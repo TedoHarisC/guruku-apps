@@ -2,8 +2,8 @@
       <div class="container">
 
         <header class="section-header">
-          <h3>Services</h3>
-          <p>Laudem latine persequeris id sed, ex fabulas delectus quo. No vel partiendo abhorreant vituperatoribus.</p>
+          <h3>Layanan Kami</h3>
+          <p>Apa saja sih layanan yang disediakan oleh GuruKU ?</p>
         </header>
 
         <div class="row">

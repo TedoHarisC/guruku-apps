@@ -1,4 +1,4 @@
-<section id="clients" class="section-bg">
+<section id="pengajar" class="section-bg">
 
       <div class="container">
 

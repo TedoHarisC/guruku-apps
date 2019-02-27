@@ -53,7 +53,7 @@
         <ul>
           <li class="active"><a href="#about">Tentang Kami</a></li>
           <li><a href="#services">Layanan Kami</a></li>
-          <li><a href="#portfolio">MateriKu</a></li>
+          <li><a href="#materiku">MateriKu</a></li>
           <li><a href="#contact">Bantuan</a></li>
         </ul>
       </nav>
@@ -91,7 +91,7 @@
     <!--==========================
       Sesi Why Us (Apa keunggulan kita)
     ============================-->
-    @include('landing.section.whyus')
+    @include('landing.section.materiku')
 
     <!--==========================
       Sesi Portfolio
@@ -114,7 +114,7 @@
     <!--==========================
       Sesi Clients
     ============================-->
-    @include('landing.section.clients')
+    @include('landing.section.pengajar')
 
     <!--==========================
       Sesi Contact

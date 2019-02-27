@@ -2,7 +2,7 @@
       <div class="container">
 
         <header class="section-header">
-          <h3>Testimonials</h3>
+          <h3>Testimoni</h3>
         </header>
 
         <div class="row justify-content-center">

@@ -1,12 +1,5 @@
-/*
-  Theme Name: NewBiz
-  Theme URL: https://bootstrapmade.com/newbiz-bootstrap-business-template/
-  Author: BootstrapMade.com
-  License: https://bootstrapmade.com/license/
-*/
-
 /*--------------------------------------------------------------
-# General
+# Konfigurasi Umum (Semua configurasi CSS)
 --------------------------------------------------------------*/
 
 body {
@@ -45,7 +38,7 @@ h6 {
     padding: 0;
 }
 
-/* Back to top button */
+/* Tombol ke atas */
 
 .back-to-top {
     position: fixed;
@@ -69,7 +62,7 @@ h6 {
     color: #fff;
 }
 
-/* Prelaoder */
+/* Preloader */
 
 #preloader {
     position: fixed;
@@ -121,7 +114,7 @@ h6 {
 }
 
 /*--------------------------------------------------------------
-# Header
+# Header (Jumbotron CSS)
 --------------------------------------------------------------*/
 
 #header {
@@ -168,7 +161,7 @@ h6 {
 }
 
 /*--------------------------------------------------------------
-# Intro Section
+# Intro Section 
 --------------------------------------------------------------*/
 
 #intro {
@@ -238,7 +231,7 @@ h6 {
 }
 
 /*--------------------------------------------------------------
-# Navigation Menu
+# Navigation Menu (Ada dua untuk Desktop dan Mobile)
 --------------------------------------------------------------*/
 
 /* Desktop Navigation */
@@ -479,7 +472,7 @@ h6 {
     background: #ecf5ff;
 }
 
-/* About Us Section
+/* Tampilan Tentang Kami
 --------------------------------*/
 
 #about {
@@ -596,7 +589,7 @@ h6 {
     cursor: pointer;
 }
 
-/* Services Section
+/* CSS Halaman Layanan Kami
 --------------------------------*/
 
 #services {
@@ -654,17 +647,19 @@ h6 {
     margin-bottom: 0;
 }
 
-#why-us {
+/* Bagian MateriKU */
+
+#materiku {
     padding: 60px 0;
     background: #004a99;
 }
 
-#why-us .section-header h3,
-#why-us .section-header p {
+#materiku .section-header h3,
+#materiku .section-header p {
     color: #fff;
 }
 
-#why-us .card {
+#materiku .card {
     background: #00458f;
     border-color: #00458f;
     border-radius: 10px;
@@ -676,28 +671,28 @@ h6 {
     height: 100%;
 }
 
-#why-us .card:hover {
+#materiku .card:hover {
     background: #003b7a;
     border-color: #003b7a;
 }
 
-#why-us .card i {
+#materiku .card i {
     font-size: 48px;
     padding-top: 15px;
     color: #bfddfe;
 }
 
-#why-us .card h5 {
+#materiku .card h5 {
     font-size: 22px;
     font-weight: 600;
 }
 
-#why-us .card p {
+#materiku .card p {
     font-size: 15px;
     color: #d8eafe;
 }
 
-#why-us .card .readmore {
+#materiku .card .readmore {
     color: #fff;
     font-weight: 600;
     display: inline-block;
@@ -705,15 +700,15 @@ h6 {
     border-bottom: #00458f solid 2px;
 }
 
-#why-us .card .readmore:hover {
+#materiku .card .readmore:hover {
     border-bottom: #fff solid 2px;
 }
 
-#why-us .counters {
+#materiku .counters {
     padding-top: 40px;
 }
 
-#why-us .counters span {
+#materiku .counters span {
     font-family: "Montserrat", sans-serif;
     font-weight: bold;
     font-size: 48px;
@@ -721,7 +716,7 @@ h6 {
     color: #fff;
 }
 
-#why-us .counters p {
+#materiku .counters p {
     padding: 0;
     margin: 0 0 20px 0;
     font-family: "Montserrat", sans-serif;
@@ -729,7 +724,7 @@ h6 {
     color: #cce5ff;
 }
 
-/* Portfolio Section
+/* Tampilan Portfolio (Kelihatannya tidak terlalu penting :D)
 --------------------------------*/
 
 #portfolio {
@@ -887,7 +882,7 @@ h6 {
     opacity: 1;
 }
 
-/* Testimonials Section
+/* Tampilan testimoni 
 --------------------------------*/
 
 #testimonials {
@@ -945,7 +940,7 @@ h6 {
     background-color: #007bff;
 }
 
-/* Team Section
+/* Tampilan Team (Kelihatannya tidak di butuhkan juga)
 --------------------------------*/
 
 #team {
@@ -1032,21 +1027,21 @@ h6 {
     margin: 0 2px;
 }
 
-/* Clients Section
+/* Halaman Tenaga Pengajar Section
 --------------------------------*/
 
-#clients {
+#pengajar {
     padding: 60px 0;
     box-shadow: inset 0px 0px 12px 0px rgba(0, 0, 0, 0.1);
 }
 
-#clients .clients-wrap {
+#pengajar .pengajar-wrap {
     border-top: 1px solid #d6eaff;
     border-left: 1px solid #d6eaff;
     margin-bottom: 30px;
 }
 
-#clients .client-logo {
+#pengajar .client-logo {
     padding: 64px;
     display: -webkit-box;
     display: -webkit-flex;
@@ -1067,12 +1062,12 @@ h6 {
     height: 200px;
 }
 
-#clients .client-logo:hover img {
+#pengajar .client-logo:hover img {
     -webkit-transform: scale(1.2);
     transform: scale(1.2);
 }
 
-#clients img {
+#pengajar img {
     transition: all 0.4s ease-in-out;
 }
 
@@ -1433,7 +1428,7 @@ h6 {
         text-align: center;
     }
 
-    #why-us .card {
+    #materiku .card {
         margin: 0;
     }
 }
@@ -1480,4 +1475,4 @@ h6 {
     }
 }
 
-/* Untuk assets gambar clients*/
+/* Untuk assets gambar pengajar*/

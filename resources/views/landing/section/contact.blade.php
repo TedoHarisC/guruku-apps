@@ -2,7 +2,7 @@
       <div class="container-fluid">
 
         <div class="section-header">
-          <h3>Contact Us</h3>
+          <h3>Hubungi Kami</h3>
         </div>
 
         <div class="row wow fadeInUp">
