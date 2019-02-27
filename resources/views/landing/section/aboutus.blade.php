@@ -45,10 +45,10 @@
           <div class="col-lg-6 wow fadeInUp pt-5 pt-lg-0">
             <h4>Anda Seorang Guru atau Guru Honorer yang mencari pekerjaan tambahan ?</h4>
             <p>
-              Ipsum in aspernatur ut possimus sint. Quia omnis est occaecati possimus ea. Quas molestiae perspiciatis occaecati qui rerum. Deleniti quod porro sed quisquam saepe. Numquam mollitia recusandae non ad at et a.
+              Bergabung menjadi bagian dari kami ! , banyak benefits yang akan di dapatkan . Seperti uang jutaan rupiah , serta bonus dan benefits lainnya. Dijamin anda akan terbantu
             </p>
             <p>
-              Ad vitae recusandae odit possimus. Quaerat cum ipsum corrupti. Odit qui asperiores ea corporis deserunt veritatis quidem expedita perferendis. Qui rerum eligendi ex doloribus quia sit. Porro rerum eum eum.
+              Bagaimana cara mendaftar menjadi tenaga pengajar kami ? Apa syarat - syarat serta prosedur yang harus dilakukan ? Silahkan klik tombol di bawah ini.
             </p>
             <p>
             <div class="text-center"><button type="submit" title="Pelajari Selengkapnya">Pelajari Selengkapnya</button></div>
@@ -64,13 +64,13 @@
           <div class="col-lg-6 wow fadeInUp pt-4 pt-lg-0 order-2 order-lg-1">
             <h4>Anda Seorang Mahasiswa , Namun bingung mencari pekerjaan tambahan ?</h4>
             <p>
-             Delectus alias ut incidunt delectus nam placeat in consequatur. Sed cupiditate quia ea quis. Voluptas nemo qui aut distinctio. Cumque fugit earum est quam officiis numquam. Ducimus corporis autem at blanditiis beatae incidunt sunt. 
+             Kebutuhan Mahasiswa ? Hmm ... tentunya sangat banyak sekali dong. Mulai dari biaya kos , biaya keseharian , biaya perkuliahan , belum lagi jika sudah menginjak semester terakhir kebutuhan untuk skripsi bisa menjadi penghalang masalah keuangan kita nih. 
             </p>
             <p>
-              Voluptas saepe natus quidem blanditiis. Non sunt impedit voluptas mollitia beatae. Qui esse molestias. Laudantium libero nisi vitae debitis. Dolorem cupiditate est perferendis iusto.
+              Tapi tenang , kalian mahasiswa dari jurusan apapun dapat bergabung dengan kami sebagai Guru disini. Tentunya kalian akan dapatkan uang tambahan senilai jutaan rupiah , serta bonus dan benefits lainnya.
             </p>
             <p>
-              Eum quia in. Magni quas ipsum a. Quis ex voluptatem inventore sint quia modi. Numquam est aut fuga mollitia exercitationem nam accusantium provident quia.
+             Bagaimana ? Apakah kalian tertarik ? Apa saja syarat yang diperlukan oleh seorang mahasiswa agar bisa bergabung menjadi tenaga pengajar kami ? Silahkan klik tombol di bawah ini untuk mengetahui lebih lanjut.
             </p>
             <p>
             <div class="text-center"><button type="submit" title="Pelajari Selengkapnya">Pelajari Selengkapnya</button></div>
