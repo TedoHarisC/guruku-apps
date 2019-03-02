@@ -51,7 +51,7 @@
               Bagaimana cara mendaftar menjadi tenaga pengajar kami ? Apa syarat - syarat serta prosedur yang harus dilakukan ? Silahkan klik tombol di bawah ini.
             </p>
             <p>
-            <div class="text-center"><button type="submit" title="Pelajari Selengkapnya">Pelajari Selengkapnya</button></div>
+            <div class="text-center"><a href="http://127.0.0.1:8000/cariGuru"><button type="submit" title="Pelajari Selengkapnya">Pelajari Selengkapnya</button></a></div>
             </p>
           </div>
         </div>

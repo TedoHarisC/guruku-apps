@@ -8,24 +8,24 @@
   <meta content="" name="description">
 
   <!-- Favicons -->
-  <link href="{{ asset('landing') }}/img/favicon.png" rel="icon">
-  <link href="{{ asset('landing') }}/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <link href="{{ asset('cariguru') }}/img/favicon.png" rel="icon">
+  <link href="{{ asset('cariguru') }}/img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Montserrat:300,400,500,700" rel="stylesheet">
 
   <!-- Bootstrap CSS File -->
-  <link href="{{ asset('landing') }}/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="{{ asset('cariguru') }}/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
   <!-- Libraries CSS Files -->
-  <link href="{{ asset('landing') }}/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-  <link href="{{ asset('landing') }}/vendor/animate/animate.min.css" rel="stylesheet">
-  <link href="{{ asset('landing') }}/vendor/ionicons/css/ionicons.min.css" rel="stylesheet">
-  <link href="{{ asset('landing') }}/vendor/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-  <link href="{{ asset('landing') }}/vendor/lightbox/css/lightbox.min.css" rel="stylesheet">
+  <link href="{{ asset('cariguru') }}/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link href="{{ asset('cariguru') }}/vendor/animate/animate.min.css" rel="stylesheet">
+  <link href="{{ asset('cariguru') }}/vendor/ionicons/css/ionicons.min.css" rel="stylesheet">
+  <link href="{{ asset('cariguru') }}/vendor/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+  <link href="{{ asset('cariguru') }}/vendor/lightbox/css/lightbox.min.css" rel="stylesheet">
 
   <!-- Main Stylesheet File -->
-  <link href="{{ asset('landing') }}/css/style.css" rel="stylesheet">
+  <link href="{{ asset('cariguru') }}/css/style.css" rel="stylesheet">
 
   <!-- =======================================================
     Theme Name: NewBiz
@@ -45,15 +45,14 @@
 
       <div class="logo float-left">
         <!-- Uncomment below if you prefer to use an image logo -->
-        <a href="#intro"><h1 class="scrollto"><span>GuruKU</span></h1></a>
-        <!-- <a href="#intro" class="scrollto"><img src="{{ asset('landing') }}/img/logo.png" alt="" class="img-fluid"></a> -->
+        <a href="http://127.0.0.1:8000"><h1 class="scrollto"><span>GuruKU</span></h1></a>
       </div>
 
       <nav class="main-nav float-left d-none d-lg-block">
         <ul>
-          <li class="active"><a href="#about">Tentang Kami</a></li>
-          <li><a href="#services">Layanan Kami</a></li>
-          <li><a href="#materiku">MateriKu</a></li>
+          <li class="active"><a href="#about">Buka Kelas</a></li>
+          <li><a href="#services">List Kelas</a></li>
+          <li><a href="#materiku">List Murid</a></li>
           <li><a href="#contact">Bantuan</a></li>
         </ul>
       </nav>
@@ -168,22 +167,22 @@
   <!-- <div id="preloader"></div> -->
 
   <!-- JavaScript Libraries -->
-  <script src="{{ asset('landing') }}/vendor/jquery/jquery.min.js"></script>
-  <script src="{{ asset('landing') }}/vendor/jquery/jquery-migrate.min.js"></script>
-  <script src="{{ asset('landing') }}/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="{{ asset('landing') }}/vendor/easing/easing.min.js"></script>
-  <script src="{{ asset('landing') }}/vendor/mobile-nav/mobile-nav.js"></script>
-  <script src="{{ asset('landing') }}/vendor/wow/wow.min.js"></script>
-  <script src="{{ asset('landing') }}/vendor/waypoints/waypoints.min.js"></script>
-  <script src="{{ asset('landing') }}/vendor/counterup/counterup.min.js"></script>
-  <script src="{{ asset('landing') }}/vendor/owlcarousel/owl.carousel.min.js"></script>
-  <script src="{{ asset('landing') }}/vendor/isotope/isotope.pkgd.min.js"></script>
-  <script src="{{ asset('landing') }}/vendor/lightbox/js/lightbox.min.js"></script>
+  <script src="{{ asset('cariguru') }}/vendor/jquery/jquery.min.js"></script>
+  <script src="{{ asset('cariguru') }}/vendor/jquery/jquery-migrate.min.js"></script>
+  <script src="{{ asset('cariguru') }}/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="{{ asset('cariguru') }}/vendor/easing/easing.min.js"></script>
+  <script src="{{ asset('cariguru') }}/vendor/mobile-nav/mobile-nav.js"></script>
+  <script src="{{ asset('cariguru') }}/vendor/wow/wow.min.js"></script>
+  <script src="{{ asset('cariguru') }}/vendor/waypoints/waypoints.min.js"></script>
+  <script src="{{ asset('cariguru') }}/vendor/counterup/counterup.min.js"></script>
+  <script src="{{ asset('cariguru') }}/vendor/owlcarousel/owl.carousel.min.js"></script>
+  <script src="{{ asset('cariguru') }}/vendor/isotope/isotope.pkgd.min.js"></script>
+  <script src="{{ asset('cariguru') }}/vendor/lightbox/js/lightbox.min.js"></script>
   <!-- Contact Form JavaScript File -->
-  <script src="{{ asset('landing') }}/contactform/contactform.js"></script>
+  <script src="{{ asset('cariguru') }}/contactform/contactform.js"></script>
 
   <!-- Template Main Javascript File -->
-  <script src="{{ asset('landing') }}/js/main.js"></script>
+  <script src="{{ asset('cariguru') }}/js/main.js"></script>
 
 </body>
 </html>
