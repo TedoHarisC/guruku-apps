@@ -15,6 +15,10 @@ Route::get('/', function () {
     return view('landing');
 });
 
+Route::get('/cariGuru',function(){
+	return view('cariGuru');
+});
+
 Route::prefix('admin')->middleware(['auth'])->name('admin')->group(function () {
 
     Route::get('/' , 'admin\DashboardController@index');

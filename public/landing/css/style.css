@@ -589,6 +589,22 @@ h6 {
     cursor: pointer;
 }
 
+/* Tombol cariGuru */
+#about .pelajari {
+    background: #007bff;
+    border: 0;
+    border-radius: 20px;
+    padding: 8px 30px;
+    color: #fff;
+    transition: 0.3s;
+}
+
+#about .pelajari:hover {
+    background: #0067d5;
+    cursor: pointer;
+}
+/* End Tombol cariGuru */
+
 /* CSS Halaman Layanan Kami
 --------------------------------*/
 
@@ -1479,4 +1495,103 @@ h6 {
 hr {
     border-top: 8px solid #fff;
     border-radius: 15px;
+}
+
+/* cariGuru list */
+#list {
+    background: #ddfaff;
+    padding: 30px 0;
+    box-shadow: inset 0px 0px 12px 0px rgba(0, 0, 0, 0.1);
+}
+
+#list .about-container .background {
+    margin: 20px 0;
+}
+
+#list .about-container .content {
+    background: #fff;
+}
+
+#list .about-container .title {
+    color: #333;
+    font-weight: 700;
+    font-size: 32px;
+}
+
+#list .about-container p {
+    line-height: 26px;
+}
+
+#list .about-container p:last-child {
+    margin-bottom: 0;
+}
+
+#list .about-extra {
+    padding-top: 60px;
+}
+
+#list .about-extra h4 {
+    font-weight: 600;
+    font-size: 24px;
+}
+
+#list .box {
+    padding: 30px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    margin: 0 10px 40px 10px;
+    background: #fff;
+    box-shadow: 0 10px 29px 0 rgba(68, 88, 144, 0.1);
+    transition: all 0.3s ease-in-out;
+}
+
+#list .box:hover {
+    -webkit-transform: translateY(-5px);
+    transform: translateY(-5px);
+}
+
+#list .icon {
+    position: absolute;
+    left: 20px;
+    top: calc(50% - 32px);
+}
+
+#list .icon i {
+    font-size: 64px;
+    line-height: 1;
+    transition: 0.5s;
+}
+
+#list .title {
+    margin-left: 80px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+#list .title a {
+    color: #111;
+}
+
+#list .box:hover .title a {
+    color: #007bff;
+}
+
+#list .description {
+    font-size: 16px;
+    margin-left: 80px;
+    line-height: 24px;
+    margin-bottom: 10px;
+}
+
+#list .description i {
+    font-size: 23px;
+    line-height: 1;
+    transition: 0.5s;
+    padding-right: 12px;
+}
+
+#list .close {
+    top: 50px;
 }
