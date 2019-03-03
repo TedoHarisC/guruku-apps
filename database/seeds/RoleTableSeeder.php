@@ -15,7 +15,9 @@ class RoleTableSeeder extends Seeder
     {
         //
         $role = Role::create(['name' => 'admin']);
-        $role = Role::create(['name' => 'user']);
+        $role = Role::create(['name' => 'guru']);
+        $role = Role::create(['name' => 'murid']);
 
     }
 }
+

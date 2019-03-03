@@ -19,17 +19,23 @@ Route::get('/cariGuru',function(){
 	return view('cariGuru');
 });
 
-Route::prefix('admin')->middleware(['auth'])->name('admin')->group(function () {
+Route::prefix('admin')->middleware(['checkadmin:admin','auth'])->name('admin')->group(function () {
 
     Route::get('/' , 'admin\DashboardController@index');
     
     // Route::resource('/organizations', 'AdminOrganizationController');
 
+    Route::resource('user', 'UserController', ['except' => ['show']]);
+    Route::get('profile', ['as' => 'profile.edit', 'uses' => 'ProfileController@edit']);
+    Route::put('profile', ['as' => 'profile.update', 'uses' => 'ProfileController@update']);
+    Route::put('profile/password', ['as' => 'profile.password', 'uses' => 'ProfileController@password']);
+
 });
 
-Auth::routes();
+Route::prefix('/my')->middleware(['checkguru:guru','auth'])->group(function () {
+    Route::get('/' , 'GuruController@index');
+});
 
-Route::get('/home', 'HomeController@index')->name('home');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
