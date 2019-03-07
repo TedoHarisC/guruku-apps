@@ -179,11 +179,26 @@
   <script src="{{ asset('landing') }}/vendor/owlcarousel/owl.carousel.min.js"></script>
   <script src="{{ asset('landing') }}/vendor/isotope/isotope.pkgd.min.js"></script>
   <script src="{{ asset('landing') }}/vendor/lightbox/js/lightbox.min.js"></script>
+  <script src="https://unpkg.com/ionicons@4.4.4/dist/ionicons.js"></script>
   <!-- Contact Form JavaScript File -->
   <script src="{{ asset('landing') }}/contactform/contactform.js"></script>
 
   <!-- Template Main Javascript File -->
   <script src="{{ asset('landing') }}/js/main.js"></script>
+  <script>
+      function myFunction(){
+      var checkBox = document.getElementById("myCheck");
+      var text = document.getElementById("text");
+      var content = document.getElementsByClassName("profile-content");
+
+      if (checkBox.checked == true){
+        text.style.display = "block";
+        // content.style.min-height = 900px;
+      } else {
+        text.style.display = "none";
+      }
+    }
+  </script>
 
 </body>
 </html>
