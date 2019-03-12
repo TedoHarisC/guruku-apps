@@ -19,6 +19,11 @@ Route::get('/cariGuru',function(){
 	return view('cariGuru');
 });
 
+// Coba route nanti di ganti Profile
+Route::get('/myProfile',function(){
+	return view('myProfile');
+});
+
 Route::prefix('admin')->middleware(['checkadmin:admin','auth'])->name('admin')->group(function () {
 
     Route::get('/' , 'admin\DashboardController@index');
