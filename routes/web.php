@@ -36,6 +36,10 @@ Route::prefix('/my')->middleware(['checkguru:guru','auth'])->group(function () {
     Route::get('/' , 'GuruController@index');
 });
 
+Route::prefix('/murid')->middleware(['checkmurid:murid','auth'])->group(function () {
+    Route::get('/' , 'MuridController@index');
+});
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

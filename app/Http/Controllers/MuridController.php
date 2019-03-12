@@ -10,6 +10,6 @@ class MuridController extends Controller
     public function index()
     {
         // return view('admin.layouts.master');
-        return "murid";
+        return view("landing");
     }
 }

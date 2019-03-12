@@ -23,7 +23,7 @@
                     <div class="card-body px-lg-5 py-lg-5">
                         <div class="text-center text-muted mb-4">
                             <small>{{ __('Or sign in with credentials') }}</small><br>
-                            <small>You can use <strong>admin@argon.com</strong> and <strong>secret</strong> to loggin</small>
+                            
                         </div>
                         <form role="form" method="POST" action="{{ route('login') }}">
                             @csrf
