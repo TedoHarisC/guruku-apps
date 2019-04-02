@@ -16,7 +16,7 @@ class CheckAdmin
     public function handle($request, Closure $next, $role)
     {       
         if (! $request->user()->hasRole($role)) {
-            return redirect('/lala');
+            return redirect('/my');
         }
         return $next($request);
 

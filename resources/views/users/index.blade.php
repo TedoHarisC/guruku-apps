@@ -1,5 +1,17 @@
 @extends('layouts.app', ['title' => __('User Management')])
 
+@push('js')
+    
+    <link rel="stylesheet" type="text/css" href="{{('css/jquery.dataTables.css')}}">
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script>
+    <script>
+        $(document).ready( function () {
+            $('#myTable').DataTable();
+            
+        } );
+    </script>
+@endpush
+
 @section('content')
     @include('layouts.headers.cards')
 
@@ -30,7 +42,7 @@
                     </div>
 
                     <div class="table-responsive">
-                        <table class="table align-items-center table-flush">
+                        <table id="myTable" class="table align-items-center table-flush">
                             <thead class="thead-light">
                                 <tr>
                                     <th scope="col">{{ __('Name') }}</th>
