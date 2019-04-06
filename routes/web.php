@@ -15,7 +15,7 @@ Route::get('/', function () {
     return view('landing');
 });
 
-Route::get('/cariGuru', function () {
+Route::get('/murid', function () {
     return view('cariGuru');
 });
 
@@ -24,14 +24,19 @@ Route::get('/myProfile', function () {
     return view('myProfile');
 });
 
-// Halaman Murid
-Route::get('/murid', function () {
+// Halaman Murid (CariGuru)
+Route::get('/guru', function () {
     return view('halamanMurid');
 });
 
 // Detail guru
-Route::get('/detail', function () {
+Route::get('/guru/detail', function () {
     return view('halamanMurid/section/detailGuru');
+});
+
+// Halaman Detail Pemesanan
+Route::get('/guru/pesan', function () {
+    return view('halamanMurid/section/detailPesanGuru');
 });
 
 Route::prefix('admin')->middleware(['checkadmin:admin', 'auth'])->name('admin')->group(function () {
