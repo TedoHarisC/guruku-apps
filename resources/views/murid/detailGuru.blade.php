@@ -1,4 +1,4 @@
-@extends('halamanMurid.app')
+@extends('murid.layouts.app')
 
 @section('content')
     <!-- Detail Guru -->

@@ -15,30 +15,7 @@ Route::get('/', function () {
     return view('landing');
 });
 
-Route::get('/murid', function () {
-    return view('cariGuru');
-});
-
-// Coba route nanti di ganti Profile
-Route::get('/myProfile', function () {
-    return view('myProfile');
-});
-
-// Halaman Murid (CariGuru)
-Route::get('/guru', function () {
-    return view('halamanMurid');
-});
-
-// Detail guru
-Route::get('/guru/detail', function () {
-    return view('halamanMurid/section/detailGuru');
-});
-
-// Halaman Detail Pemesanan
-Route::get('/guru/pesan', function () {
-    return view('halamanMurid/section/detailPesanGuru');
-});
-
+// Route for Admin
 Route::prefix('admin')->middleware(['checkadmin:admin', 'auth'])->name('admin')->group(function () {
 
     Route::get('/', 'admin\DashboardController@index');
@@ -46,27 +23,42 @@ Route::prefix('admin')->middleware(['checkadmin:admin', 'auth'])->name('admin')-
     // Route::resource('/organizations', 'AdminOrganizationController');
 
     Route::resource('user', 'UserController', ['except' => ['show']]);
+
     Route::get('profile', ['as' => 'profile.edit', 'uses' => 'ProfileController@edit']);
     Route::put('profile', ['as' => 'profile.update', 'uses' => 'ProfileController@update']);
     Route::put('profile/password', ['as' => 'profile.password', 'uses' => 'ProfileController@password']);
 
 });
 
-Route::prefix('/my')->middleware(['checkguru:guru', 'auth'])->group(function () {
-    Route::get('/', 'GuruController@index');
-});
+// Route for Guru
+Route::prefix('/my')->middleware(['auth','checkguru:guru'])->group(function () {
 
-Route::prefix('/murid')->middleware(['checkmurid:murid','auth'])->group(function () {
-    Route::get('/' , 'MuridController@index');
+    Route::get('/', 'GuruController@index');
+
+    Route::get('/profile' , 'GuruController@profile');
+    
+});
+// Route for murid
+Route::group(['middleware' => 'auth','checkmurid:murid'],function () {
+    // Route::get('/' , 'MuridController@index');
+
+    Route::get('/profile' , 'MuridController@profile');
+
+    Route::get('/guru' , 'MuridController@cariguru');
+
+    Route::get('/detailguru' , 'MuridController@detailguru');
+
+    Route::get('/checkout' , 'MuridController@checkout');
+
 });
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::group(['middleware' => 'auth'], function () {
-    Route::resource('user', 'UserController', ['except' => ['show']]);
-    Route::get('profile', ['as' => 'profile.edit', 'uses' => 'ProfileController@edit']);
-    Route::put('profile', ['as' => 'profile.update', 'uses' => 'ProfileController@update']);
-    Route::put('profile/password', ['as' => 'profile.password', 'uses' => 'ProfileController@password']);
-});
+// Route::group(['middleware' => 'auth'], function () {
+//     Route::resource('user', 'UserController', ['except' => ['show']]);
+//     Route::get('profile', ['as' => 'profile.edit', 'uses' => 'ProfileController@edit']);
+//     Route::put('profile', ['as' => 'profile.update', 'uses' => 'ProfileController@update']);
+//     Route::put('profile/password', ['as' => 'profile.password', 'uses' => 'ProfileController@password']);
+// });
