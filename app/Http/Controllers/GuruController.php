@@ -9,8 +9,14 @@ class GuruController extends Controller
     //
     public function index()
     {
-        // return view('admin.layouts.master');
-        return "guru";
+        return view('guru.dashboard');
+
+    }
+
+    public function profile()
+    {
+        return view('guru.profile');
+
     }
 
 }
