@@ -1,4 +1,4 @@
-@extends('guru.dashboard.app')
+@extends('guru.layouts.app')
 
 @section('content')
     <!-- Heading -->
