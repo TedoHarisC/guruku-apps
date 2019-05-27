@@ -45,7 +45,7 @@
 
       <div class="logo float-left">
         <!-- Uncomment below if you prefer to use an image logo -->
-        <a href="#intro"><h1 class="scrollto"><span>GuruKU</span></h1></a>
+        <a href="/"><h1 class="scrollto"><span>GuruKU</span></h1></a>
         <!-- <a href="#intro" class="scrollto"><img src="{{ asset('landing') }}/img/logo.png" alt="" class="img-fluid"></a> -->
       </div>
 

@@ -8,7 +8,7 @@
       <div class="intro-info">
         <h2>Pesan<br><span>Guru Les Privat</span><br>Cepat Mudah dan Terpercaya</h2>
         <div>
-        <a href="http://127.0.0.1:8000/cariGuru" class="btn-get-started scrollto">Cari Guru Sekarang</a>
+        <a href="guru" class="btn-get-started scrollto">Cari Guru Sekarang</a>
         </div>
       </div>
 

@@ -45,7 +45,7 @@
 
       <div class="logo float-left">
         <!-- Uncomment below if you prefer to use an image logo -->
-        <a href="http://127.0.0.1:8000"><h1 class="scrollto"><span>GuruKU</span></h1></a>
+        <a href="/"><h1 class="scrollto"><span>GuruKU</span></h1></a>
       </div>
 
       <nav class="main-nav float-left d-none d-lg-block">
@@ -58,8 +58,8 @@
       </nav>
       <nav class="main-nav float-right d-none d-lg-block">
         <ul>
-          <li><a href="#">Log In</a></li>
-          <li><a href="#">Sign Up</a></li>
+          <li><a href="login">Log In</a></li>
+          <li><a href="register">Sign Up</a></li>
         </ul>
       </nav>
       <!-- .main-nav -->

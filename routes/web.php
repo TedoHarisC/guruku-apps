@@ -34,7 +34,6 @@ Route::prefix('admin')->middleware(['checkadmin:admin', 'auth'])->name('admin')-
 Route::prefix('/my')->middleware(['auth','checkguru:guru'])->group(function () {
 
     Route::get('/', 'GuruController@index');
-
     Route::get('/profile' , 'GuruController@profile');
     
 });
@@ -43,11 +42,8 @@ Route::group(['middleware' => 'auth','checkmurid:murid'],function () {
     // Route::get('/' , 'MuridController@index');
 
     Route::get('/profile' , 'MuridController@profile');
-
     Route::get('/guru' , 'MuridController@cariguru');
-
     Route::get('/detailguru' , 'MuridController@detailguru');
-
     Route::get('/checkout' , 'MuridController@checkout');
 
 });
@@ -62,3 +58,6 @@ Route::group(['middleware' => 'auth'], function () {
     Route::put('profile', ['as' => 'profile.update', 'uses' => 'ProfileController@update']);
     Route::put('profile/password', ['as' => 'profile.password', 'uses' => 'ProfileController@password']);
 });
+
+Route::post('/city', 'MuridController@city')->name('city');
+Route::post('/kecamatan', 'MuridController@kecamatan')->name('kecamatan');

@@ -2,10 +2,17 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests;
 use Illuminate\Http\Request;
+use Indonesia;
 
 class MuridController extends Controller
 {
+    protected $request;
+
+    public function __construct(Request $request){   
+        $this->request = $request;
+    }
     //
     public function index()
     {
@@ -30,11 +37,36 @@ class MuridController extends Controller
         return view('murid.detailGuru');
     }
 
-
     public function checkout()
     {
-        return view('murid/detailPesanGuru');
+        $provinces = Indonesia::allProvinces();
+        return(view('murid/detailPesanGuru')->with('provinces',$provinces));
     }
 
+    public function city()
+    {
+        $data = $this->request->idprov;
+        $cities = Indonesia::findProvince($data, ['cities']);
+        $test = "";
+
+        foreach($cities['cities'] as $city){
+            $test .= "<option value='".$city['id']."'>".$city['name']."</option>";
+        }
+    
+        return $test;
+    }
+
+    public function kecamatan()
+    {
+        $data = $this->request->idcity;
+        $kecamatans = Indonesia::findCity($data, ['districts']);
+        $test = "";
+
+        foreach($kecamatans['districts'] as $kecamatan){
+            $test .= "<option value='".$kecamatan['id']."'>".$kecamatan['name']."</option>";
+        }
+    
+        return $test;
+    }
     
 }

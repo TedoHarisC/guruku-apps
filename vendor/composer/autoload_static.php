@@ -111,6 +111,7 @@ class ComposerStaticInitfd45410921595192fa3f9f77c9149f0c
             'League\\Flysystem\\' => 17,
             'League\\Event\\' => 13,
             'Lcobucci\\JWT\\' => 13,
+            'Laravolt\\Indonesia\\' => 19,
             'Laravel\\Tinker\\' => 15,
             'Laravel\\Socialite\\' => 18,
             'Laravel\\Passport\\' => 17,
@@ -336,6 +337,10 @@ class ComposerStaticInitfd45410921595192fa3f9f77c9149f0c
         'Lcobucci\\JWT\\' => 
         array (
             0 => __DIR__ . '/..' . '/lcobucci/jwt/src',
+        ),
+        'Laravolt\\Indonesia\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/laravolt/indonesia/src',
         ),
         'Laravel\\Tinker\\' => 
         array (
@@ -2143,6 +2148,21 @@ class ComposerStaticInitfd45410921595192fa3f9f77c9149f0c
         'Laravel\\Tinker\\Console\\TinkerCommand' => __DIR__ . '/..' . '/laravel/tinker/src/Console/TinkerCommand.php',
         'Laravel\\Tinker\\TinkerCaster' => __DIR__ . '/..' . '/laravel/tinker/src/TinkerCaster.php',
         'Laravel\\Tinker\\TinkerServiceProvider' => __DIR__ . '/..' . '/laravel/tinker/src/TinkerServiceProvider.php',
+        'Laravolt\\Indonesia\\Commands\\SeedCommand' => __DIR__ . '/..' . '/laravolt/indonesia/src/Commands/SeedCommand.php',
+        'Laravolt\\Indonesia\\Facade' => __DIR__ . '/..' . '/laravolt/indonesia/src/Facade.php',
+        'Laravolt\\Indonesia\\Indonesia' => __DIR__ . '/..' . '/laravolt/indonesia/src/Indonesia.php',
+        'Laravolt\\Indonesia\\Models\\City' => __DIR__ . '/..' . '/laravolt/indonesia/src/Models/City.php',
+        'Laravolt\\Indonesia\\Models\\District' => __DIR__ . '/..' . '/laravolt/indonesia/src/Models/District.php',
+        'Laravolt\\Indonesia\\Models\\Model' => __DIR__ . '/..' . '/laravolt/indonesia/src/Models/Model.php',
+        'Laravolt\\Indonesia\\Models\\Province' => __DIR__ . '/..' . '/laravolt/indonesia/src/Models/Province.php',
+        'Laravolt\\Indonesia\\Models\\Village' => __DIR__ . '/..' . '/laravolt/indonesia/src/Models/Village.php',
+        'Laravolt\\Indonesia\\Seeds\\CitiesSeeder' => __DIR__ . '/..' . '/laravolt/indonesia/src/Seeds/CitiesSeeder.php',
+        'Laravolt\\Indonesia\\Seeds\\CsvtoArray' => __DIR__ . '/..' . '/laravolt/indonesia/src/Seeds/CsvtoArray.php',
+        'Laravolt\\Indonesia\\Seeds\\DatabaseSeeder' => __DIR__ . '/..' . '/laravolt/indonesia/src/Seeds/DatabaseSeeder.php',
+        'Laravolt\\Indonesia\\Seeds\\DistrictsSeeder' => __DIR__ . '/..' . '/laravolt/indonesia/src/Seeds/DistrictsSeeder.php',
+        'Laravolt\\Indonesia\\Seeds\\ProvincesSeeder' => __DIR__ . '/..' . '/laravolt/indonesia/src/Seeds/ProvincesSeeder.php',
+        'Laravolt\\Indonesia\\Seeds\\VillagesSeeder' => __DIR__ . '/..' . '/laravolt/indonesia/src/Seeds/VillagesSeeder.php',
+        'Laravolt\\Indonesia\\ServiceProvider' => __DIR__ . '/..' . '/laravolt/indonesia/src/ServiceProvider.php',
         'Lcobucci\\JWT\\Builder' => __DIR__ . '/..' . '/lcobucci/jwt/src/Builder.php',
         'Lcobucci\\JWT\\Claim' => __DIR__ . '/..' . '/lcobucci/jwt/src/Claim.php',
         'Lcobucci\\JWT\\Claim\\Basic' => __DIR__ . '/..' . '/lcobucci/jwt/src/Claim/Basic.php',

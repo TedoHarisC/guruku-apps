@@ -47,7 +47,7 @@
 
       <div class="logo float-left">
         <!-- Uncomment below if you prefer to use an image logo -->
-        <a href="http://127.0.0.1:8000"><h1 class="scrollto"><span>GuruKU</span></h1></a>
+        <a href="/"><h1 class="scrollto"><span>GuruKU</span></h1></a>
       </div>
 
       <nav class="main-nav float-left d-none d-lg-block">
@@ -60,8 +60,8 @@
       </nav>
       <nav class="main-nav float-right d-none d-lg-block">
         <ul>
-          <li><a href="#">Log In</a></li>
-          <li><a href="#">Sign Up</a></li>
+          <li><a href="login">Log In</a></li>
+          <li><a href="register">Sign Up</a></li>
         </ul>
       </nav>
       <!-- .main-nav -->
@@ -174,6 +174,7 @@
   <script src="{{ asset('landing') }}/vendor/jquery/jquery.min.js"></script>
   <script src="{{ asset('landing') }}/vendor/jquery/jquery-migrate.min.js"></script>
   <script src="{{ asset('landing') }}/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="{{ asset('landing') }}/vendor/bootstrap/js/bootstrap.min.js"></script>
   <script src="{{ asset('landing') }}/vendor/easing/easing.min.js"></script>
   <script src="{{ asset('landing') }}/vendor/mobile-nav/mobile-nav.js"></script>
   <script src="{{ asset('landing') }}/vendor/wow/wow.min.js"></script>
@@ -183,12 +184,17 @@
   <script src="{{ asset('landing') }}/vendor/isotope/isotope.pkgd.min.js"></script>
   <script src="{{ asset('landing') }}/vendor/lightbox/js/lightbox.min.js"></script>
 
-
   <!-- Contact Form JavaScript File -->
   <script src="{{ asset('landing') }}/contactform/contactform.js"></script>
 
   <!-- Template Main Javascript File -->
   <script src="{{ asset('landing') }}/js/main.js"></script>
+
+  <!-- ClockPicker Stylesheet -->
+  <link rel="stylesheet" type="text/css" href="{{ asset('landing') }}/vendor/bootstrap/dist/bootstrap-clockpicker.min.css">
+
+  <!-- ClockPicker script -->
+  <script src="{{ asset('landing') }}/vendor/bootstrap/dist/bootstrap-clockpicker.min.js"></script>
 
   <!-- Script for Tab on detailGuru Tabs -->
   <script type="text/javascript">
@@ -319,14 +325,23 @@
     $(document).ready(function(){
       var date_input=$('input[name="date"]'); //our date input has the name "date"
       var container=$('.bootstrap-iso form').length>0 ? $('.bootstrap-iso form').parent() : "body";
-      var options={
-        format: 'mm/dd/yyyy',
-        container: container,
-        todayHighlight: true,
-        autoclose: true,
-      };
-      date_input.datepicker(options);
+      // var options={
+      //   format: 'mm/dd/yyyy',
+      //   container: container,
+      //   todayHighlight: true,
+      //   autoclose: true,
+      //   donetext: 'Done'
+      // };
+      // date_input.datepicker(options);
     })
+    </script>
+
+    <script type="text/javascript">
+    $('.clockpicker').clockpicker()
+	    .find('input').change(function(){
+		  // TODO: time changed
+		  console.log(this.value);
+	  });
     </script>
 
 </body>

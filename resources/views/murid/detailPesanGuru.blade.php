@@ -55,17 +55,25 @@
                             <div class="col col-lg-6">
                                 <label for="comboBoxMapel" style="float:left;">Durasi Per Pertemuan *</label>
                                 <select class="form-control">
-                                    <option value="" selected disabled>Pilih Mata pelajaran</option>
-                                    <option value="">IPA SD</option>
-                                    <option value="">IPS SD</option>
+                                    <option value="" selected disabled>Pilih...</option>
+                                    <option value="">1 jam</option>
+                                    <option value="">1,5 jam</option>
+                                    <option value="">2 jam</option>
+                                    <option value="">2,5 jam</option>
+                                    <option value="">3 jam</option>
                                 </select>
                             </div>
                             <div class="col col-lg-6">
                                 <label for="comboBoxMapel" style="float:left;">Jumlah Pertemuan minimal 8 *</label>
                                 <select class="form-control">
-                                    <option value="" selected disabled>Pilih Mata pelajaran</option>
-                                    <option value="">IPA SD</option>
-                                    <option value="">IPS SD</option>
+                                    <option value="" selected disabled>Pilih...</option>
+                                    <option value="">8</option>
+                                    <option value="">9</option>
+                                    <option value="">10</option>
+                                    <option value="">11</option>
+                                    <option value="">12</option>
+                                    <option value="">13</option>
+                                    <option value="">14</option>
                                 </select>
                             </div>
                         </div><br/>
@@ -79,25 +87,31 @@
                 <fieldset>
                     <h2 class="fs-title">Tentukan Waktu</h2>
                     <div class="form-group">
-                        <label for="labelDate" style="float:left;">Tentukan Hari Pertama Belajar*</label>
+                        <label for="labelDate" style="float:left;">Tentukan Tanggal Pertama Belajar*</label>
                         <input type="date" name="datePicker" placeholder="DD-MM-YYYY" />
                     </div>
                     <div class="row">
                             <div class="col col-lg-6">
                                 <label for="comboBoxMapel" style="float:left;">Tentukan Hari*</label>
                                 <select class="form-control">
-                                    <option value="" selected disabled>Pilih Hari</option>
-                                    <option value="">IPA SD</option>
-                                    <option value="">IPS SD</option>
+                                    <option value="" selected disabled>Pilih...</option>
+                                    <option value="">Senin</option>
+                                    <option value="">Selasa</option>
+                                    <option value="">Rabu</option>
+                                    <option value="">Kamis</option>
+                                    <option value="">Jumat</option>
+                                    <option value="">Sabtu</option>
+                                    <option value="">Minggu</option>
                                 </select>
                             </div>
                             <div class="col col-lg-6">
-                                <label for="comboBoxMapel" style="float:left;">Tentukan Waktu*</label>
-                                <select class="form-control">
-                                    <option value="" selected disabled>Pilih Waktu</option>
-                                    <option value="">IPA SD</option>
-                                    <option value="">IPS SD</option>
-                                </select>
+                                <label for="comboBoxMapel" style="float:left;">Tentukan Waktu Pertemuan Pertama*</label>
+                                <div class="input-group clockpicker" data-align="top" data-autoclose="true">
+	                                <input type="text" name="date" class="form-control" value="Pilih...">
+	                            <span class="input-group-addon">
+		                            <span class="glyphicon glyphicon-time"></span>
+	                            </span>
+                            </div>
                             </div>
                         </div><br/>
                     <input type="button" name="previous" class="previous action-button" value="Previous" />
@@ -112,27 +126,24 @@
                 <div class="row">
                         <div class="col col-lg-6">
                             <label for="comboBoxMapel" style="float:left;">Provinsi*</label>
-                            <select class="form-control">
+                            <select class="form-control"  id="province"  onchange="showCity()">
                                 <option value="" selected disabled>Pilih Provinsi</option>
-                                <option value="">DKI JAKARTA</option>
-                                <option value="">JAWA BARAT</option>
+                                @foreach ($provinces as $item):
+                                    <option value="{{$item['id']}}">{{$item['name']}}</option>
+                                @endforeach
                             </select>
                         </div>
                         <div class="col col-lg-6">
                             <label for="comboBoxMapel" style="float:left;">Kota*</label>
-                            <select class="form-control">
+                            <select class="form-control" id="city" name="city" onchange="showDistrict()">
                                 <option value="" selected disabled>Pilih Kota</option>
-                                <option value="">SEMARANG</option>
-                                <option value="">SURABAYA</option>
                             </select>
                         </div>
                     </div><br/>
                     <div class="form-group">
                         <label for="comboBoxMapel" style="float:left;">Kecamatan*</label>
-                            <select class="form-control">
-                                <option value="" selected disabled>Pilih Waktu</option>
-                                <option value="">Semarang Timur</option>
-                                <option value="">Semarang Barat</option>
+                            <select class="form-control" id="kecamatan" name="kecamatan">
+                                <option value="" selected disabled>Pilih Kecamatan</option>
                             </select>
                     </div>
                     <input type="button" name="previous" class="previous action-button" value="Previous" />
@@ -141,4 +152,54 @@
                 </form>
             <br/><br/>
     </section>
+
+    <script type="text/javascript">
+    function showCity() {
+        var city = $('#kabupaten').val();
+        
+        $('#province').change(function(){
+            var province = $('#province').val();
+
+            // start
+            $.post("{{ route('city')}}",
+                {
+                    _method: 'POST',
+                    _token: '{{ csrf_token() }}',
+                    idprov: province,            
+                    success: function(result){
+                        // $("#city").html(result);
+                        console.log('my message ' + province);
+                    }
+                },
+                function (data, status) {
+                    var option = "";
+                    $("#city").html(data);                  
+                });
+        });
+    }
+
+    function showDistrict(){
+        var kecamatan = $('#kecamatan').val();
+        
+        $('#city').change(function(){
+            var city = $('#city').val();
+
+            // start
+            $.post("{{ route('kecamatan')}}",
+                {
+                    _method: 'POST',
+                    _token: '{{ csrf_token() }}',
+                    idcity: city,            
+                    success: function(result){
+                        // $("#city").html(result);
+                        console.log('my message city' + city);
+                    }
+                },
+                function (data, status) {
+                    var option = "";
+                    $("#kecamatan").html(data);                  
+                });
+        });
+    }
+    </script>
 @endsection

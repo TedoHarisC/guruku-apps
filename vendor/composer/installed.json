@@ -1566,6 +1566,78 @@
         ]
     },
     {
+        "name": "laravolt/indonesia",
+        "version": "v0.9",
+        "version_normalized": "0.9.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/laravolt/indonesia.git",
+            "reference": "27a4c89ec3a934df3c64fce898dbbd8a6250ff0d"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/laravolt/indonesia/zipball/27a4c89ec3a934df3c64fce898dbbd8a6250ff0d",
+            "reference": "27a4c89ec3a934df3c64fce898dbbd8a6250ff0d",
+            "shasum": ""
+        },
+        "require": {
+            "illuminate/support": "~5.2",
+            "php": ">=5.5.0"
+        },
+        "require-dev": {
+            "orchestra/testbench": "~3.0",
+            "phpunit/phpunit": "4.*",
+            "squizlabs/php_codesniffer": "2.*"
+        },
+        "time": "2019-04-04T09:46:03+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.0-dev"
+            },
+            "laravel": {
+                "providers": [
+                    "Laravolt\\Indonesia\\ServiceProvider"
+                ],
+                "aliases": {
+                    "Indonesia": "Laravolt\\Indonesia\\Facade"
+                }
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Laravolt\\Indonesia\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Deri Ramdani",
+                "email": "deri.ramdani1@gmail.com"
+            },
+            {
+                "name": "Akbar Adhatama",
+                "email": "am.adhatama@gmail.com"
+            }
+        ],
+        "description": "Package Laravel yang berisi data Provinsi, Kabupaten/Kota, Kecamatan, dan Keluarahan/Desa di seluruh Indonesia.",
+        "keywords": [
+            "desa",
+            "indonesia",
+            "kabupaten",
+            "kecamatan",
+            "kelurahan",
+            "kota",
+            "laravel",
+            "laravolt",
+            "provinsi"
+        ]
+    },
+    {
         "name": "lcobucci/jwt",
         "version": "3.2.5",
         "version_normalized": "3.2.5.0",
