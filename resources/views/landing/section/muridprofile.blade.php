@@ -64,12 +64,12 @@
 					<!--Sub entry left  -->
 					<div class="sub-entry">
 						<div class="form-group col-md-12">
-							<label for="firstName">First Name</label>
+							<label for="firstName">Nama Depan</label>
 							<input type="text" class="form-control" id="firstName" value="Marcus">
 						</div>
 
 						<div class="form-group col-md-12">
-							<label for="email">Email address</label>
+							<label for="email">Email Address</label>
 							<input type="email" class="form-control" id="email" aria-describedby="emailHelp" value="Doe">
 						</div>
 
@@ -119,7 +119,7 @@
 					<!-- Sub entry right -->
 					<div class="sub-entry">
 						<div class="form-group col-md-12">
-								<label for="lastName">Last Name</label>
+								<label for="lastName">Nama Belakang</label>
 								<input type="text" class="form-control" id="lastName" value="Doe">
 						</div>
 
