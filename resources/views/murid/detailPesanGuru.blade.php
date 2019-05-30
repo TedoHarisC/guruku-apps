@@ -160,14 +160,14 @@
         $('#province').change(function(){
             var province = $('#province').val();
 
-            // start
+            // mulai berubah
             $.post("{{ route('city')}}",
                 {
                     _method: 'POST',
                     _token: '{{ csrf_token() }}',
                     idprov: province,            
                     success: function(result){
-                        // $("#city").html(result);
+                        // coba dengan log (debugging)
                         console.log('my message ' + province);
                     }
                 },
@@ -184,14 +184,14 @@
         $('#city').change(function(){
             var city = $('#city').val();
 
-            // start
+            // mulai 
             $.post("{{ route('kecamatan')}}",
                 {
                     _method: 'POST',
                     _token: '{{ csrf_token() }}',
                     idcity: city,            
                     success: function(result){
-                        // $("#city").html(result);
+                        // Debugging dengan log
                         console.log('my message city' + city);
                     }
                 },
