@@ -23,7 +23,7 @@
 
       <!-- Modal -->
     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
+        <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
                 <div class="modal-header">
                 <h5 class="modal-title" id="exampleModalLabel">Form Membuka Kelas</h5>
@@ -38,12 +38,85 @@
                     <input type="text" class="form-control"  placeholder="Masukan Mata Pelajaran">
                 </div>
                 <div class="form-group">
-                    <label for="jadwalPertemuan">Jadwal Pertemuan</label>
-                    <input type="text" class="form-control"  placeholder="Masukan Jadwal">
+                    <label for="hargaPerPertemuan">Biaya per Pertemuan</label>
+                    <input type="text" class="form-control"  placeholder="Masukan Biaya">
                 </div>
                 <div class="form-group">
-                    <label for="hargaPerPertemuan">Harga per Pertemuan</label>
-                    <input type="text" class="form-control"  placeholder="Masukan Harga">
+                    <div class="row">
+                      <div class="col-md-6">
+                        <button type="button" class="btn btn-primary" id="tambah">Tambah Jadwal</button>
+                        <button type="button" class="btn btn-primary" id="kurang">Kurang Jadwal</button>
+                      </div>
+                        
+                    </div>
+                </div>
+                <div class="form-group" id="jadwal1">
+                    <div class="row">
+                      <div class="col-md-6">
+                        <label for="jadwalPertemuan">Hari</label>
+                        <input type="text" class="form-control"  placeholder="Masukan Hari">
+                      </div>
+                      <div class="col-md-6">
+                        <label for="jadwalPertemuan">Jam</label>
+                        <div class="input-group clockpicker" data-align="top" data-autoclose="true">
+	                                <input type="text" name="date" class="form-control" placeholder="Pilih...">
+	                            <span class="input-group-addon">
+		                            <span class="glyphicon glyphicon-time"></span>
+	                            </span>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+                <div class="form-group" id="jadwal2">
+                    <div class="row">
+                      <div class="col-md-6">
+                        <label for="jadwalPertemuan">Hari</label>
+                        <input type="text" class="form-control"  placeholder="Masukan Hari">
+                      </div>
+                      <div class="col-md-6">
+                        <label for="jadwalPertemuan">Jam</label>
+                        <div class="input-group clockpicker" data-align="top" data-autoclose="true">
+	                                <input type="text" name="date" class="form-control" placeholder="Pilih...">
+	                            <span class="input-group-addon">
+		                            <span class="glyphicon glyphicon-time"></span>
+	                            </span>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+                <div class="form-group" id="jadwal3">
+                    <div class="row">
+                      <div class="col-md-6">
+                        <label for="jadwalPertemuan">Hari</label>
+                        <input type="text" class="form-control"  placeholder="Masukan Hari">
+                      </div>
+                      <div class="col-md-6">
+                        <label for="jadwalPertemuan">Jam</label>
+                        <div class="input-group clockpicker" data-align="top" data-autoclose="true">
+	                                <input type="text" name="date" class="form-control" placeholder="Pilih...">
+	                            <span class="input-group-addon">
+		                            <span class="glyphicon glyphicon-time"></span>
+	                            </span>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+                <div class="form-group" id="jadwal4">
+                    <div class="row">
+                      <div class="col-md-6">
+                        <label for="jadwalPertemuan">Hari</label>
+                        <input type="text" class="form-control"  placeholder="Masukan Hari">
+                      </div>
+                      <div class="col-md-6">
+                        <label for="jadwalPertemuan">Jam</label>
+                        <div class="input-group clockpicker" data-align="top" data-autoclose="true">
+	                                <input type="text" name="date" class="form-control" placeholder="Pilih...">
+	                            <span class="input-group-addon">
+		                            <span class="glyphicon glyphicon-time"></span>
+	                            </span>
+                        </div>
+                      </div>
+                    </div>
                 </div>
             </form>
         </div>
