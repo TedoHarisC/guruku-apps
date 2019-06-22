@@ -200,15 +200,19 @@
       $("#jadwal4").hide();
       
       $("#tambah").click(function(){
-          point++;
-          $("#jadwal"+point).show();
-          console.log(point);
+        if(point <= 4){
+            point++;
+            $("#jadwal"+point).show();
+            console.log(point);
+          }
       });
 
       $("#kurang").click(function(){
-          point--;
-          $("#jadwal"+(point + 1)).hide();
-          console.log(point);
+        if(point != 1){
+            point--;
+            $("#jadwal"+(point + 1)).hide();
+            console.log(point);
+          }
       });
   </script>
 

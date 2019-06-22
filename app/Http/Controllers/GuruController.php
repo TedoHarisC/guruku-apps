@@ -19,4 +19,9 @@ class GuruController extends Controller
 
     }
 
+    public function bukaKelas()
+    {
+        return view('guru.formBukaKelas');
+    }
+
 }

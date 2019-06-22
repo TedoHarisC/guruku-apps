@@ -35,6 +35,7 @@ Route::prefix('/my')->middleware(['checkguru:guru','auth'])->group(function () {
 
     Route::get('/', 'GuruController@index');
     Route::get('/profiles' , 'GuruController@profile');
+    Route::get('/bukaKelas', 'GuruController@bukaKelas');
     
 });
 
