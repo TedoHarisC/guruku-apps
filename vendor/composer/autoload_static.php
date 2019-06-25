@@ -495,6 +495,7 @@ class ComposerStaticInitfd45410921595192fa3f9f77c9149f0c
         'App\\Http\\Controllers\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/HomeController.php',
         'App\\Http\\Controllers\\MuridController' => __DIR__ . '/../..' . '/app/Http/Controllers/MuridController.php',
         'App\\Http\\Controllers\\ProfileController' => __DIR__ . '/../..' . '/app/Http/Controllers/ProfileController.php',
+        'App\\Http\\Controllers\\ProvinceController' => __DIR__ . '/../..' . '/app/Http/Controllers/ProvinceController.php',
         'App\\Http\\Controllers\\UserController' => __DIR__ . '/../..' . '/app/Http/Controllers/UserController.php',
         'App\\Http\\Controllers\\admin\\DashboardController' => __DIR__ . '/../..' . '/app/Http/Controllers/admin/DashboardController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',

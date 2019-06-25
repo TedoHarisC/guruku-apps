@@ -183,6 +183,53 @@
 
   <!-- Template Main Javascript File -->
   <script src="{{ asset('cariguru') }}/js/main.js"></script>
+  
+  <!-- ClockPicker Stylesheet -->
+  <link rel="stylesheet" type="text/css" href="{{ asset('landing') }}/vendor/bootstrap/dist/bootstrap-clockpicker.min.css">
+
+  <!-- ClockPicker script -->
+  <script src="{{ asset('landing') }}/vendor/bootstrap/dist/bootstrap-clockpicker.min.js"></script>
+
+  <!-- Script untuk tambah jadwal pada tambah kelas -->
+  <script type="text/javascript">
+      var point = 1;
+
+      // Inisialisasi yang sembunyi !
+      $("#jadwal2").hide();
+      $("#jadwal3").hide();
+      $("#jadwal4").hide();
+      
+      $("#tambah").click(function(){
+        if(point <= 4){
+            point++;
+            $("#jadwal"+point).show();
+            console.log(point);
+          }
+      });
+
+      $("#kurang").click(function(){
+        if(point != 1){
+            point--;
+            $("#jadwal"+(point + 1)).hide();
+            console.log(point);
+          }
+      });
+  </script>
+
+<script type="text/javascript">
+    $(document).ready(function(){
+      var date_input=$('input[name="date"]'); //our date input has the name "date"
+      var container=$('.bootstrap-iso form').length>0 ? $('.bootstrap-iso form').parent() : "body";
+    });
+    </script>
+
+    <script type="text/javascript">
+    $('.clockpicker').clockpicker()
+	    .find('input').change(function(){
+		  // TODO: time changed
+		  console.log(this.value);
+	  });
+    </script>
 
 </body>
 </html>

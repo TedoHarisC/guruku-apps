@@ -17,6 +17,7 @@
         <link href="{{ asset('argon') }}/vendor/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
         <!-- Argon CSS -->
         <link type="text/css" href="{{ asset('argon') }}/css/argon.css?v=1.0.0" rel="stylesheet">
+        <script src="{{ asset('landing') }}/vendor/easing/easing.min.js"></script>
     </head>
     <body class="{{ $class ?? '' }}">
         @auth()
@@ -42,5 +43,21 @@
         
         <!-- Argon JS -->
         <script src="{{ asset('argon') }}/js/argon.js?v=1.0.0"></script>
+        
+        <!-- Script for RadioButton -->
+        <script type="text/javascript">
+                $("#form1").show();
+                $("#form2").hide();
+
+            $("#registerGuru").click(function(){
+                $("#form1").show();
+                $("#form2").hide();
+            });
+            
+            $("#registerMurid").click(function(){
+                $("#form2").show();
+                $("#form1").hide();
+            });
+        </script>
     </body>
 </html>

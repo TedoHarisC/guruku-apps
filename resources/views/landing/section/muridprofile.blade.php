@@ -64,28 +64,26 @@
 					<!--Sub entry left  -->
 					<div class="sub-entry">
 						<div class="form-group col-md-12">
-							<label for="firstName">First Name</label>
+							<label for="firstName">Nama Depan</label>
 							<input type="text" class="form-control" id="firstName" value="Marcus">
 						</div>
 
 						<div class="form-group col-md-12">
-							<label for="email">Email address</label>
-							<input type="email" class="form-control" id="email" aria-describedby="emailHelp" value="Doe">
-						</div>
-
-						<div class="form-group col-md-12">
-							<label for="SkypeID">Skype ID</label>
-							<input type="text" class="form-control" id="skypeID" value="marcus_d@mail.com">
-						</div>
-						
-						<div class="form-group col-md-12">
-							<label for="pinCode">Pin Code</label>
-							<input type="text" class="form-control" id="pinCode" value="324005">
+							<label for="email">Alamat Email</label>
+							<input type="email" class="form-control" id="email" aria-describedby="emailHelp" value="Doe@gmail.com">
 						</div>
 
 						<div class="form-group col-md-12">
 							<label for="Address">Address</label>
 							<input type="text" class="form-control" id="Address" value="street 69,235,RK Puram">
+						</div>
+						
+						<div class="form-group col-md-12">
+								<label for="jenisKelamin">Jenis Kelamin</label>
+								<select class="form-control" id="jenisKelamin" name="jenisKelamin">
+                    <option value="laki">Laki laki</option>
+                    <option value="perempuan">Perempuan</option>
+                </select>
 						</div>
 
 						<div class="form-group col-md-12">
@@ -119,23 +117,23 @@
 					<!-- Sub entry right -->
 					<div class="sub-entry">
 						<div class="form-group col-md-12">
-								<label for="lastName">Last Name</label>
+								<label for="lastName">Nama Belakang</label>
 								<input type="text" class="form-control" id="lastName" value="Doe">
 						</div>
 
 						<div class="form-group col-md-12">
-								<label for="contact">Contact No.</label>
-								<input type="text" class="form-control" id="kontak" value="08xxxxxxx">
+								<label for="nomorTelepon">Nomor Telepon</label>
+								<input type="text" class="form-control" id="nomorTelepon" name="nomorTelepon" value="08xxxxxxx">
 						</div>
 
 						<div class="form-group col-md-12">
-								<label for="country">Country</label>
-								<input type="text" class="form-control" id="country" value="Indonesia">
+								<label for="asalSekolah">Asal Sekolah</label>
+								<input type="text" class="form-control" id="asalSekolah" name="asalSekolah" value="SD Permata Indah 1">
 						</div>
 
 						<div class="form-group col-md-12">
-								<label for="city">City</label>
-								<input type="text" class="form-control" id="city" value="Semarang">
+							<label for="foto">Foto</label>
+							<input type="file" class="form-control-file" id="foto" name="foto" value="">
 						</div>
 					</div>
 				

@@ -162,6 +162,10 @@ h6 {
 # Intro Section 
 --------------------------------------------------------------*/
 
+#formKelas {
+    padding: 140px 0 60px 0;
+}
+
 #intro {
     width: 100%;
     position: relative;
@@ -583,6 +587,50 @@ h6 {
 
 #list .close {
     top: 50px;
+}
+
+/*--------------------------------------------------------------
+# Form Buka Kelas
+--------------------------------------------------------------*/
+.shadow {
+    border-radius: 0% 0% 100% 100% / 0% 0% 8px 8px;
+    border-top-right-radius: rgba(0, 0, 0, 0.3) 0 2px 3px;
+    -webkit-border-radius: 0% 0% 100% 100% / 0% 0% 8px 8px;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.3) 0 2px 3px;
+}
+
+.card-pesan {
+    border: 1px solid #d3d3d3;
+    border-radius: 0.25rem;
+    width: 100%;
+    height: 900px;
+}
+
+.bg-img {
+    background-size: cover;
+    min-height: 180px;
+    background-position: center;
+    background-color: white;
+}
+
+#msform {
+    margin: 40px auto;
+    position: relative;
+}
+#msform fieldset {
+    background: white;
+    border: 0 none;
+    border-radius: 3px;
+    box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
+    padding: 20px 30px;
+    box-sizing: border-box;
+    width: 80%;
+    margin: 0 10%;
+    position: relative;
+}
+
+small {
+    padding-top: 5px;
 }
 
 /*--------------------------------------------------------------

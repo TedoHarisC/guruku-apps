@@ -31,17 +31,19 @@ Route::prefix('admin')->middleware(['checkadmin:admin', 'auth'])->name('admin')-
 });
 
 // Route for Guru
-Route::prefix('/my')->middleware(['auth','checkguru:guru'])->group(function () {
+Route::prefix('/my')->middleware(['checkguru:guru','auth'])->group(function () {
 
     Route::get('/', 'GuruController@index');
-    Route::get('/profile' , 'GuruController@profile');
+    Route::get('/profiles' , 'GuruController@profile');
+    Route::get('/bukaKelas', 'GuruController@bukaKelas');
     
 });
-// Route for murid
-Route::group(['middleware' => 'auth','checkmurid:murid'],function () {
+
+// Route for Murid
+Route::group(['middleware' => 'checkmurid:murid','auth'],function () {
     // Route::get('/' , 'MuridController@index');
 
-    Route::get('/profile' , 'MuridController@profile');
+    Route::get('/profiles' , 'MuridController@profile');
     Route::get('/guru' , 'MuridController@cariguru');
     Route::get('/detailguru' , 'MuridController@detailguru');
     Route::get('/checkout' , 'MuridController@checkout');
