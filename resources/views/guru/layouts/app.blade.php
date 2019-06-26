@@ -229,7 +229,37 @@
 		  // TODO: time changed
 		  console.log(this.value);
 	  });
-    </script>
+</script>
+
+<!-- Membuat dropdown untuk mata pelajaran -->
+<script type="text/javascript">
+  $(document).ready(function(){
+        $('#tingkatPendidikan').change(function(){
+          var tingkatPendidikan = $('#tingkatPendidikan').val();
+          var listmapelSdSmp = ['Bahasa Indonesia','Bahasa Inggris','Matematika','IPA','IPS','Agama'];
+          var listmapelSma = ['Agama','Bahasa Indonesia','Bahasa Inggris','Biologi','Fisika','Kimia','Geografi','Ekonomi','Matematika'];
+          console.log(tingkatPendidikan);
+
+          if(tingkatPendidikan === 'sd'){
+            $.each(listmapelSdSmp, function(i, p) {
+                $('#mataPelajaran').append($('<option></option>').val(p).html(p));
+            });
+          }
+          else if(tingkatPendidikan === 'smp'){
+            $('#mataPelajaran').empty();
+            $.each(listmapelSdSmp, function(i, p) {
+                $('#mataPelajaran').append($('<option></option>').val(p).html(p));
+            });  
+          }
+          else {
+            $('#mataPelajaran').empty();
+            $.each(listmapelSma, function(i, p) {
+                $('#mataPelajaran').append($('<option></option>').val(p).html(p));
+            });  
+          }
+        });
+  });
+</script>
 
 </body>
 </html>

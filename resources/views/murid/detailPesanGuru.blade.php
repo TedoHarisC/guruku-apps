@@ -7,10 +7,10 @@
             <div class="shadow">
             <div class="card-pesan">
                 <div class="bg-img">
-                    <center style="padding-top: 15px;">
+                    <div style="padding-top: 15px; text-align:center">
                         <h3>Detail Pesan Guru</h3>
                         <label>Isi formulir berikut ini dengan lengkap dan seksama untuk melengkapi prosedur pemesanan guru privat anda</label>
-                    </center>
+                    </div>
                     <!-- Form -->
                 <!-- multistep form -->
                 <form id="msform">
