@@ -6,16 +6,27 @@
             <div class="shadow">
                 <div class="card pesan">
                     <div class="bg-img">
-                    <center style="padding-top: 15px;">
+                    <div style="padding-top: 15px; text-align: center">
                         <h3>Detail Buka Kelas</h3>
                         <label>Isi formulir berikut ini dengan lengkap dan seksama untuk melengkapi prosedur untuk membuka kelas anda</label>
-                    </center>
+                    </div>
 
                 <form id="msform">
                     <fieldset>
                         <div class="form-group">
+                            <label for="tingkatPendidikan">Tingkat Pendidikan</label>
+                            <select class="form-control" id="tingkatPendidikan">
+                                <option value="" selected disabled>Pilih Tingkat Pendidikan</option>
+                                <option value="sd">SD</option>
+                                <option value="smp">SMP</option>
+                                <option value="sma">SMA</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
                             <label for="mataPelajaran">Mata Pelajaran</label>
-                            <input type="text" class="form-control"  placeholder="Masukan Mata Pelajaran">
+                            <select class="form-control" id="mataPelajaran">
+                                <option value="" selected disabled>Pilih Mata Pelajaran</option>
+                            </select>
                         </div>
                         <div class="form-group">
                             <label for="hargaPerPertemuan">Biaya per Pertemuan</label>
