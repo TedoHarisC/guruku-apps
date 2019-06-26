@@ -5,7 +5,7 @@
 body {
     background: #fff;
     color: #444;
-    font-family: 'Open Sans', sans-serif;
+    font-family: "Open Sans", sans-serif;
     height: 100%;
     overflow-x: hidden;
 }
@@ -34,7 +34,7 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: 'Montserrat', sans-serif;
+    font-family: "Montserrat", sans-serif;
     font-weight: 400;
     margin: 0 0 20px 0;
     padding: 0;
@@ -78,7 +78,7 @@ h6 {
 }
 
 #preloader:before {
-    content: '';
+    content: "";
     position: fixed;
     top: calc(50% - 30px);
     left: calc(50% - 30px);
@@ -193,7 +193,7 @@ h6 {
     padding: 10px 17px;
     transition: 0.3s;
     font-size: 14px;
-    font-family: 'Montserrat', sans-serif;
+    font-family: "Montserrat", sans-serif;
     font-weight: 500;
 }
 
@@ -242,7 +242,7 @@ h6 {
 }
 
 .main-nav .drop-down > a:after {
-    content: '\f107';
+    content: "\f107";
     font-family: FontAwesome;
     padding-left: 10px;
 }
@@ -263,7 +263,7 @@ h6 {
 }
 
 .main-nav .drop-down .drop-down > a:after {
-    content: '\f105';
+    content: "\f105";
     position: absolute;
     right: 15px;
 }
@@ -305,7 +305,7 @@ h6 {
 }
 
 .mobile-nav .drop-down > a:after {
-    content: '\f078';
+    content: "\f078";
     font-family: FontAwesome;
     padding-left: 10px;
     position: absolute;
@@ -313,7 +313,7 @@ h6 {
 }
 
 .mobile-nav .active.drop-down > a:after {
-    content: '\f077';
+    content: "\f077";
 }
 
 .mobile-nav .drop-down > a {
@@ -557,6 +557,26 @@ h6 {
 #msform .action-button:focus {
     box-shadow: 0 0 0 2px white, 0 0 0 3px #27ae60;
 }
+
+.button {
+    width: 50px;
+    background: #007bff;
+    font-weight: bold;
+    color: white;
+    border: 0 none;
+    border-radius: 1px;
+    cursor: pointer;
+    padding: 4px 4px;
+    margin: 10px 5px;
+}
+
+#kurang1,
+#kurang2,
+#kurang3,
+#kurang4 {
+    background-color: red;
+}
+
 /*headings*/
 .fs-title {
     font-size: 15px;
@@ -607,7 +627,7 @@ h6 {
 }
 /*progressbar connectors*/
 #progressbar li:after {
-    content: '';
+    content: "";
     width: 100%;
     height: 2px;
     background: white;
@@ -754,7 +774,7 @@ button {
     margin: 0 0 20px 0;
     padding: 2px 0 2px 0;
     line-height: 1;
-    font-family: 'Montserrat', sans-serif;
+    font-family: "Montserrat", sans-serif;
     color: #fff;
     font-weight: 400;
     letter-spacing: 3px;
@@ -765,7 +785,7 @@ button {
     font-size: 13px;
     line-height: 24px;
     margin-bottom: 0;
-    font-family: 'Montserrat', sans-serif;
+    font-family: "Montserrat", sans-serif;
     color: #ecf5ff;
 }
 
@@ -839,13 +859,13 @@ button {
     margin-top: 25px;
 }
 
-#footer .footer-top .footer-newsletter input[type='email'] {
+#footer .footer-top .footer-newsletter input[type="email"] {
     border: 0;
     padding: 6px 8px;
     width: 65%;
 }
 
-#footer .footer-top .footer-newsletter input[type='submit'] {
+#footer .footer-top .footer-newsletter input[type="submit"] {
     background: #007bff;
     border: 0;
     width: 35%;
@@ -856,7 +876,7 @@ button {
     cursor: pointer;
 }
 
-#footer .footer-top .footer-newsletter input[type='submit']:hover {
+#footer .footer-top .footer-newsletter input[type="submit"]:hover {
     background: #0062cc;
 }
 
@@ -1028,7 +1048,7 @@ button {
 }
 
 .tab:after {
-    content: '';
+    content: "";
     position: absolute;
     top: 100%;
     left: -1px;

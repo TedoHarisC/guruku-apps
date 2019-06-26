@@ -344,5 +344,39 @@
 	  });
     </script>
 
+    <!-- Script untuk menambah form di part 2 -->
+    <script type="text/javascript">
+      var point = 1;
+
+      // Init hiding form 
+      $("#form2").hide();
+      $("#form3").hide();
+      $("#form4").hide();
+
+      $("#tambah").click(function(){
+        if(point <= 4){
+            point++;
+            $("#form"+point).show();
+            console.log(point);
+          }
+      });
+
+      $("#kurang1").click(function(){
+        $("#form"+1).hide();
+      });
+
+      $("#kurang2").click(function(){
+        $("#form"+2).hide();
+      });
+
+      $("#kurang3").click(function(){
+        $("#form"+3).hide();
+      });
+
+      $("#kurang4").click(function(){
+        $("#form"+4).hide();
+      });
+    </script>
+
 </body>
 </html>
