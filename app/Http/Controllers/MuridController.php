@@ -43,6 +43,11 @@ class MuridController extends Controller
         return(view('murid/detailPesanGuru')->with('provinces',$provinces));
     }
 
+    public function dashboard()
+    {
+        return view('murid.dashboard');
+    }
+
     public function city()
     {
         $data = $this->request->idprov;

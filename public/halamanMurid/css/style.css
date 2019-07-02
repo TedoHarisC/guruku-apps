@@ -1150,3 +1150,120 @@ button {
         margin-bottom: 4px;
     }
 }
+
+/* Dashboard Halaman Murid */
+#list {
+    background: #ddfaff;
+    padding: 10px;
+}
+
+#list .about-container .background {
+    margin: 10px 0;
+}
+
+#list .about-container .content {
+    background: #fff;
+}
+
+#list .about-container .title {
+    color: #333;
+    font-weight: 700;
+    font-size: 32px;
+}
+
+#list .about-container p {
+    line-height: 26px;
+}
+
+#list .about-container p:last-child {
+    margin-bottom: 0;
+}
+
+#list .about-extra {
+    padding-top: 60px;
+}
+
+#list .about-extra h4 {
+    font-weight: 600;
+    font-size: 24px;
+}
+
+#list .box {
+    padding: 30px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    margin: 0 10px 40px 10px;
+    background: #fff;
+    box-shadow: 0 10px 29px 0 rgba(68, 88, 144, 0.1);
+    transition: all 0.3s ease-in-out;
+}
+
+#list .box:hover {
+    -webkit-transform: translateY(-5px);
+    transform: translateY(-5px);
+}
+
+#list .icon {
+    position: absolute;
+    left: 20px;
+    top: calc(50% - 32px);
+}
+
+#list .icon i {
+    font-size: 64px;
+    line-height: 1;
+    transition: 0.5s;
+}
+
+#list .title {
+    margin-left: 80px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+#list .title a {
+    color: #111;
+}
+
+#list .box:hover .title a {
+    color: #007bff;
+}
+
+#list .description {
+    font-size: 16px;
+    margin-left: 80px;
+    line-height: 24px;
+    margin-bottom: 10px;
+}
+
+#list .description i {
+    font-size: 23px;
+    line-height: 1;
+    transition: 0.5s;
+    padding-right: 12px;
+}
+
+#list button {
+    margin-left: 80px;
+}
+
+#list button:hover {
+    background-color: #007bff;
+    color: white;
+}
+
+#list .close {
+    top: 50px;
+}
+
+/* Rating page pada halaman murid */
+.star-rating {
+    line-height: 50px;
+    font-size: 1.9em;
+}
+
+.star-rating .fa-star {
+    color: #007bff;
+}
