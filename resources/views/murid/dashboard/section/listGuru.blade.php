@@ -11,7 +11,7 @@
                 <div class="col-md-9 col-lg-8 offset-lg-1 wow bounceInUp" data-wow-duration="1.4s">
                     <div class="box" style="background-color:#ddfaff">
                         <div class="icon"><i class="ion-ios-analytics-outline" style="color: #ff689b;"></i></div>
-                        <h4 class="title"><a href="">Dio Jotaro</a></h4>
+                        <h4 class="title"><a href="detailpesanan">Dio Jotaro</a></h4>
                         <p class="description"><i class="ion-ios-analytics-outline" style="color: #d63636;"></i>SD Bugangan 01</p>
                         <p class="description"><i class="ion-ios-alarm-outline" style="color: #d63636;"></i>Kamis, Sabtu, Jumat</p>
                         <button type="button" data-toggle="modal" data-target="#beriRating">Beri Nilai</button>
@@ -47,7 +47,7 @@
                     <span class="fa fa-star-o" data-rating="3"></span>
                     <span class="fa fa-star-o" data-rating="4"></span>
                     <span class="fa fa-star-o" data-rating="5"></span>
-                    <input type="hidden" name="whatever1" class="rating-value" value="5">
+                    <input type="hidden" name="whatever1" class="rating-value" value="0">
                 </div>
                 </div>
             </div><br/>

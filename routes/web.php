@@ -49,6 +49,7 @@ Route::group(['middleware' => 'checkmurid:murid','auth'],function () {
     Route::get('/checkout' , 'MuridController@checkout');
     //tambahan untuk coba saja
     Route::get('/dashboard','MuridController@dashboard');
+    Route::get('/detailpesanan','MuridController@detail');
 });
 
 Auth::routes();

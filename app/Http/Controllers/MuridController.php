@@ -48,6 +48,11 @@ class MuridController extends Controller
         return view('murid.dashboard');
     }
 
+    public function detail()
+    {
+        return view('murid.detailPesan');
+    }
+
     public function city()
     {
         $data = $this->request->idprov;
