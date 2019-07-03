@@ -633,8 +633,6 @@ small {
     padding-top: 5px;
 }
 
-
-
 /*--------------------------------------------------------------
 # Footer
 --------------------------------------------------------------*/
@@ -908,4 +906,18 @@ small {
     #intro {
         padding: 100px 0 20px 0;
     }
+}
+
+/* Halaman detail */
+
+.invoice {
+    position: relative;
+    background: #fff;
+    border: 1px solid #f4f4f4;
+    padding: 10px;
+    margin: 10px 25px;
+}
+.page-header {
+    margin: 0px 0 0px 0;
+    font-size: 22px;
 }
