@@ -451,6 +451,10 @@ h6 {
     /* height: 900px; */
 }
 
+.list li {
+    list-style: none;
+}
+
 /* Card untuk bagian detail pesan */
 .card-pesan {
     border: 1px solid #d3d3d3;

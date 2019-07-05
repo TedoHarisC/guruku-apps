@@ -251,7 +251,7 @@
                 $('#mataPelajaran').append($('<option></option>').val(p).html(p));
             });  
           }
-          else {
+          else if(tingkatPendidikan === 'sma'){
             $('#mataPelajaran').empty();
             $.each(listmapelSma, function(i, p) {
                 $('#mataPelajaran').append($('<option></option>').val(p).html(p));
