@@ -8,6 +8,10 @@ use DB;
 use Illuminate\Http\Request;
 use Indonesia;
 
+use Carbon\Carbon;
+use Image;
+use File;
+
 class MuridController extends Controller
 {
     protected $request;
@@ -37,7 +41,19 @@ class MuridController extends Controller
 
     public function profile()
     {
-        return view("murid.profile");
+        $user_id = Auth::id();
+
+        $murid = DB::table('murids')
+        ->join('users', 'murids.user_id', '=', 'users.id')
+        //->orderBy('carts.created_at', 'desc')
+        ->where('users.id', '=', $user_id)
+        ->get();    
+
+        // dd($murid);
+        
+        return view('murid.profile')->with('murid',$murid);
+
+        // return view("murid.profile");
     }
 
     public function detailguru()

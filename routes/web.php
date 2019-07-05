@@ -46,8 +46,8 @@ Route::prefix('/my')->middleware(['checkguru:guru','auth'])->group(function () {
 Route::group(['middleware' => 'checkmurid:murid','auth'],function () {
     // Route::get('/' , 'MuridController@index');
 
-    Route::get('/profiles' , 'MuridController@profile');
-    Route::get('/guru' , 'MuridController@cariguru');
+    Route::get('/profiles' , 'MuridController@profile')->name('muridprofile');
+    Route::get('/guru' , 'MuridController@cariguru')->name('cariguru');
     Route::get('/detailguru' , 'MuridController@detailguru');
     Route::get('/checkout' , 'MuridController@checkout');
     //tambahan untuk coba saja

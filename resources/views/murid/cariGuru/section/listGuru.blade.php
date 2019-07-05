@@ -1,7 +1,3 @@
-@section('js')
-
-<script>
-@endsection
 <div class="col-lg-8">
     <section id="halamanList">
         <div class="about-extra">
@@ -67,3 +63,4 @@
         </div>
     </section>
 </div>
+

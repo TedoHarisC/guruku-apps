@@ -1,10 +1,10 @@
 @extends('murid.layouts.app')
 
 @section('content')
-
+    <!-- Halaman Intro Cari Guru -->
+    @include('murid.dashboard.section.headerDashboard')
     <!-- List Guru yang dipesan -->
     @include('murid.dashboard.section.listGuru')
-
 @endsection
 
 @push('js')
