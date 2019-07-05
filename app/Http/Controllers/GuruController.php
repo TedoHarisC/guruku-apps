@@ -24,4 +24,9 @@ class GuruController extends Controller
         return view('guru.formBukaKelas');
     }
 
+    public function detail()
+    {
+        return view('guru.detailPesan');
+    }
+
 }

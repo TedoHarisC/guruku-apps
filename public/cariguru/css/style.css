@@ -490,7 +490,7 @@ h6 {
 }
 /* End Tombol cariGuru */
 
-/* cariGuru list */
+/* list murid yang memesan dan kelas yang dibuka */
 #list {
     background: #ddfaff;
     padding: 30px 0;
@@ -590,7 +590,7 @@ h6 {
 }
 
 /*--------------------------------------------------------------
-# Form Buka Kelas
+# Form Pesan Guru
 --------------------------------------------------------------*/
 .shadow {
     border-radius: 0% 0% 100% 100% / 0% 0% 8px 8px;
@@ -906,4 +906,18 @@ small {
     #intro {
         padding: 100px 0 20px 0;
     }
+}
+
+/* Halaman detail */
+
+.invoice {
+    position: relative;
+    background: #fff;
+    border: 1px solid #f4f4f4;
+    padding: 10px;
+    margin: 10px 25px;
+}
+.page-header {
+    margin: 0px 0 0px 0;
+    font-size: 22px;
 }

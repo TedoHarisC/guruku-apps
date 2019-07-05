@@ -5,7 +5,7 @@
 body {
     background: #fff;
     color: #444;
-    font-family: 'Open Sans', sans-serif;
+    font-family: "Open Sans", sans-serif;
     height: 100%;
     overflow-x: hidden;
 }
@@ -34,7 +34,7 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: 'Montserrat', sans-serif;
+    font-family: "Montserrat", sans-serif;
     font-weight: 400;
     margin: 0 0 20px 0;
     padding: 0;
@@ -78,7 +78,7 @@ h6 {
 }
 
 #preloader:before {
-    content: '';
+    content: "";
     position: fixed;
     top: calc(50% - 30px);
     left: calc(50% - 30px);
@@ -193,7 +193,7 @@ h6 {
     padding: 10px 17px;
     transition: 0.3s;
     font-size: 14px;
-    font-family: 'Montserrat', sans-serif;
+    font-family: "Montserrat", sans-serif;
     font-weight: 500;
 }
 
@@ -242,7 +242,7 @@ h6 {
 }
 
 .main-nav .drop-down > a:after {
-    content: '\f107';
+    content: "\f107";
     font-family: FontAwesome;
     padding-left: 10px;
 }
@@ -263,7 +263,7 @@ h6 {
 }
 
 .main-nav .drop-down .drop-down > a:after {
-    content: '\f105';
+    content: "\f105";
     position: absolute;
     right: 15px;
 }
@@ -305,7 +305,7 @@ h6 {
 }
 
 .mobile-nav .drop-down > a:after {
-    content: '\f078';
+    content: "\f078";
     font-family: FontAwesome;
     padding-left: 10px;
     position: absolute;
@@ -313,7 +313,7 @@ h6 {
 }
 
 .mobile-nav .active.drop-down > a:after {
-    content: '\f077';
+    content: "\f077";
 }
 
 .mobile-nav .drop-down > a {
@@ -451,6 +451,10 @@ h6 {
     /* height: 900px; */
 }
 
+.list li {
+    list-style: none;
+}
+
 /* Card untuk bagian detail pesan */
 .card-pesan {
     border: 1px solid #d3d3d3;
@@ -557,6 +561,26 @@ h6 {
 #msform .action-button:focus {
     box-shadow: 0 0 0 2px white, 0 0 0 3px #27ae60;
 }
+
+.button {
+    width: 50px;
+    background: #007bff;
+    font-weight: bold;
+    color: white;
+    border: 0 none;
+    border-radius: 1px;
+    cursor: pointer;
+    padding: 4px 4px;
+    margin: 10px 5px;
+}
+
+#kurang1,
+#kurang2,
+#kurang3,
+#kurang4 {
+    background-color: red;
+}
+
 /*headings*/
 .fs-title {
     font-size: 15px;
@@ -607,7 +631,7 @@ h6 {
 }
 /*progressbar connectors*/
 #progressbar li:after {
-    content: '';
+    content: "";
     width: 100%;
     height: 2px;
     background: white;
@@ -754,7 +778,7 @@ button {
     margin: 0 0 20px 0;
     padding: 2px 0 2px 0;
     line-height: 1;
-    font-family: 'Montserrat', sans-serif;
+    font-family: "Montserrat", sans-serif;
     color: #fff;
     font-weight: 400;
     letter-spacing: 3px;
@@ -765,7 +789,7 @@ button {
     font-size: 13px;
     line-height: 24px;
     margin-bottom: 0;
-    font-family: 'Montserrat', sans-serif;
+    font-family: "Montserrat", sans-serif;
     color: #ecf5ff;
 }
 
@@ -839,13 +863,13 @@ button {
     margin-top: 25px;
 }
 
-#footer .footer-top .footer-newsletter input[type='email'] {
+#footer .footer-top .footer-newsletter input[type="email"] {
     border: 0;
     padding: 6px 8px;
     width: 65%;
 }
 
-#footer .footer-top .footer-newsletter input[type='submit'] {
+#footer .footer-top .footer-newsletter input[type="submit"] {
     background: #007bff;
     border: 0;
     width: 35%;
@@ -856,7 +880,7 @@ button {
     cursor: pointer;
 }
 
-#footer .footer-top .footer-newsletter input[type='submit']:hover {
+#footer .footer-top .footer-newsletter input[type="submit"]:hover {
     background: #0062cc;
 }
 
@@ -1028,7 +1052,7 @@ button {
 }
 
 .tab:after {
-    content: '';
+    content: "";
     position: absolute;
     top: 100%;
     left: -1px;
@@ -1129,4 +1153,121 @@ button {
         border-radius: 2px;
         margin-bottom: 4px;
     }
+}
+
+/* Dashboard Halaman Murid */
+#list {
+    background: #ddfaff;
+    padding: 10px;
+}
+
+#list .about-container .background {
+    margin: 10px 0;
+}
+
+#list .about-container .content {
+    background: #fff;
+}
+
+#list .about-container .title {
+    color: #333;
+    font-weight: 700;
+    font-size: 32px;
+}
+
+#list .about-container p {
+    line-height: 26px;
+}
+
+#list .about-container p:last-child {
+    margin-bottom: 0;
+}
+
+#list .about-extra {
+    padding-top: 60px;
+}
+
+#list .about-extra h4 {
+    font-weight: 600;
+    font-size: 24px;
+}
+
+#list .box {
+    padding: 30px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    margin: 0 10px 40px 10px;
+    background: #fff;
+    box-shadow: 0 10px 29px 0 rgba(68, 88, 144, 0.1);
+    transition: all 0.3s ease-in-out;
+}
+
+#list .box:hover {
+    -webkit-transform: translateY(-5px);
+    transform: translateY(-5px);
+}
+
+#list .icon {
+    position: absolute;
+    left: 20px;
+    top: calc(50% - 32px);
+}
+
+#list .icon i {
+    font-size: 64px;
+    line-height: 1;
+    transition: 0.5s;
+}
+
+#list .title {
+    margin-left: 80px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+#list .title a {
+    color: #111;
+}
+
+#list .box:hover .title a {
+    color: #007bff;
+}
+
+#list .description {
+    font-size: 16px;
+    margin-left: 80px;
+    line-height: 24px;
+    margin-bottom: 10px;
+}
+
+#list .description i {
+    font-size: 23px;
+    line-height: 1;
+    transition: 0.5s;
+    padding-right: 12px;
+}
+
+#list button {
+    margin-left: 80px;
+}
+
+#list button:hover {
+    background-color: #007bff;
+    color: white;
+}
+
+#list .close {
+    top: 50px;
+}
+
+/* Rating page pada halaman murid */
+.star-rating {
+    line-height: 50px;
+    font-size: 1.9em;
+}
+
+.star-rating .fa-star {
+    color: #007bff;
 }
