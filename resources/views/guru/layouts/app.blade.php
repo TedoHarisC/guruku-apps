@@ -16,6 +16,7 @@
 
   <!-- Bootstrap CSS File -->
   <link href="{{ asset('cariguru') }}/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <!-- <link type="text/css" href="{{ asset('argon') }}/css/argon.css?v=1.0.0" rel="stylesheet"> -->
 
   <!-- Libraries CSS Files -->
   <link href="{{ asset('cariguru') }}/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
@@ -57,10 +58,46 @@
         </ul>
       </nav>
       <nav class="main-nav float-right d-none d-lg-block">
-        <ul>
+
+        @auth()
+      <div class="container-fluid">
+
+        <ul class="navbar-nav align-items-center d-none d-md-flex">
+            <li class="nav-item dropdown">
+                <a class="nav-link pr-0" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <div class="media align-items-center">
+                        <span class="avatar avatar-sm rounded-circle">
+                            {{-- <img alt="Image placeholder" src="{{ asset('argon') }}/img/theme/team-4-800x800.jpg"> --}}
+                        </span>
+                        <div class="media-body ml-2 d-none d-lg-block">
+                            <span class="mb-0 text-sm  font-weight-bold">{{ auth()->user()->name }}</span>
+                        </div>
+                    </div>
+                </a>
+                <div class="dropdown-menu dropdown-menu-arrow dropdown-menu-right">
+                    <!-- <div class=" dropdown-header noti-title">
+                        <h6 class="text-overflow m-0">{{ __('Welcome!') }}</h6>
+                    </div> -->
+                    <a href="{{ route('guruprofile') }}" class="dropdown-item">
+                        <i class="ni ni-single-02"></i>
+                        <span>{{ __('My profile') }}</span>
+                    </a>
+                    <div class="dropdown-divider"></div>
+                    <a href="{{ route('logout') }}" class="dropdown-item" onclick="event.preventDefault();
+                    document.getElementById('logout-form').submit();">
+                        <i class="ni ni-user-run"></i>
+                        <span>{{ __('Logout') }}</span>
+                    </a>
+                </div>
+            </li>
+        </ul>
+        </div>
+        
+        @endauth()
+        {{-- <ul>
           <li><a href="login">Log In</a></li>
           <li><a href="register">Sign Up</a></li>
-        </ul>
+        </ul> --}}
       </nav>
       <!-- .main-nav -->
       
