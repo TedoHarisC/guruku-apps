@@ -34,7 +34,7 @@ Route::prefix('admin')->middleware(['checkadmin:admin', 'auth'])->name('admin')-
 Route::prefix('/my')->middleware(['checkguru:guru','auth'])->group(function () {
 
     Route::get('/', 'GuruController@index')->name('gurudashboard');
-    Route::get('/profiles' , 'GuruController@profile');
+    Route::get('/profiles' , 'GuruController@profile')->name('guruprofile');
     Route::get('/bukakelas', 'GuruController@bukaKelas')->name('bukakelas');
 
     //post
