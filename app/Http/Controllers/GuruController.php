@@ -19,7 +19,6 @@ class GuruController extends Controller
     public function index()
     {
         $kelas = BukaKelas::all();
-        
 
         $jadwals = DB::table('jadwals')
         ->join('buka_kelas', 'jadwals.bukakelas_id', '=', 'buka_kelas.id')
