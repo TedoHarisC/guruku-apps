@@ -14,7 +14,7 @@
             </p>
             <p>
             <div class="text-center">
-              <a href="my/bukaKelas"><button type="button" class="pelajari" title="Pelajari Selengkapnya">Buka Kelas Sekarang</button></a>
+              <a href="{{route('bukakelas')}}"><button type="button" class="pelajari" title="Pelajari Selengkapnya">Buka Kelas Sekarang</button></a>
             </div>
             </p>
           </div>

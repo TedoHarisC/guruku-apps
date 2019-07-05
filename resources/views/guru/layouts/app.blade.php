@@ -190,31 +190,7 @@
   <!-- ClockPicker script -->
   <script src="{{ asset('landing') }}/vendor/bootstrap/dist/bootstrap-clockpicker.min.js"></script>
 
-  <!-- Script untuk tambah jadwal pada tambah kelas -->
-  <script type="text/javascript">
-      var point = 1;
-
-      // Inisialisasi yang sembunyi !
-      $("#jadwal2").hide();
-      $("#jadwal3").hide();
-      $("#jadwal4").hide();
-      
-      $("#tambah").click(function(){
-        if(point <= 4){
-            point++;
-            $("#jadwal"+point).show();
-            console.log(point);
-          }
-      });
-
-      $("#kurang").click(function(){
-        if(point != 1){
-            point--;
-            $("#jadwal"+(point + 1)).hide();
-            console.log(point);
-          }
-      });
-  </script>
+  @yield('js')
 
 <script type="text/javascript">
     $(document).ready(function(){
@@ -231,35 +207,7 @@
 	  });
 </script>
 
-<!-- Membuat dropdown untuk mata pelajaran -->
-<script type="text/javascript">
-  $(document).ready(function(){
-        $('#tingkatPendidikan').change(function(){
-          var tingkatPendidikan = $('#tingkatPendidikan').val();
-          var listmapelSdSmp = ['Bahasa Indonesia','Bahasa Inggris','Matematika','IPA','IPS','Agama'];
-          var listmapelSma = ['Agama','Bahasa Indonesia','Bahasa Inggris','Biologi','Fisika','Kimia','Geografi','Ekonomi','Matematika'];
-          console.log(tingkatPendidikan);
 
-          if(tingkatPendidikan === 'sd'){
-            $.each(listmapelSdSmp, function(i, p) {
-                $('#mataPelajaran').append($('<option></option>').val(p).html(p));
-            });
-          }
-          else if(tingkatPendidikan === 'smp'){
-            $('#mataPelajaran').empty();
-            $.each(listmapelSdSmp, function(i, p) {
-                $('#mataPelajaran').append($('<option></option>').val(p).html(p));
-            });  
-          }
-          else if(tingkatPendidikan === 'sma'){
-            $('#mataPelajaran').empty();
-            $.each(listmapelSma, function(i, p) {
-                $('#mataPelajaran').append($('<option></option>').val(p).html(p));
-            });  
-          }
-        });
-  });
-</script>
 
 </body>
 </html>
