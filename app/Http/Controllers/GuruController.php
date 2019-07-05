@@ -18,7 +18,17 @@ class GuruController extends Controller
     //
     public function index()
     {
-        return view('guru.dashboard');
+        $kelas = BukaKelas::all();
+        
+
+        $jadwals = DB::table('jadwals')
+        ->join('buka_kelas', 'jadwals.bukakelas_id', '=', 'buka_kelas.id')
+        ->get();
+
+        // dd($kelas);
+
+
+        return view('guru.dashboard')->with('kelas',$kelas)->with('jadwals',$jadwals);
 
     }
 
