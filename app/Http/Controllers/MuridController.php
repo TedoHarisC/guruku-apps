@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests;
+use App\BukaKelas;
+use DB;
 use Illuminate\Http\Request;
 use Indonesia;
 
@@ -23,7 +25,13 @@ class MuridController extends Controller
 
     public function cariguru()
     {
-        return view("murid.cariguru");
+        $kelas = BukaKelas::all();
+
+        $jadwals = DB::table('jadwals')
+        ->join('buka_kelas', 'jadwals.bukakelas_id', '=', 'buka_kelas.id')
+        ->get();
+
+        return view("murid.cariguru")->with('kelas',$kelas)->with('jadwals',$jadwals);
         
     }
 
