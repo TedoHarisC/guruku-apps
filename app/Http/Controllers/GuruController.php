@@ -67,4 +67,10 @@ class GuruController extends Controller
         return redirect()->route('gurudashboard');
     }
 
+    public function detail()
+    {
+        return view('guru.detailPesan');
+
+    }
+
 }

@@ -39,7 +39,7 @@ Route::prefix('/my')->middleware(['checkguru:guru','auth'])->group(function () {
 
     //post
     Route::post('/bukakelas', 'GuruController@postBukaKelas')->name('postbukakelas');
-    
+    Route::get('/detailpesanan', 'GuruController@detail');
 });
 
 // Route for Murid
@@ -50,7 +50,9 @@ Route::group(['middleware' => 'checkmurid:murid','auth'],function () {
     Route::get('/guru' , 'MuridController@cariguru');
     Route::get('/detailguru' , 'MuridController@detailguru');
     Route::get('/checkout' , 'MuridController@checkout');
-
+    //tambahan untuk coba saja
+    Route::get('/dashboard','MuridController@dashboard');
+    Route::get('/detailpesanan','MuridController@detail');
 });
 
 Auth::routes();

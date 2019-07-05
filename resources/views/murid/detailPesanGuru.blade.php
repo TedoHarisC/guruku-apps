@@ -43,15 +43,11 @@
                             </div>
                         </div>
                     </div><br/>
-                    <div class="form-group">
-                            <label for="comboBoxMapel" style="float:left;">Mata Pelajaran *</label>
-                            <select class="form-control">
-                                <option value="" selected disabled>Pilih Mata pelajaran</option>
-                                <option value="">IPA SD</option>
-                                <option value="">IPS SD</option>
-                            </select>
-                     </div>
                      <div class="row">
+                            <div class="col col-lg-6">
+                                    <label for="comboBoxMapel" style="float:left;">Mata Pelajaran *</label>
+                                    <input type="text" name="mataPelajaran" class="form-control" value="Matematika" disabled />
+                            </div>
                             <div class="col col-lg-6">
                                 <label for="comboBoxMapel" style="float:left;">Durasi Per Pertemuan *</label>
                                 <select class="form-control">
@@ -61,19 +57,6 @@
                                     <option value="">2 jam</option>
                                     <option value="">2,5 jam</option>
                                     <option value="">3 jam</option>
-                                </select>
-                            </div>
-                            <div class="col col-lg-6">
-                                <label for="comboBoxMapel" style="float:left;">Jumlah Pertemuan minimal 8 *</label>
-                                <select class="form-control">
-                                    <option value="" selected disabled>Pilih...</option>
-                                    <option value="">8</option>
-                                    <option value="">9</option>
-                                    <option value="">10</option>
-                                    <option value="">11</option>
-                                    <option value="">12</option>
-                                    <option value="">13</option>
-                                    <option value="">14</option>
                                 </select>
                             </div>
                         </div><br/>
@@ -86,12 +69,15 @@
                 </fieldset>
                 <fieldset>
                     <h2 class="fs-title">Tentukan Waktu</h2>
-                    <div class="form-group">
-                        <label for="labelDate" style="float:left;">Tentukan Tanggal Pertama Belajar*</label>
-                        <input type="date" name="datePicker" placeholder="DD-MM-YYYY" />
-                    </div>
                     <div class="row">
-                            <div class="col col-lg-6">
+                        <div class="col col-lg-4">
+                            <div class="button" id="tambah">
+                                <i class="fa fa-plus"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row" id="form1">
+                            <div class="col col-lg-5">
                                 <label for="comboBoxMapel" style="float:left;">Tentukan Hari*</label>
                                 <select class="form-control">
                                     <option value="" selected disabled>Pilih...</option>
@@ -104,14 +90,113 @@
                                     <option value="">Minggu</option>
                                 </select>
                             </div>
-                            <div class="col col-lg-6">
+                            <div class="col col-lg-5">
                                 <label for="comboBoxMapel" style="float:left;">Tentukan Waktu Pertemuan Pertama*</label>
                                 <div class="input-group clockpicker" data-align="top" data-autoclose="true">
 	                                <input type="text" name="date" class="form-control" value="Pilih...">
 	                            <span class="input-group-addon">
 		                            <span class="glyphicon glyphicon-time"></span>
 	                            </span>
+                                </div>
                             </div>
+                            <div class="col col-lg-2">
+                                <br/>
+                                <div class="button" id="kurang1" >
+                                    <i class="fa fa-minus"></i>
+                                </div>
+                            </div>
+                        </div><br/>
+
+                        <div class="row" id="form2">
+                            <div class="col col-lg-5">
+                                <label for="comboBoxMapel" style="float:left;">Tentukan Hari*</label>
+                                <select class="form-control">
+                                    <option value="" selected disabled>Pilih...</option>
+                                    <option value="">Senin</option>
+                                    <option value="">Selasa</option>
+                                    <option value="">Rabu</option>
+                                    <option value="">Kamis</option>
+                                    <option value="">Jumat</option>
+                                    <option value="">Sabtu</option>
+                                    <option value="">Minggu</option>
+                                </select>
+                            </div>
+                            <div class="col col-lg-5">
+                                <label for="comboBoxMapel" style="float:left;">Tentukan Waktu Pertemuan Pertama*</label>
+                                <div class="input-group clockpicker" data-align="top" data-autoclose="true">
+	                                <input type="text" name="date" class="form-control" value="Pilih...">
+	                            <span class="input-group-addon">
+		                            <span class="glyphicon glyphicon-time"></span>
+	                            </span>
+                                </div>
+                            </div>
+                            <div class="col col-lg-2">
+                                <br/>
+                                <div class="button" id="kurang2" >
+                                    <i class="fa fa-minus"></i>
+                                </div>
+                            </div>
+                        </div><br/>
+
+                        <div class="row" id="form3">
+                            <div class="col col-lg-5">
+                                <label for="comboBoxMapel" style="float:left;">Tentukan Hari*</label>
+                                <select class="form-control">
+                                    <option value="" selected disabled>Pilih...</option>
+                                    <option value="">Senin</option>
+                                    <option value="">Selasa</option>
+                                    <option value="">Rabu</option>
+                                    <option value="">Kamis</option>
+                                    <option value="">Jumat</option>
+                                    <option value="">Sabtu</option>
+                                    <option value="">Minggu</option>
+                                </select>
+                            </div>
+                            <div class="col col-lg-5">
+                                <label for="comboBoxMapel" style="float:left;">Tentukan Waktu Pertemuan Pertama*</label>
+                                <div class="input-group clockpicker" data-align="top" data-autoclose="true">
+	                                <input type="text" name="date" class="form-control" value="Pilih...">
+	                            <span class="input-group-addon">
+		                            <span class="glyphicon glyphicon-time"></span>
+	                            </span>
+                                </div>
+                            </div>
+                            <div class="col col-lg-2">
+                                <br/>
+                                <div class="button" id="kurang3" >
+                                    <i class="fa fa-minus"></i>
+                                </div>
+                            </div>
+                        </div><br/>
+
+                        <div class="row" id="form4">
+                            <div class="col col-lg-5">
+                                <label for="comboBoxMapel" style="float:left;">Tentukan Hari*</label>
+                                <select class="form-control">
+                                    <option value="" selected disabled>Pilih...</option>
+                                    <option value="">Senin</option>
+                                    <option value="">Selasa</option>
+                                    <option value="">Rabu</option>
+                                    <option value="">Kamis</option>
+                                    <option value="">Jumat</option>
+                                    <option value="">Sabtu</option>
+                                    <option value="">Minggu</option>
+                                </select>
+                            </div>
+                            <div class="col col-lg-5">
+                                <label for="comboBoxMapel" style="float:left;">Tentukan Waktu Pertemuan Pertama*</label>
+                                <div class="input-group clockpicker" data-align="top" data-autoclose="true">
+	                                <input type="text" name="date" class="form-control" value="Pilih...">
+	                            <span class="input-group-addon">
+		                            <span class="glyphicon glyphicon-time"></span>
+	                            </span>
+                                </div>
+                            </div>
+                            <div class="col col-lg-2">
+                                <br/>
+                                <div class="button" id="kurang4" >
+                                    <i class="fa fa-minus"></i>
+                                </div>
                             </div>
                         </div><br/>
                     <input type="button" name="previous" class="previous action-button" value="Previous" />
