@@ -64,37 +64,35 @@
 					<!--Sub entry left  -->
 					<div class="sub-entry">
 						<div class="form-group col-md-12">
-							<label for="namaDepan">Nama Depan</label>
-							<input type="text" class="form-control" id="namaDepan" name="namaDepan" value="Marcus">
-						</div>
-
-						<div class="form-group col-md-12">
-							<label for="email">Alamat Email</label>
-							<input type="email" class="form-control" id="email" aria-describedby="emailHelp" value="Doe@gmail.com">
+							<label for="namaDepan">Nama </label>
+							<input type="text" class="form-control" id="namaDepan" name="namaDepan" value="">
 						</div>
 
 						<div class="form-group col-md-12">
 							<label for="ipk">IPK</label>
-							<input type="text" class="form-control" id="ipk" name="ipk" value="3.75">
+							<input type="text" class="form-control" id="ipk" name="ipk" placeholder="3.75">
 						</div>
-						
+
+						<div class="form-group col-md-12">
+								<label for="contact">Nomor Telepon</label>
+								<input type="text" class="form-control" id="nomorTelepon" name="nomorTelepon" placeholder="08xxxxxxx">
+						</div>
+
+						{{-- comment
 						<div class="form-group col-md-12">
 							<label for="tingkatPendidikan">Tingkat Pendidikan</label>
 							<input type="text" class="form-control" id="tingkatPendidikan" name="tingkatPendidikan" value="SD">
 						</div>
-
+						--}}
 						<div class="form-group col-md-12">
-								<label for="jenisKelamin">Jenis Kelamin</label>
-								<select class="form-control" id="jenisKelamin" name="jenisKelamin">
-                    <option value="laki">Laki laki</option>
-                    <option value="perempuan">Perempuan</option>
-                </select>
+							<label for="alamat">Alamat</label>
+							<textarea class="form-control" id="alamat" name="alamat" rows="2"></textarea>
 						</div>
 
-					<div class="form-group col-md-12">
-    						<label for="bio">Bio</label>
-    						<textarea class="form-control" id="bio" name="bio" rows="3"></textarea>
-  				</div>
+						<div class="form-group col-md-12">
+							<label for="bio">Bio</label>
+							<textarea class="form-control" id="bio" name="bio" rows="2"></textarea>
+						</div>
 
 						<div class="form-group col-md-12">
 							<div class="row">
@@ -130,14 +128,13 @@
 					<!-- Sub entry right -->
 					<div class="sub-entry">
 						<div class="form-group col-md-12">
-								<label for="namaBelakang">Nama Belakang</label>
-								<input type="text" class="form-control" id="namaBelakang" name="namaBelakang" value="Doe">
+							<label for="jenisKelamin">Jenis Kelamin</label>
+							<select class="form-control" id="jenisKelamin" name="jenisKelamin">
+								<option value="laki">Laki laki</option>
+								<option value="perempuan">Perempuan</option>
+							</select>
 						</div>
 
-						<div class="form-group col-md-12">
-								<label for="contact">Nomor Telepon</label>
-								<input type="text" class="form-control" id="nomorTelepon" name="nomorTelepon" value="08xxxxxxx">
-						</div>
 
 						<div class="form-group col-md-12">
 								<label for="institusi">Institusi</label>
