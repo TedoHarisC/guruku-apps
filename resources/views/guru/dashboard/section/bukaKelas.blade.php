@@ -1,6 +1,16 @@
 <section id="bukaKelas">
       <div class="container">
         <div class="row about-extra">
+          <div class="alert alert-danger alert-dismissible show wow fadeInUp" role="alert">
+            Silahkan lengkapi data diri anda pada halaman profil, untuk melakukan proses selanjutnya
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row about-extra">
           <div class="col-lg-6 wow fadeInUp">
             <img src="{{ asset('landing') }}/img/about-extra-1.svg" class="img-fluid" alt="">
           </div>

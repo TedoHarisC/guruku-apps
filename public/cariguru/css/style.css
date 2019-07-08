@@ -921,3 +921,11 @@ small {
     margin: 0px 0 0px 0;
     font-size: 22px;
 }
+
+/* Halaman dashboard */
+
+.alert {
+    width: 100%;
+    font-size: 16px;
+    text-align: center;
+}
