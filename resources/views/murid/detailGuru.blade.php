@@ -12,7 +12,7 @@
                         <img src="{{ asset('landing') }}/img/sd.jpeg" class="profile-img" alt="">
                     </div>
                     <div class="col col-md-10 content">
-                            <h4>Annisa</h4>
+                            <h4>{{$bukakelas->name}}</h4>
                             <label>Rating : 4.7</label>
                             <label>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis deleniti neque eaque odio sunt distinctio nesciunt, aut natus esse ab ex nisi laboriosam illum magnam perferendis consequuntur aspernatur error reiciendis?</label>
                     </div>
@@ -61,7 +61,12 @@
                 <div class="content-below">
                     <h4>Tertarik dengan Saya ?</h4>
                     <label>Tekan tombol di bawah ini untuk les dengan saya</label><br/>
-                    <button class="btn search-button">Pesan Guru</button>
+                    <form action="{{route('checkout')}}" method="POST">
+                        @csrf
+                        <input type="hidden" name="mata_pelajaran" value="{{$bukakelas->mata_pelajaran}}" /> 
+
+                        <button class="btn search-button" type="submit">Pesan Guru</button>
+                    </form>
                 </div>
             </div>
             </div>

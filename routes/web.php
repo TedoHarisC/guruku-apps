@@ -48,8 +48,8 @@ Route::group(['middleware' => 'checkmurid:murid','auth'],function () {
 
     Route::get('/profiles' , 'MuridController@profile');
     Route::get('/guru' , 'MuridController@cariguru');
-    Route::get('/detailguru' , 'MuridController@detailguru');
-    Route::get('/checkout' , 'MuridController@checkout');
+    Route::get('/guru/{slug}' , 'MuridController@detailguru')->name('detailguru');
+    Route::post('/checkout' , 'MuridController@checkout')->name('checkout');
     //tambahan untuk coba saja
     Route::get('/dashboard','MuridController@dashboard');
     Route::get('/detailpesanan','MuridController@detail');

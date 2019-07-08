@@ -20,9 +20,9 @@
                             <label for="tingkatPendidikan">Tingkat Pendidikan</label>
                             <select name="tingkat_pendidikan" class="form-control" id="tingkatPendidikan">
                                 <option value="" selected disabled>Pilih Tingkat Pendidikan</option>
-                                <option value="sd">SD</option>
-                                <option value="smp">SMP</option>
-                                <option value="sma">SMA</option>
+                                <option value="SD">SD</option>
+                                <option value="SMP">SMP</option>
+                                <option value="SMA">SMA</option>
                             </select>
                         </div>
                         <div class="form-group">
