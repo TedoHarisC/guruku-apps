@@ -26,6 +26,12 @@
                             </select>
                         </div>
                         <div class="form-group">
+                            <label for="kelasPendidikan">Pilih Kelas</label>
+                            <select name="kelas_pendidikan" class="form-control" id="kelasPendidikan">
+                                <option value="" selected disabled>Pilih Kelas</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
                             <label for="mataPelajaran">Mata Pelajaran</label>
                             <select name="mata_pelajaran" class="form-control" id="mataPelajaran">
                                 <option value="" selected disabled>Pilih Mata Pelajaran</option>
@@ -200,25 +206,49 @@
     $(document).ready(function(){
         $('#tingkatPendidikan').change(function(){
         var tingkatPendidikan = $('#tingkatPendidikan').val();
+
+        // Mata Pelajaran
         var listmapelSdSmp = ['Bahasa Indonesia','Bahasa Inggris','Matematika','IPA','IPS','Agama'];
         var listmapelSma = ['Agama','Bahasa Indonesia','Bahasa Inggris','Biologi','Fisika','Kimia','Geografi','Ekonomi','Matematika'];
         console.log(tingkatPendidikan);
+
+        // Kelas
+        var listkelasSd = [1,2,3,4,5,6];
+        var listkelasSmpSma = [1,2,3];
 
         if(tingkatPendidikan === 'sd'){
             $.each(listmapelSdSmp, function(i, p) {
                 $('#mataPelajaran').append($('<option></option>').val(p).html(p));
             });
+
+            $.each(listkelasSd, function(i, p){
+                $('#kelasPendidikan').append($('<option></option>').val(p).html(p));
+            });
         }
         else if(tingkatPendidikan === 'smp'){
             $('#mataPelajaran').empty();
+            $('#mataPelajaran').append($('<option>Pilih Mata Pelajaran</option>'));
             $.each(listmapelSdSmp, function(i, p) {
                 $('#mataPelajaran').append($('<option></option>').val(p).html(p));
+            });
+
+            $('#kelasPendidikan').empty();
+            $('#kelasPendidikan').append($('<option>Pilih Kelas</option>'));
+            $.each(listkelasSmpSma, function(i, p){
+                $('#kelasPendidikan').append($('<option></option>').val(p).html(p));
             });  
         }
         else {
             $('#mataPelajaran').empty();
+            $('#mataPelajaran').append($('<option>Pilih Mata Pelajaran</option>'));
             $.each(listmapelSma, function(i, p) {
                 $('#mataPelajaran').append($('<option></option>').val(p).html(p));
+            });
+
+            $('#kelasPendidikan').empty();
+            $('#kelasPendidikan').append($('<option>Pilih Kelas</option>'));
+            $.each(listkelasSmpSma, function(i, p){
+                $('#kelasPendidikan').append($('<option></option>').val(p).html(p));
             });  
         }
         });

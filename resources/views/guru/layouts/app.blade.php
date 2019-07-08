@@ -10,13 +10,14 @@
   <!-- Favicons -->
   <link href="{{ asset('cariguru') }}/img/favicon.png" rel="icon">
   <link href="{{ asset('cariguru') }}/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <link href="{{ asset('argon') }}/vendor/nucleo/css/nucleo.css" rel="stylesheet">
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Montserrat:300,400,500,700" rel="stylesheet">
 
   <!-- Bootstrap CSS File -->
   <link href="{{ asset('cariguru') }}/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-        <!-- <link type="text/css" href="{{ asset('argon') }}/css/argon.css?v=1.0.0" rel="stylesheet"> -->
+  <link type="text/css" href="{{ asset('argon') }}/css/argon.css?v=1.0.0" rel="stylesheet">
 
   <!-- Libraries CSS Files -->
   <link href="{{ asset('cariguru') }}/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
@@ -67,7 +68,7 @@
                 <a class="nav-link pr-0" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <div class="media align-items-center">
                         <span class="avatar avatar-sm rounded-circle">
-                            {{-- <img alt="Image placeholder" src="{{ asset('argon') }}/img/theme/team-4-800x800.jpg"> --}}
+                            <img alt="Image placeholder" src="{{ asset('argon') }}/img/theme/team-4-800x800.jpg">
                         </span>
                         <div class="media-body ml-2 d-none d-lg-block">
                             <span class="mb-0 text-sm  font-weight-bold">{{ auth()->user()->name }}</span>
@@ -88,6 +89,9 @@
                         <i class="ni ni-user-run"></i>
                         <span>{{ __('Logout') }}</span>
                     </a>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                      @csrf
+                    </form>
                 </div>
             </li>
         </ul>

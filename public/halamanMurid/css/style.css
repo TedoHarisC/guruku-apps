@@ -1298,3 +1298,9 @@ button {
 .star-rating .fa-star {
     color: #007bff;
 }
+
+.alert {
+    width: 100%;
+    font-size: 16px;
+    text-align: center;
+}
