@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests;
 use App\BukaKelas;
+use App\User;
+use App\Review;
 use DB;
 use Illuminate\Http\Request;
 use Indonesia;
@@ -29,13 +31,17 @@ class MuridController extends Controller
 
     public function cariguru()
     {
-        $kelas = BukaKelas::all();
-
         $jadwals = DB::table('jadwals')
         ->join('buka_kelas', 'jadwals.bukakelas_id', '=', 'buka_kelas.id')
         ->get();
 
-        return view("murid.cariguru")->with('kelas',$kelas)->with('jadwals',$jadwals);
+        $list = DB::table('buka_kelas')
+        ->select('buka_kelas.id','tingkat_pendidikan','mata_pelajaran','biaya','id_user_guru','name')
+        ->join('users', 'buka_kelas.id_user_guru', '=', 'users.id')
+        ->get();
+
+        // dd($list);
+        return view("murid.cariguru")->with('list',$list)->with('jadwals',$jadwals);
         
     }
 
@@ -56,15 +62,34 @@ class MuridController extends Controller
         // return view("murid.profile");
     }
 
-    public function detailguru()
+    public function detailguru($id)
     {
-        return view('murid.detailGuru');
+        // retrieve data buka kelas and guru
+        $bukakelas = DB::table('buka_kelas')
+        ->select('buka_kelas.id','tingkat_pendidikan','mata_pelajaran','biaya','id_user_guru','name')
+        ->join('users', 'buka_kelas.id_user_guru', '=', 'users.id')
+        ->where('buka_kelas.id',$id)
+        ->first();
+
+        // retrieve data review
+        // $review = Review::where('guru_id', '=', $bukakelas->id_user_guru)->get();
+        $review = DB::table('reviews')
+        ->join('users', 'reviews.guru_id', '=', 'users.id')
+        ->get();
+
+        //count review
+        $count = $review->count();
+
+        return view('murid.detailGuru')->with('bukakelas',$bukakelas)->with('review',$review)->with('count',$count);
     }
 
-    public function checkout()
+    public function checkout(Request $request)
     {
+
+        $mata_pelajaran = $request -> mata_pelajaran;
         $provinces = Indonesia::allProvinces();
-        return(view('murid/detailPesanGuru')->with('provinces',$provinces));
+
+        return(view('murid/detailPesanGuru')->with('provinces',$provinces)->with('mata_pelajaran',$mata_pelajaran));
     }
 
     public function dashboard()
