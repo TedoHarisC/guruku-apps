@@ -67,11 +67,16 @@ class MuridController extends Controller
     public function detailguru($id)
     {
         // retrieve data buka kelas 
-        // $bukakelas = BukaKelas::where('id', '=', $id)->first();
-        $bukakelas = DB::table('buka_kelas')
-        ->join('jadwals', 'buka_kelas.id', '=', 'jadwals.bukakelas_id')
-        ->where('buka_kelas.id',$id)
-        ->first();
+        $bukakelas = BukaKelas::where('id', '=', $id)->first();
+        // $bukakelas = DB::table('buka_kelas')
+        // ->join('jadwals', 'buka_kelas.id', '=', 'jadwals.bukakelas_id')
+        // ->where('buka_kelas.id',$id)
+        // ->first();
+
+        // retrieve data jadwal
+        $jadwals = DB::table('jadwals')
+        ->join('buka_kelas', 'jadwals.bukakelas_id', '=', 'buka_kelas.id')
+        ->get();
         
         // retrieve guru profiles
         $guru = DB::table('users')
@@ -89,9 +94,9 @@ class MuridController extends Controller
         // count review
         $count = $review->count();
 
-        // dd($bukakelas);
+        // dd($jadwals);
 
-        return view('murid.detailGuru')->with('bukakelas',$bukakelas)->with('guru',$guru)->with('review',$review)->with('count',$count);
+        return view('murid.detailGuru')->with('bukakelas',$bukakelas)->with('guru',$guru)->with('jadwals',$jadwals)->with('review',$review)->with('count',$count);
     }
 
     public function checkout(Request $request)
