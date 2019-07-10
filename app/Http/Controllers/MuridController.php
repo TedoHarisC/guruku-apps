@@ -66,23 +66,32 @@ class MuridController extends Controller
 
     public function detailguru($id)
     {
-        // retrieve data buka kelas and guru
+        // retrieve data buka kelas 
+        // $bukakelas = BukaKelas::where('id', '=', $id)->first();
         $bukakelas = DB::table('buka_kelas')
-        ->select('buka_kelas.id','tingkat_pendidikan','mata_pelajaran','biaya','id_user_guru','name')
-        ->join('users', 'buka_kelas.id_user_guru', '=', 'users.id')
+        ->join('jadwals', 'buka_kelas.id', '=', 'jadwals.bukakelas_id')
         ->where('buka_kelas.id',$id)
+        ->first();
+        
+        // retrieve guru profiles
+        $guru = DB::table('users')
+        ->join('gurus', 'users.id', '=','gurus.user_id')
+        ->where('users.id', '=', $bukakelas->id_user_guru)
         ->first();
 
         // retrieve data review
         // $review = Review::where('guru_id', '=', $bukakelas->id_user_guru)->get();
         $review = DB::table('reviews')
         ->join('users', 'reviews.guru_id', '=', 'users.id')
+        ->where('users.id',$bukakelas->id_user_guru)
         ->get();
 
-        //count review
+        // count review
         $count = $review->count();
 
-        return view('murid.detailGuru')->with('bukakelas',$bukakelas)->with('review',$review)->with('count',$count);
+        dd($bukakelas);
+
+        return view('murid.detailGuru')->with('bukakelas',$bukakelas)->with('guru',$guru)->with('review',$review)->with('count',$count);
     }
 
     public function checkout(Request $request)
@@ -96,7 +105,13 @@ class MuridController extends Controller
 
     public function dashboard()
     {
-        return view('murid.dashboard');
+        $user_id = Auth::id();
+        $murid = DB::table('users')
+        ->join('murids', 'users.id', '=','murids.user_id')
+        ->where('users.id', '=', $user_id)
+        ->first();  
+
+        return view('murid.dashboard')->with('murid',$murid);
     }
 
     public function detail()

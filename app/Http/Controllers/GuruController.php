@@ -24,16 +24,21 @@ class GuruController extends Controller
     //
     public function index()
     {
+        $user_id = Auth::id();
         $kelas = BukaKelas::all();
 
         $jadwals = DB::table('jadwals')
         ->join('buka_kelas', 'jadwals.bukakelas_id', '=', 'buka_kelas.id')
         ->get();
 
-        // dd($kelas);
+        $guru = DB::table('users')
+        ->join('gurus', 'users.id', '=','gurus.user_id')
+        ->where('users.id', '=', $user_id)
+        ->first();  
 
+        // dd($guru);
 
-        return view('guru.dashboard')->with('kelas',$kelas)->with('jadwals',$jadwals);
+        return view('guru.dashboard')->with('kelas',$kelas)->with('jadwals',$jadwals)->with('guru',$guru);
 
     }
 
@@ -44,7 +49,6 @@ class GuruController extends Controller
 
         $guru = DB::table('users')
         ->join('gurus', 'users.id', '=','gurus.user_id')
-        //->orderBy('carts.created_at', 'desc')
         ->where('users.id', '=', $user_id)
         ->first();    
 
@@ -67,6 +71,7 @@ class GuruController extends Controller
         $bukakelas = new BukaKelas;
         $bukakelas -> id_user_guru = $user_id;
         $bukakelas -> tingkat_pendidikan = $request -> tingkat_pendidikan;
+        $bukakelas -> kelas = $request -> kelas_pendidikan;
         $bukakelas -> mata_pelajaran = $request -> mata_pelajaran;
         $bukakelas -> biaya = $request -> biaya;
 
@@ -87,7 +92,27 @@ class GuruController extends Controller
 
         $user_id = Auth::id();
 
-        $guru = new Guru;
+        // update name field on users table
+        $user = User::find($user_id);
+        $user -> name = $request -> name;
+        $user -> save();
+
+        // retrieve guru data 
+        $gurucheck = DB::table('users')
+        ->join('gurus', 'users.id', '=','gurus.user_id')
+        ->where('users.id', '=', $user_id)
+        ->first();
+
+        // check whenever guru data is exist
+        if(empty($gurucheck)){
+            // if empty create new !
+            $guru = new Guru;
+
+        }else if(!empty($gurucheck)){
+            // if exist just update!
+            $guru = Guru::find($gurucheck->id);
+
+        }
         $guru -> alamat = $request -> alamat;
         $guru -> jk = $request -> jk;
         $guru -> telp = $request -> telp;

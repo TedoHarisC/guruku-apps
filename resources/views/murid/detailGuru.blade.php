@@ -12,20 +12,20 @@
                         <img src="{{ asset('landing') }}/img/sd.jpeg" class="profile-img" alt="">
                     </div>
                     <div class="col col-md-10 content">
-                            <h4>{{$bukakelas->name}}</h4>
-                            <label>Rating : 4.7</label>
-                            <label>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis deleniti neque eaque odio sunt distinctio nesciunt, aut natus esse ab ex nisi laboriosam illum magnam perferendis consequuntur aspernatur error reiciendis?</label>
+                            <h4>{{$guru->name}}</h4>
+                            <label>Rating : 4.7</label></br>
+                            <label>{{$guru->bio}}</label>
                     </div>
                 </div>
                 </div>
                 <div class="content-below">
-                    <div class="icon"><i class="ion-ios-analytics-outline" style="color: #ff689b;"></i><a href="" style="padding-left: 10px">Lokasi Mengajar</a></div>
+                    <div class="icons"><i class="ion-ios-analytics-outline" style="color: #ff689b;"></i><a href="" style="padding-left: 10px">Alamat</a></div>
                     <div class="content" style="margin-top: 2px;">
-                        <label style="padding-left: 15px;">Jakarta Utara , Jakarta Selatan , Jakarta Barat</label>
+                        <label style="padding-left: 15px;">{{$guru->alamat}}</label>
                     </div>
-                    <div class="icon"><i class="ion-ios-alarm-outline" style="color: #d63636;"></i><a href="" style="padding-left: 10px;">Rekam Studi</a></div>
+                    <div class="icons"><i class="ion-ios-alarm-outline" style="color: #d63636;"></i><a href="" style="padding-left: 10px;">Rekam Studi</a></div>
                     <div class="content" style="margin-top: 2px;">
-                        <label style="padding-left: 15px;">SMA N 1 KUDUS , Politeknik Negeri Semarang</label>
+                        <label style="padding-left: 15px;">{{$guru->programstudi}} , {{$guru->institusi}}</label>
                     </div>
                 </div>
                 <div class="content">
@@ -49,7 +49,7 @@
                     </div>
                     <div class="tabpanel" id="panel3" role="tabpanel">
                         <h1>Jadwal Saya ?</h1>
-                        <p>Id qui natum prompta percipit, per no dicta ancillae scripserit. Simul veniam vidisse mea eu, vim ei corpora splendide. Aeque possim usu eu, ad brute choro verear pro. Amet erat copiosae has te. At lorem vocibus ancillae duo, ius ea putant scripserit, vel ei sale inimicus forensibus. No quando nullam voluptatum pro, has at quodsi aperiri principes.</p>
+                        <p></p>
                     </div>
                 </div>
             </div>

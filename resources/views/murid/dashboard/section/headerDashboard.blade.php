@@ -1,12 +1,16 @@
 <section id="intro">
       <div class="container">
           <div class="row about-extra">
-            <div class="alert alert-danger alert-dismissible show wow fadeInUp" role="alert">
-              Silahkan lengkapi data diri anda pada halaman profil, untuk melakukan proses selanjutnya
-              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-          </div>
+          
+           @if (empty($murid) ) 
+              <div class="alert alert-danger alert-dismissible show wow fadeInUp" role="alert">
+                <a href="{{route('muridprofile')}}" class="alert-link">Silahkan lengkapi data diri anda pada halaman profil, untuk melakukan proses selanjutnya</a>
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+            @else
+            @endif
         </div>
       </div><br>
       <div class="container">
