@@ -39,6 +39,7 @@ Route::prefix('/my')->middleware(['checkguru:guru','auth'])->group(function () {
 
     //post
     Route::post('/bukakelas', 'GuruController@postBukaKelas')->name('postbukakelas');
+    Route::post('/profiles', 'GuruController@postProfiles')->name('postprofiles');
     Route::get('/detailpesanan', 'GuruController@detail');
 });
 

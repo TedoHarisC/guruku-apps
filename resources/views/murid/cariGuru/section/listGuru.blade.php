@@ -18,9 +18,9 @@
                     </div>
                     <div class="content-below">
                         <h4>Card title</h4>
-                        <div class="icon"><i class="ion-ios-analytics-outline" style="color: #ff689b;"></i><a href="" style="padding-left: 10px" class="studi">{{$data->tingkat_pendidikan}}</a></div>
-                        <div class="icon"><i class="ion-ios-analytics-outline" style="color: #ff689b;"></i><a href="" style="padding-left: 10px" class="mapel">{{$data->mata_pelajaran}}</a></div>
-                        <div class="icon"><i class="ion-ios-analytics-outline" style="color: #ff689b;"></i><a href="" style="padding-left: 10px" class="harga">{{$data->biaya}}</a></div>
+                        <div class="icons"><i class="ion-ios-analytics-outline" style="color: #ff689b;"></i><a href="" style="padding-left: 10px" class="studi">{{$data->tingkat_pendidikan}}</a></div>
+                        <div class="icons"><i class="ion-ios-analytics-outline" style="color: #ff689b;"></i><a href="" style="padding-left: 10px" class="mapel">{{$data->mata_pelajaran}}</a></div>
+                        <div class="icons"><i class="ion-ios-analytics-outline" style="color: #ff689b;"></i><a href="" style="padding-left: 10px" class="harga">{{$data->biaya}}</a></div>
                         <div class="description"><i class="ion-ios-alarm-outline" style="color: #d63636;"></i><a href="" style="padding-left: 10px" class="kota">Jakarta</a></p></p>
 
                         <a href="{{route('detailguru',$data->id)}}" class="btn-get-started scrollto">Read More</a>

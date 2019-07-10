@@ -1235,13 +1235,13 @@ button {
     transform: translateY(-5px);
 }
 
-#list .icon {
+#list .icons {
     position: absolute;
     left: 20px;
     top: calc(50% - 32px);
 }
 
-#list .icon i {
+#list .icons i {
     font-size: 64px;
     line-height: 1;
     transition: 0.5s;
