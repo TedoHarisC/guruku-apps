@@ -89,7 +89,7 @@ class MuridController extends Controller
         // count review
         $count = $review->count();
 
-        dd($bukakelas);
+        // dd($bukakelas);
 
         return view('murid.detailGuru')->with('bukakelas',$bukakelas)->with('guru',$guru)->with('review',$review)->with('count',$count);
     }
