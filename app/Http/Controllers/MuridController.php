@@ -8,6 +8,8 @@ use App\User;
 use App\Review;
 use DB;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+
 use Indonesia;
 
 use Carbon\Carbon;

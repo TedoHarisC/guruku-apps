@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Guru;
 use App\BukaKelas;
 use App\Jadwal;
+use App\User;
 use Illuminate\Support\Facades\Auth;
 use DB;
 // use Illuminate\Support\Facades\File;
@@ -39,16 +40,17 @@ class GuruController extends Controller
     public function profile()
     {
         $user_id = Auth::id();
+        $user = User::find($user_id);
 
-        $guru = DB::table('gurus')
-        ->join('users', 'gurus.user_id', '=', 'users.id')
+        $guru = DB::table('users')
+        ->join('gurus', 'users.id', '=','gurus.user_id')
         //->orderBy('carts.created_at', 'desc')
         ->where('users.id', '=', $user_id)
-        ->get();    
+        ->first();    
 
         // dd($guru);
         
-        return view('guru.profile')->with('guru',$guru);
+        return view('guru.profile')->with('guru',$guru)->with('user',$user);
 
     }
 
@@ -79,6 +81,44 @@ class GuruController extends Controller
         }
         
         return redirect()->route('gurudashboard');
+    }
+
+    public function postProfiles(Request $request){
+
+        $user_id = Auth::id();
+
+        $guru = new Guru;
+        $guru -> alamat = $request -> alamat;
+        $guru -> jk = $request -> jk;
+        $guru -> telp = $request -> telp;
+        $guru -> institusi = $request -> institusi;
+        $guru -> programstudi = $request -> programstudi;
+        $guru -> ipk = $request -> ipk;
+        $guru -> bio = $request -> bio;
+        
+        $guru -> user_id = $user_id;
+        if ($request->hasFile('foto')) {
+			// Mengambil file yang diupload
+			$uploaded_cover = $request->file('foto');
+			// Mengambil extension file
+			$extension = $uploaded_cover->getClientOriginalExtension();
+			// Membuat nama file random dengan extension
+            $filename = md5(time()) . "." . $extension;
+            $filesave = 'photo/guru/profiles/'.$filename;
+			// Menyimpan cover ke folder public/gambar
+            // $destinationPath = storage_path() . DIRECTORY_SEPARATOR . 'storage'. DIRECTORY_SEPARATOR . 'users';
+            $destinationPath = public_path() . DIRECTORY_SEPARATOR . 'photo'. DIRECTORY_SEPARATOR . 'guru'. DIRECTORY_SEPARATOR . 'profiles';
+            
+            
+			$uploaded_cover->move($destinationPath, $filename);
+			// Mengisi field gambar di artikel dengan filename yang baru dibuat
+			$guru-> foto = $filesave;
+            $guru-> save();
+		    }
+        $guru -> save();
+
+        return redirect()->route('gurudashboard');
+        
     }
 
     public function detail()

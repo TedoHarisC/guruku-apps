@@ -16,7 +16,7 @@ class CheckMurid
     public function handle($request, Closure $next, $role)
     {
         if (! $request->user()->hasRole($role)) {
-            return redirect('/guru');
+            return redirect('/my');
         }
         return $next($request);
     }
