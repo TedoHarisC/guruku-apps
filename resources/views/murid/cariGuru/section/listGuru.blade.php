@@ -29,7 +29,6 @@
                 </li>
             @endforeach
             {{-- end loop --}}
-            
             </ul>
         </div>
         </div>

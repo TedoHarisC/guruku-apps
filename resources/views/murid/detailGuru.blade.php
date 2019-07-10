@@ -19,11 +19,11 @@
                 </div>
                 </div>
                 <div class="content-below">
-                    <div class="icon"><i class="ion-ios-analytics-outline" style="color: #ff689b;"></i><a href="" style="padding-left: 10px">Lokasi Mengajar</a></div>
+                    <div class="icons"><i class="ion-ios-analytics-outline" style="color: #ff689b;"></i><a href="" style="padding-left: 10px">Lokasi Mengajar</a></div>
                     <div class="content" style="margin-top: 2px;">
                         <label style="padding-left: 15px;">Jakarta Utara , Jakarta Selatan , Jakarta Barat</label>
                     </div>
-                    <div class="icon"><i class="ion-ios-alarm-outline" style="color: #d63636;"></i><a href="" style="padding-left: 10px;">Rekam Studi</a></div>
+                    <div class="icons"><i class="ion-ios-alarm-outline" style="color: #d63636;"></i><a href="" style="padding-left: 10px;">Rekam Studi</a></div>
                     <div class="content" style="margin-top: 2px;">
                         <label style="padding-left: 15px;">SMA N 1 KUDUS , Politeknik Negeri Semarang</label>
                     </div>
