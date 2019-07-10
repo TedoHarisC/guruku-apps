@@ -45,11 +45,11 @@ Route::prefix('/my')->middleware(['checkguru:guru','auth'])->group(function () {
 // Route for Murid
 Route::group(['middleware' => 'checkmurid:murid','auth'],function () {
     // Route::get('/' , 'MuridController@index');
-
+    
     Route::get('/profiles' , 'MuridController@profile')->name('muridprofile');
     Route::get('/guru' , 'MuridController@cariguru')->name('cariguru');
-    Route::get('/detailguru' , 'MuridController@detailguru');
-    Route::get('/checkout' , 'MuridController@checkout');
+    Route::get('/guru/{slug}' , 'MuridController@detailguru')->name('detailguru');
+    Route::post('/checkout' , 'MuridController@checkout')->name('checkout');
     //tambahan untuk coba saja
     Route::get('/dashboard','MuridController@dashboard');
     Route::get('/detailpesanan','MuridController@detail');

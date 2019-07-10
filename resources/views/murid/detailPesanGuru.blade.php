@@ -47,7 +47,7 @@
                      <div class="row">
                             <div class="col col-lg-6">
                                     <label for="comboBoxMapel" style="float:left;">Mata Pelajaran *</label>
-                                    <input type="text" name="mataPelajaran" class="form-control" value="Matematika" disabled />
+                                    <input type="text" name="mataPelajaran" class="form-control" value="{{$mata_pelajaran}}" disabled />
                             </div>
                             <div class="col col-lg-6">
                                 <label for="comboBoxMapel" style="float:left;">Durasi Per Pertemuan *</label>
