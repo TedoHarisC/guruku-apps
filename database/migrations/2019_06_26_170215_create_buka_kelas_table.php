@@ -17,6 +17,7 @@ class CreateBukaKelasTable extends Migration
             $table->increments('id');
             $table->string('id_user_guru');
             $table->string('tingkat_pendidikan');
+            $table->string('kelas');
             $table->string('mata_pelajaran');
             $table->string('biaya');
             $table->timestamps(); 

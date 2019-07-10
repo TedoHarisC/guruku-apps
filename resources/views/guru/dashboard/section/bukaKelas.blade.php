@@ -1,11 +1,13 @@
 <section id="bukaKelas">
       <div class="container">
         <div class="row about-extra">
+        @if (empty($guru) ) 
           <div class="alert alert-danger alert-dismissible show wow fadeInUp" role="alert">
-            <a href="{{route('guruprofile')}}" class="alert-link">Silahkan lengkapi data diri anda pada halaman profil, untuk melakukan proses selanjutnya</a>
-            {{--   --}}
+            <a href="{{route('guruprofile')}}" class="alert-link">Silahkan lengkapi data diri anda pada halaman profil, untuk melakukan proses selanjutnya</a>            
             </button>
           </div>
+        @else
+        @endif
         </div>
       </div>
       <div class="container">
@@ -23,7 +25,11 @@
             </p>
             <p>
             <div class="text-center">
-              <a href="{{route('bukakelas')}}"><button type="button" class="pelajari" title="Pelajari Selengkapnya">Buka Kelas Sekarang</button></a>
+              @if (empty($guru) )
+                <a href="{{route('bukakelas')}}"><button type="button" class="pelajaris" title="Pelajari Selengkapnya" disabled>Buka Kelas Sekarang</button></a>
+              @else
+                <a href="{{route('bukakelas')}}"><button type="button" class="pelajari" title="Pelajari Selengkapnya">Buka Kelas Sekarang</button></a>
+              @endif
             </div>
             </p>
           </div>

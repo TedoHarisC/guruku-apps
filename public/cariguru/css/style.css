@@ -477,7 +477,7 @@ h6 {
 /* Tombol cariGuru */
 #bukaKelas .pelajari {
     background: #007bff;
-    border: 0;
+    border: 2px solid #007bff;
     border-radius: 20px;
     padding: 8px 30px;
     color: #fff;
@@ -489,6 +489,26 @@ h6 {
     cursor: pointer;
 }
 /* End Tombol cariGuru */
+
+/* Tombol cariGuru disabled*/
+#bukaKelas .pelajaris {
+
+    background: #fff;
+    border: 2px solid #007bff;
+    color: #007bff;
+    border-radius: 20px;
+    padding: 8px 30px;
+    
+    transition: 0.3s;
+}
+
+#bukaKelas .pelajaris:hover {
+    background: #0067d5;
+    cursor:not-allowed;
+    color: #fff;
+
+}
+/* End Tombol cariGuru disabled */
 
 /* list murid yang memesan dan kelas yang dibuka */
 #list {
