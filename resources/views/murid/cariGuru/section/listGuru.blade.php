@@ -15,9 +15,9 @@
                 </div>
                 <div class="content-below">
                     <h4>Card title</h4>
-                    <div class="icon"><i class="ion-ios-analytics-outline" style="color: #ff689b;"></i><a href="" style="padding-left: 10px" class="studi">SD</a></div>
-                    <div class="icon"><i class="ion-ios-analytics-outline" style="color: #ff689b;"></i><a href="" style="padding-left: 10px" class="mapel">Matematika</a></div>
-                    <div class="icon"><i class="ion-ios-analytics-outline" style="color: #ff689b;"></i><a href="" style="padding-left: 10px" class="harga">300000</a></div>
+                    <div class="icons"><i class="ion-ios-analytics-outline" style="color: #ff689b;"></i><a href="" style="padding-left: 10px" class="studi">SD</a></div>
+                    <div class="icons"><i class="ion-ios-analytics-outline" style="color: #ff689b;"></i><a href="" style="padding-left: 10px" class="mapel">Matematika</a></div>
+                    <div class="icons"><i class="ion-ios-analytics-outline" style="color: #ff689b;"></i><a href="" style="padding-left: 10px" class="harga">300000</a></div>
                     <div class="description"><i class="ion-ios-alarm-outline" style="color: #d63636;"></i><a href="" style="padding-left: 10px" class="kota">Jakarta</a></p></p> <button>Readmore</button>
                 </div>
             </div>
@@ -33,9 +33,9 @@
                 </div>
                 <div class="content-below">
                     <h4>Card title</h4>
-                    <div class="icon"><i class="ion-ios-analytics-outline" style="color: #ff689b;"></i><a href="" style="padding-left: 10px" class="studi">SMP</a></div>
-                    <div class="icon"><i class="ion-ios-analytics-outline" style="color: #ff689b;"></i><a href="" style="padding-left: 10px" class="mapel">IPA</a></div>
-                    <div class="icon"><i class="ion-ios-analytics-outline" style="color: #ff689b;"></i><a href="" style="padding-left: 10px" class="harga">200000</a></div>
+                    <div class="icons"><i class="ion-ios-analytics-outline" style="color: #ff689b;"></i><a href="" style="padding-left: 10px" class="studi">SMP</a></div>
+                    <div class="icons"><i class="ion-ios-analytics-outline" style="color: #ff689b;"></i><a href="" style="padding-left: 10px" class="mapel">IPA</a></div>
+                    <div class="icons"><i class="ion-ios-analytics-outline" style="color: #ff689b;"></i><a href="" style="padding-left: 10px" class="harga">200000</a></div>
                     <div class="description"><i class="ion-ios-alarm-outline" style="color: #d63636;"></i><a href="" style="padding-left: 10px" class="kota">Semarang</a></p></p> <button>Readmore</button>
                 </div>
             </div>
@@ -51,9 +51,9 @@
                 </div>
                 <div class="content-below">
                     <h4>Card title</h4>
-                    <div class="icon"><i class="ion-ios-analytics-outline" style="color: #ff689b;"></i><a href="" style="padding-left: 10px" class="studi">SMA</a></div>
-                    <div class="icon"><i class="ion-ios-analytics-outline" style="color: #ff689b;"></i><a href="" style="padding-left: 10px" class="mapel">Biologi</a></div>
-                    <div class="icon"><i class="ion-ios-analytics-outline" style="color: #ff689b;"></i><a href="" style="padding-left: 10px" class="harga">150000</a></div>
+                    <div class="icons"><i class="ion-ios-analytics-outline" style="color: #ff689b;"></i><a href="" style="padding-left: 10px" class="studi">SMA</a></div>
+                    <div class="icons"><i class="ion-ios-analytics-outline" style="color: #ff689b;"></i><a href="" style="padding-left: 10px" class="mapel">Biologi</a></div>
+                    <div class="icons"><i class="ion-ios-analytics-outline" style="color: #ff689b;"></i><a href="" style="padding-left: 10px" class="harga">150000</a></div>
                     <div class="description"><i class="ion-ios-alarm-outline" style="color: #d63636;"></i><a href="" style="padding-left: 10px" class="kota">Bandung</a></p></p> <button>Readmore</button>
                 </div>
             </div>
