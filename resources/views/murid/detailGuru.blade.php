@@ -49,6 +49,23 @@
                     </div>
                     <div class="tabpanel" id="panel3" role="tabpanel">
                         <h1>Jadwal Saya ?</h1>
+                        <table style="margin-left: 25px;">
+                        @foreach ($jadwals as $jadwal)
+                        <tr>
+                            
+                            <div class="icons">
+                                <td>
+                                    <i class="ion-ios-timer-outline" style="color: #d63636;"></i><a  style="padding-left: 10px;">{{$jadwal->hari}}</a>
+                                    
+                                <td>
+                                <td>
+                                    <i class="ion-ios-alarm-outline" style="color: #d63636;padding-left: 10px;"></i><a  style="padding-left: 10px;">{{$jadwal->jam}}</a>
+                                </td>
+                            </div>
+                            
+                        </tr>
+                        @endforeach
+                        </table>
                         <p></p>
                     </div>
                 </div>
