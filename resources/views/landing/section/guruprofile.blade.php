@@ -1,3 +1,5 @@
+<!-- CSS di landing untuk profile -->
+
 <section id="intro">
 <div class="container">
     <div class="row profile">
@@ -213,6 +215,26 @@
 									value="{{$guru->programstudi}}"
 								@else
 								@endif>
+						</div>
+
+						<div class="form-group col-md-12">
+							<label for="bio">Tentang saya</label>
+							
+							@if (!empty($guru) )  
+								<textarea class="form-control" id="bio" name="bio" rows="2"></textarea>
+							@else
+								<textarea class="form-control" id="bio" name="bio" rows="2"></textarea>
+							@endif
+						</div>
+
+						<div class="form-group col-md-12">
+							<label for="bio">Pengalaman</label>
+							
+							@if (!empty($guru) )  
+								<textarea class="form-control" id="bio" name="bio" rows="2"></textarea>
+							@else
+								<textarea class="form-control" id="bio" name="bio" rows="2"></textarea>
+							@endif
 						</div>
 
 						<div class="form-group col-md-12">

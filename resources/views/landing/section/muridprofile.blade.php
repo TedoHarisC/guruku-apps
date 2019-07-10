@@ -64,10 +64,9 @@
 					<!--Sub entry left  -->
 					<div class="sub-entry">
 						<div class="form-group col-md-12">
-							<label for="firstName">Nama Depan</label>
-							<input type="text" class="form-control" id="firstName" value="Marcus">
+							<label for="namaDepan">Nama </label>
+							<input type="text" class="form-control" id="namaDepan" name="name" value="Murid" required>
 						</div>
-
 						<div class="form-group col-md-12">
 							<label for="email">Alamat Email</label>
 							<input type="email" class="form-control" id="email" aria-describedby="emailHelp" value="Doe@gmail.com">
@@ -116,11 +115,6 @@
 
 					<!-- Sub entry right -->
 					<div class="sub-entry">
-						<div class="form-group col-md-12">
-								<label for="lastName">Nama Belakang</label>
-								<input type="text" class="form-control" id="lastName" value="Doe">
-						</div>
-
 						<div class="form-group col-md-12">
 								<label for="nomorTelepon">Nomor Telepon</label>
 								<input type="text" class="form-control" id="nomorTelepon" name="nomorTelepon" value="08xxxxxxx">
