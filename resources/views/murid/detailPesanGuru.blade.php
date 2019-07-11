@@ -101,15 +101,14 @@
 	                            </span>
                                 </div>
                             </div>
-
-                            <i class="button fa fa-minus" id="kurang1"></i>
-
+                            
                             <!-- <div class="col col-lg-2">
                                 <br/>
-                                <div class="button" id="kurang1" >
-                                    
-                                </div>
+                                <div class="button" id="kurang1"> -->
+                                    <i class="button fa fa-minus" id="kurang1"></i>
+                                <!-- </div>
                             </div> -->
+
                     </div><br/>
                     
                     <input type="button" name="previous" class="previous action-button" value="Previous" />
