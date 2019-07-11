@@ -6,6 +6,7 @@ use App\Http\Requests;
 use App\BukaKelas;
 use App\User;
 use App\Review;
+use App\Jadwal;
 use DB;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -67,11 +68,16 @@ class MuridController extends Controller
     public function detailguru($id)
     {
         // retrieve data buka kelas 
-        // $bukakelas = BukaKelas::where('id', '=', $id)->first();
-        $bukakelas = DB::table('buka_kelas')
-        ->join('jadwals', 'buka_kelas.id', '=', 'jadwals.bukakelas_id')
-        ->where('buka_kelas.id',$id)
-        ->first();
+        $bukakelas = BukaKelas::where('id', '=', $id)->first();
+        // $bukakelas = DB::table('buka_kelas')
+        // ->join('jadwals', 'buka_kelas.id', '=', 'jadwals.bukakelas_id')
+        // ->where('buka_kelas.id',$id)
+        // ->first();
+
+        // retrieve data jadwal
+        $jadwals = DB::table('jadwals')
+        ->join('buka_kelas', 'jadwals.bukakelas_id', '=', 'buka_kelas.id')
+        ->get();
         
         // retrieve guru profiles
         $guru = DB::table('users')
@@ -89,18 +95,21 @@ class MuridController extends Controller
         // count review
         $count = $review->count();
 
-        // dd($bukakelas);
+        // dd($jadwals);
 
-        return view('murid.detailGuru')->with('bukakelas',$bukakelas)->with('guru',$guru)->with('review',$review)->with('count',$count);
+        return view('murid.detailGuru')->with('bukakelas',$bukakelas)->with('guru',$guru)->with('jadwals',$jadwals)->with('review',$review)->with('count',$count);
     }
 
     public function checkout(Request $request)
     {
 
-        $mata_pelajaran = $request -> mata_pelajaran;
         $provinces = Indonesia::allProvinces();
 
-        return(view('murid/detailPesanGuru')->with('provinces',$provinces)->with('mata_pelajaran',$mata_pelajaran));
+        $mata_pelajaran = $request -> mata_pelajaran;
+        
+        $jadwals = Jadwal::where('bukakelas_id', '=', $request->bukakelas_id)->get();
+
+        return(view('murid.detailPesanGuru')->with('provinces',$provinces)->with('mata_pelajaran',$mata_pelajaran)->with('jadwals',$jadwals));
     }
 
     public function dashboard()
@@ -146,3 +155,4 @@ class MuridController extends Controller
     }
     
 }
+

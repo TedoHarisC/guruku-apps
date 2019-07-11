@@ -23,6 +23,8 @@ class CreateGurusTable extends Migration
             $table->string('ipk');
             $table->string('bio');
             $table->string('foto');
+            $table->string('tentangsaya');
+            $table->string('pengalaman');
             $table->string('user_id');
             $table->timestamps();
         });
