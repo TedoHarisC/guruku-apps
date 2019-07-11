@@ -6,6 +6,7 @@ use App\Http\Requests;
 use App\BukaKelas;
 use App\User;
 use App\Review;
+use App\Jadwal;
 use DB;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -102,10 +103,13 @@ class MuridController extends Controller
     public function checkout(Request $request)
     {
 
-        $mata_pelajaran = $request -> mata_pelajaran;
         $provinces = Indonesia::allProvinces();
 
-        return(view('murid/detailPesanGuru')->with('provinces',$provinces)->with('mata_pelajaran',$mata_pelajaran));
+        $mata_pelajaran = $request -> mata_pelajaran;
+        
+        $jadwals = Jadwal::where('bukakelas_id', '=', $request->bukakelas_id)->get();
+
+        return(view('murid.detailPesanGuru')->with('provinces',$provinces)->with('mata_pelajaran',$mata_pelajaran)->with('jadwals',$jadwals));
     }
 
     public function dashboard()
@@ -151,3 +155,4 @@ class MuridController extends Controller
     }
     
 }
+

@@ -135,9 +135,9 @@
 							<label for="bio">Bio</label>
 							
 							@if (!empty($guru) )  
-								<textarea class="form-control" id="bio" name="bio" rows="2">{{$guru->bio}}</textarea>
+								<textarea class="form-control" id="bio" name="bio" rows="2" required>{{$guru->bio}}</textarea>
 							@else
-								<textarea class="form-control" id="bio" name="bio" rows="2"></textarea>
+								<textarea class="form-control" id="bio" name="bio" rows="2" required></textarea>
 							@endif
 							
 						</div>
@@ -221,9 +221,9 @@
 							<label for="bio">Tentang saya</label>
 							
 							@if (!empty($guru) )  
-								<textarea class="form-control" id="bio" name="bio" rows="2"></textarea>
+								<textarea class="form-control" id="tentangsaya" name="tentangsaya" rows="2" required></textarea>
 							@else
-								<textarea class="form-control" id="bio" name="bio" rows="2"></textarea>
+								<textarea class="form-control" id="tentangsaya" name="tentangsaya" rows="2" required></textarea>
 							@endif
 						</div>
 
@@ -231,15 +231,15 @@
 							<label for="bio">Pengalaman</label>
 							
 							@if (!empty($guru) )  
-								<textarea class="form-control" id="bio" name="bio" rows="2"></textarea>
+								<textarea class="form-control" id="pengalaman" name="pengalaman" rows="2" required></textarea>
 							@else
-								<textarea class="form-control" id="bio" name="bio" rows="2"></textarea>
+								<textarea class="form-control" id="pengalaman" name="pengalaman" rows="2" required></textarea>
 							@endif
 						</div>
 
 						<div class="form-group col-md-12">
 							<label for="foto">Foto</label>
-							<input type="file" class="form-control-file" id="foto" name="foto" value="">
+							<input type="file" class="form-control-file" id="foto" name="foto" required>
 						</div>
 					</div>
 

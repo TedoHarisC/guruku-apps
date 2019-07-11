@@ -41,11 +41,11 @@
                     </ul>
                     <div class="tabpanel" id="panel1" role="tabpanel">
                         <h1>Siapa saya ?</h1>
-                        <p>Lorem ipsum dolor sit amet, case solum pri ex, sed te feugiat legimus. Sea doming alterum necessitatibus id, ipsum putent disputando ei pri. Docendi electram ei cum, usu ea meis tractatos dignissim. An eos putent tamquam postulant, falli periculis nam et. Ne mel hinc scaevola probatus.</p>
+                        <p>{{$guru->tentangsaya}}</p>
                     </div>
                     <div class="tabpanel" id="panel2" role="tabpanel">
                         <h1>Apa Saja Pengalaman Saya ?</h1>
-                        <p>Eu choro adolescens est. Cu pro case sanctus convenire, natum mazim duo ne. Ius numquam euismod luptatum eu, eu veri iudico molestie nec. Causae facilis duo id, te vix maiorum omittam appareat, nostrud platonem in quo. At nobis vitae vel.</p>
+                        <p>{{$guru->pengalaman}}</p>
                     </div>
                     <div class="tabpanel" id="panel3" role="tabpanel">
                         <h1>Jadwal Saya ?</h1>
@@ -81,6 +81,7 @@
                     <form action="{{route('checkout')}}" method="POST">
                         @csrf
                         <input type="hidden" name="mata_pelajaran" value="{{$bukakelas->mata_pelajaran}}" /> 
+                        <input type="hidden" name="bukakelas_id" value="{{$bukakelas->id}}" /> 
 
                         <button class="btn search-button" type="submit">Pesan Guru</button>
                     </form>

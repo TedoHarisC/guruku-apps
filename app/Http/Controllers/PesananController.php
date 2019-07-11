@@ -36,6 +36,10 @@ class PesananController extends Controller
     public function store(Request $request)
     {
         //
+        // $pesanan = new Pesanan;
+        return "lala";
+        
+
     }
 
     /**
