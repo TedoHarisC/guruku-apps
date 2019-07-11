@@ -14,7 +14,8 @@
                     </div>
                     <!-- Form -->
                 <!-- multistep form -->
-                <form id="msform">
+                <form method="POST" action="{{route('pesananstore')}}" id="msform">
+                @csrf
 
                 <!-- progressbar -->
                 <ul id="progressbar">
@@ -47,23 +48,23 @@
                      <div class="row">
                             <div class="col col-lg-6">
                                     <label for="comboBoxMapel" style="float:left;">Mata Pelajaran *</label>
-                                    <input type="text" name="mataPelajaran" class="form-control" value="{{$mata_pelajaran}}" disabled />
+                                    <input type="text" name="matapelajaran" class="form-control" value="{{$mata_pelajaran}}" disabled />
                             </div>
                             <div class="col col-lg-6">
                                 <label for="comboBoxMapel" style="float:left;">Durasi Per Pertemuan *</label>
-                                <select class="form-control">
+                                <select name="durasi" class="form-control" required>
                                     <option value="" selected disabled>Pilih...</option>
-                                    <option value="">1 jam</option>
-                                    <option value="">1,5 jam</option>
-                                    <option value="">2 jam</option>
-                                    <option value="">2,5 jam</option>
-                                    <option value="">3 jam</option>
+                                    <option value="1">1 jam</option>
+                                    <option value="1.5">1,5 jam</option>
+                                    <option value="2">2 jam</option>
+                                    <option value="2.5">2,5 jam</option>
+                                    <option value="3">3 jam</option>
                                 </select>
                             </div>
                         </div><br/>
                         <div class="form-group">
                             <label for="exampleFormControlTextarea1" style="float:left;">Pesan Untuk Pengajar</label>
-                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="4"></textarea>
+                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="4" placeholder="Optional"></textarea>
                         </div>
                         <label style="float:left;">* Wajib Diisi</label><br/>
                     <input type="button" name="next" class="next action-button" value="Next" />
@@ -80,21 +81,17 @@
                     <div class="row" id="form1">
                             <div class="col col-lg-5">
                                 <label for="comboBoxMapel" style="float:left;">Tentukan Hari*</label>
-                                <select class="form-control">
+                                <select name="hari[]" class="form-control">
                                     <option value="" selected disabled>Pilih...</option>
-                                    <option value="">Senin</option>
-                                    <option value="">Selasa</option>
-                                    <option value="">Rabu</option>
-                                    <option value="">Kamis</option>
-                                    <option value="">Jumat</option>
-                                    <option value="">Sabtu</option>
-                                    <option value="">Minggu</option>
+                                    @foreach ($jadwals as $jadwal)
+                                        <option value="{{$jadwal->hari}}">{{$jadwal->hari}}</option>    
+                                    @endforeach
                                 </select>
                             </div>
                             <div class="col col-lg-5">
                                 <label for="comboBoxMapel" style="float:left;">Tentukan Waktu Pertemuan Pertama*</label>
                                 <div class="input-group clockpicker" data-align="top" data-autoclose="true">
-	                                <input type="text" name="date" class="form-control" value="Pilih...">
+	                                <input type="text" name="jam[]" class="form-control" value="Pilih...">
 	                            <span class="input-group-addon">
 		                            <span class="glyphicon glyphicon-time"></span>
 	                            </span>
@@ -207,12 +204,12 @@
                     <h2 class="fs-title">Tentukan Lokasi</h2>
                     <div class="form-group">
                     <label for="alamat Lengkap" style="float:left;">Alamat Lengkap*</label>
-                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Masukan Alamat Lengkap Anda"></textarea>
+                    <textarea name="alamat" class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Masukan Alamat Lengkap Anda" required></textarea>
                 </div>
                 <div class="row">
                         <div class="col col-lg-6">
                             <label for="comboBoxMapel" style="float:left;">Provinsi*</label>
-                            <select class="form-control"  id="province"  onchange="showCity()">
+                            <select name="provinsi" class="form-control"  id="province"  onchange="showCity()">
                                 <option value="" selected disabled>Pilih Provinsi</option>
                                 @foreach ($provinces as $item):
                                     <option value="{{$item['id']}}">{{$item['name']}}</option>
@@ -221,7 +218,7 @@
                         </div>
                         <div class="col col-lg-6">
                             <label for="comboBoxMapel" style="float:left;">Kota*</label>
-                            <select class="form-control" id="city" name="city" onchange="showDistrict()">
+                            <select class="form-control" id="city" name="kota" onchange="showDistrict()">
                                 <option value="" selected disabled>Pilih Kota</option>
                             </select>
                         </div>
@@ -372,9 +369,9 @@
         });
       });
 
-      $(".submit").click(function(){
-        return false;
-      })
+      //$(".submit").click(function(){
+       // return false;
+      //})
 
     </script>
 

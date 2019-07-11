@@ -120,6 +120,8 @@ class GuruController extends Controller
         $guru -> programstudi = $request -> programstudi;
         $guru -> ipk = $request -> ipk;
         $guru -> bio = $request -> bio;
+        $guru -> tentangsaya = $request -> tentangsaya;
+        $guru -> pengalaman = $request -> pengalaman;
         
         $guru -> user_id = $user_id;
         if ($request->hasFile('foto')) {
