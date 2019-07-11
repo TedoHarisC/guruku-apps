@@ -24,6 +24,8 @@
                     <li>Personal Details</li>
                 </ul>
                 <!-- fieldsets -->
+
+                <!-- Tab 1 -->
                 <fieldset>
                     <h2 class="fs-title"></h2>
                     <div class="fs-type">
@@ -69,6 +71,8 @@
                         <label style="float:left;">* Wajib Diisi</label><br/>
                     <input type="button" name="next" class="next action-button" value="Next" />
                 </fieldset>
+
+                <!-- Tab 2 -->
                 <fieldset>
                     <h2 class="fs-title">Tentukan Waktu</h2>
                     <div class="row">
@@ -97,109 +101,21 @@
 	                            </span>
                                 </div>
                             </div>
-                            <div class="col col-lg-2">
+                            
+                            <!-- <div class="col col-lg-2">
                                 <br/>
-                                <div class="button" id="kurang1" >
-                                    <i class="fa fa-minus"></i>
-                                </div>
-                            </div>
-                        </div><br/>
+                                <div class="button" id="kurang1"> -->
+                                    <i class="button fa fa-minus" id="kurang1"></i>
+                                <!-- </div>
+                            </div> -->
 
-                        <div class="row" id="form2">
-                            <div class="col col-lg-5">
-                                <label for="comboBoxMapel" style="float:left;">Tentukan Hari*</label>
-                                <select class="form-control">
-                                    <option value="" selected disabled>Pilih...</option>
-                                    <option value="">Senin</option>
-                                    <option value="">Selasa</option>
-                                    <option value="">Rabu</option>
-                                    <option value="">Kamis</option>
-                                    <option value="">Jumat</option>
-                                    <option value="">Sabtu</option>
-                                    <option value="">Minggu</option>
-                                </select>
-                            </div>
-                            <div class="col col-lg-5">
-                                <label for="comboBoxMapel" style="float:left;">Tentukan Waktu Pertemuan Pertama*</label>
-                                <div class="input-group clockpicker" data-align="top" data-autoclose="true">
-	                                <input type="text" name="date" class="form-control" value="Pilih...">
-	                            <span class="input-group-addon">
-		                            <span class="glyphicon glyphicon-time"></span>
-	                            </span>
-                                </div>
-                            </div>
-                            <div class="col col-lg-2">
-                                <br/>
-                                <div class="button" id="kurang2" >
-                                    <i class="fa fa-minus"></i>
-                                </div>
-                            </div>
-                        </div><br/>
-
-                        <div class="row" id="form3">
-                            <div class="col col-lg-5">
-                                <label for="comboBoxMapel" style="float:left;">Tentukan Hari*</label>
-                                <select class="form-control">
-                                    <option value="" selected disabled>Pilih...</option>
-                                    <option value="">Senin</option>
-                                    <option value="">Selasa</option>
-                                    <option value="">Rabu</option>
-                                    <option value="">Kamis</option>
-                                    <option value="">Jumat</option>
-                                    <option value="">Sabtu</option>
-                                    <option value="">Minggu</option>
-                                </select>
-                            </div>
-                            <div class="col col-lg-5">
-                                <label for="comboBoxMapel" style="float:left;">Tentukan Waktu Pertemuan Pertama*</label>
-                                <div class="input-group clockpicker" data-align="top" data-autoclose="true">
-	                                <input type="text" name="date" class="form-control" value="Pilih...">
-	                            <span class="input-group-addon">
-		                            <span class="glyphicon glyphicon-time"></span>
-	                            </span>
-                                </div>
-                            </div>
-                            <div class="col col-lg-2">
-                                <br/>
-                                <div class="button" id="kurang3" >
-                                    <i class="fa fa-minus"></i>
-                                </div>
-                            </div>
-                        </div><br/>
-
-                        <div class="row" id="form4">
-                            <div class="col col-lg-5">
-                                <label for="comboBoxMapel" style="float:left;">Tentukan Hari*</label>
-                                <select class="form-control">
-                                    <option value="" selected disabled>Pilih...</option>
-                                    <option value="">Senin</option>
-                                    <option value="">Selasa</option>
-                                    <option value="">Rabu</option>
-                                    <option value="">Kamis</option>
-                                    <option value="">Jumat</option>
-                                    <option value="">Sabtu</option>
-                                    <option value="">Minggu</option>
-                                </select>
-                            </div>
-                            <div class="col col-lg-5">
-                                <label for="comboBoxMapel" style="float:left;">Tentukan Waktu Pertemuan Pertama*</label>
-                                <div class="input-group clockpicker" data-align="top" data-autoclose="true">
-	                                <input type="text" name="date" class="form-control" value="Pilih...">
-	                            <span class="input-group-addon">
-		                            <span class="glyphicon glyphicon-time"></span>
-	                            </span>
-                                </div>
-                            </div>
-                            <div class="col col-lg-2">
-                                <br/>
-                                <div class="button" id="kurang4" >
-                                    <i class="fa fa-minus"></i>
-                                </div>
-                            </div>
-                        </div><br/>
+                    </div><br/>
+                    
                     <input type="button" name="previous" class="previous action-button" value="Previous" />
                     <input type="button" name="next" class="next action-button" value="Next" />
                 </fieldset>
+
+                <!-- Tab 3 -->
                 <fieldset>
                     <h2 class="fs-title">Tentukan Lokasi</h2>
                     <div class="form-group">
@@ -377,35 +293,38 @@
 
     <!-- Script untuk menambah form di part 2 -->
     <script type="text/javascript">
-      var point = 1;
 
-      // Init hiding form 
-      $("#form2").hide();
-      $("#form3").hide();
-      $("#form4").hide();
-
-      $("#tambah").click(function(){
-        if(point <= 4){
-            point++;
-            $("#form"+point).show();
-            console.log(point);
-          }
-      });
-
-      $("#kurang1").click(function(){
-        $("#form"+1).hide();
-      });
-
-      $("#kurang2").click(function(){
-        $("#form"+2).hide();
-      });
-
-      $("#kurang3").click(function(){
-        $("#form"+3).hide();
-      });
-
-      $("#kurang4").click(function(){
-        $("#form"+4).hide();
-      });
+    $(document).ready(function(){
+    var maxField = 10; //Input fields increment limitation
+    var addButton = $('#tambah'); //Add button selector
+    var wrapper = $('#form1'); //Input field wrapper
+    var fieldHTML = '<div class="col col-lg-5"><label for="comboBoxMapel" style="float:left;">Tentukan Hari*</label><select class="form-control"><option value="" selected disabled>Pilih...</option><option value="">Senin</option><option value="">Selasa</option><option value="">Rabu</option><option value="">Kamis</option><option value="">Jumat</option><option value="">Sabtu</option><option value="">Minggu</option></select></div><div class="col col-lg-5"><label for="comboBoxMapel" style="float:left;">Tentukan Waktu Pertemuan Pertama*</label><div class="input-group clockpicker" data-align="top" data-autoclose="true"><input type="text" name="date" class="form-control" value="Pilih..."><span class="input-group-addon"><span class="glyphicon glyphicon-time"></span></span></div></div><i class="button fa fa-minus" id="kurang1"></i>';
+    // var fieldHTML2 = ''                        
+    // var fieldHTML3 = ''
+    var x = 1; //Initial field counter is 1
+    
+    //Once add button is clicked
+    $(addButton).click(function(){
+        //Check maximum number of input fields
+        if(x < maxField){ 
+            x++; //Increment field counter
+            $(wrapper).append(fieldHTML);
+            // $(wrapper).append(fieldHTML2);
+            // $(wrapper).append(fieldHTML3);
+        }
+    });
+    
+    //Once remove button is clicked
+    $(wrapper).on('click', '#kurang1', function(e){
+        e.preventDefault();
+        var total_fields = wrapper[0].childNodes.length;
+	    if(total_fields>1){
+		    wrapper[0].childNodes[total_fields-1].remove();
+            wrapper[0].childNodes[total_fields-2].remove();
+            wrapper[0].childNodes[total_fields-3].remove();
+	    }
+        x--; //Decrement field counter
+    });
+});
     </script>
 @endpush
