@@ -28,7 +28,9 @@
             </p>
             <p>
             <div class="text-center">
-              <a href="{{route('cariguru')}}"><button type="button" class="pelajari" title="Pelajari Selengkapnya">Cari Guru Sekarang</button></a>
+              <a href="{{route('cariguru')}}">
+                <button type="button" class="pelajari" title="Pelajari Selengkapnya">Cari Guru Sekarang</button>
+              </a>
             </div>
             </p>
           </div>

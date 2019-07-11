@@ -4,8 +4,8 @@
 		<div class="col-md-3">
 			<div class="profile-sidebar">
 				<!-- SIDEBAR USERPIC -->
-				<div class="profile-userpic">
-          <center><img src="{{ asset('landing') }}/img/sd.jpeg" class="img-responsive" alt=""></center>
+				<div class="profile-userpic" style="text-align:center">
+          			<img src="{{ asset('landing') }}/img/sd.jpeg" class="img-responsive" alt="foto profil">
 				</div>
 				<!-- END SIDEBAR USERPIC -->
 				<!-- SIDEBAR USER TITLE -->
