@@ -26,9 +26,9 @@
             <p>
             <div class="text-center">
               @if (empty($guru) )
-                <a href="{{route('bukakelas')}}"><button type="button" class="pelajaris" title="Pelajari Selengkapnya" disabled>Buka Kelas Sekarang</button></a>
+                <a href="{{route('bukakelas')}}"><button type="button" class="pelajaris" title="Lengkapi Profile terlebih dahulu" disabled>Buka Kelas Sekarang</button></a>
               @else
-                <a href="{{route('bukakelas')}}"><button type="button" class="pelajari" title="Pelajari Selengkapnya">Buka Kelas Sekarang</button></a>
+                <a href="{{route('bukakelas')}}"><button type="button" class="pelajari" title="Buka Kelas Sekarang!">Buka Kelas Sekarang</button></a>
               @endif
             </div>
             </p>

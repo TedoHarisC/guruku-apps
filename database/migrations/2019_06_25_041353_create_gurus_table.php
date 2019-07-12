@@ -22,7 +22,7 @@ class CreateGurusTable extends Migration
             $table->string('programstudi');
             $table->string('ipk');
             $table->string('bio');
-            $table->string('foto');
+            $table->string('foto')->nullable();
             $table->string('tentangsaya');
             $table->string('pengalaman');
             $table->string('user_id');
