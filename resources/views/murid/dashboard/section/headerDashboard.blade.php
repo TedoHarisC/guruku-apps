@@ -29,7 +29,7 @@
             <p>
             <div class="text-center">
               <a href="{{route('cariguru')}}">
-                <button type="button" class="pelajari" title="Pelajari Selengkapnya">Cari Guru Sekarang</button>
+                <button type="button" class="btn-get-started scrollto" title="Pelajari Selengkapnya">Cari Guru Sekarang</button>
               </a>
             </div>
             </p>

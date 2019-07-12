@@ -56,7 +56,6 @@
                             <div class="icons">
                                 <td>
                                     <i class="ion-ios-timer-outline" style="color: #d63636;"></i><a  style="padding-left: 10px;">{{$jadwal->hari}}</a>
-                                    
                                 <td>
                                 <td>
                                     <i class="ion-ios-alarm-outline" style="color: #d63636;padding-left: 10px;"></i><a  style="padding-left: 10px;">{{$jadwal->jam}}</a>
