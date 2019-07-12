@@ -1,9 +1,9 @@
-<section id="intro">
+<section id="listGuru">
 <div id="list" style="background-color:white">
     <div class="container">
         <div class="row about-extra">
           <div class="col-lg-12 wow fadeInUp pt-5 pt-lg-0">
-            <h4>List Guru yang dipesan</h4>
+            <h4>List Guru yang dipesan</h4><br/>
             
             <!-- Ini List nya -->
             <div class="row">

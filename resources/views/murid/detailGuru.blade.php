@@ -7,17 +7,24 @@
             <div class="shadow">
             <div class="card">
                 <div class="bg-img">
+                <fieldset style="margin: 30px; text-align:center">
+                <div class="fs-type">
                 <div class="row">
                     <div class="col col-md-2">
-                        <img src="{{ asset('landing') }}/img/sd.jpeg" class="profile-img" alt="">
+                        <img src="{{ asset('landing') }}/img/sd.jpeg" class="profile-img" alt="" style="width: 120px;">
                     </div>
-                    <div class="col col-md-10 content">
+                    <div class="col col-md-10">
+                        <div class="fs-label-type">
                             <h4>{{$guru->name}}</h4>
                             <label>Rating : 4.7</label><br/>
                             <label>{{$guru->bio}}</label>
+                        </div>
                     </div>
                 </div>
                 </div>
+                </div>
+                </fieldset>
+
                 <div class="content-below">
                     <div class="icons"><i class="ion-ios-analytics-outline" style="color: #ff689b;"></i><a href="" style="padding-left: 10px">Alamat</a></div>
                     <div class="content" style="margin-top: 2px;">
