@@ -725,7 +725,7 @@ button {
 }
 
 .table {
-    background-color: #2196f3;
+    /* background-color: #2196f3; */
     margin: 0;
     padding: 0;
     width: 100%;
@@ -741,6 +741,7 @@ button {
 .table tr th label {
     padding-right: 50px;
 }
+
 /*--------------------------------------------------------------
 # Footer
 --------------------------------------------------------------*/

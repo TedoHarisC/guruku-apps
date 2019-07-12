@@ -13,7 +13,7 @@
                     </div>
                     <div class="col col-md-10 content">
                             <h4>{{$guru->name}}</h4>
-                            <label>Rating : 4.7</label></br>
+                            <label>Rating : 4.7</label><br/>
                             <label>{{$guru->bio}}</label>
                     </div>
                 </div>

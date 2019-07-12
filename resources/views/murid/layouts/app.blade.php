@@ -8,7 +8,7 @@
   <meta content="" name="description">
 
   <!-- Favicons -->
-  <link href="{{ asset('landing') }}/img/favicon.png" rel="icon">
+  <link href="{{ asset('landing') }}/img/favicon2.png" rel="icon">
   <link href="{{ asset('landing') }}/img/apple-touch-icon.png" rel="apple-touch-icon">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link href="{{ asset('argon') }}/vendor/nucleo/css/nucleo.css" rel="stylesheet">

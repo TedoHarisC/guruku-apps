@@ -8,7 +8,7 @@
   <meta content="" name="description">
 
   <!-- Favicons -->
-  <link href="{{ asset('cariguru') }}/img/favicon.png" rel="icon">
+  <link href="{{ asset('cariguru') }}/img/favicon2.png" rel="icon">
   <link href="{{ asset('cariguru') }}/img/apple-touch-icon.png" rel="apple-touch-icon">
   <link href="{{ asset('argon') }}/vendor/nucleo/css/nucleo.css" rel="stylesheet">
 
