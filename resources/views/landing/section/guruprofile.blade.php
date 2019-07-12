@@ -6,11 +6,11 @@
 		<div class="col-md-3">
 			<div class="profile-sidebar">
 				<!-- SIDEBAR USERPIC -->
-				<div class="profile-userpic">
+				<div class="profile-userpic" style="text-align:center">
 					@if (!empty($guru->foto) )  
-						<center><img src="{{ asset($guru->foto) }}" class="img-responsive" alt=""></center>
+						<img src="{{ asset($guru->foto) }}" class="img-responsive" alt="">
 					@else
-						<center><img src="{{ asset('landing') }}/img/sd.jpeg" class="img-responsive" alt=""></center>
+						<img src="{{ asset('landing') }}/img/sd.jpeg" class="img-responsive" alt="">
 					@endif
 				</div>
 				<!-- END SIDEBAR USERPIC -->

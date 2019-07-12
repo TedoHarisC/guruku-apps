@@ -433,7 +433,7 @@ h6 {
 /* Btn search */
 .search-button {
     background-color: #007bff;
-    padding: 10px 21px;
+    padding: 10px 20px;
     color: white;
     font-size: 1rem;
     cursor: pointer;
@@ -528,7 +528,7 @@ h6 {
 .card-detail label {
     font-size: 15px;
     line-height: 18px;
-    margin-bottom: 14px;
+    margin-bottom: 8px;
 }
 
 /* Stars */
@@ -701,7 +701,7 @@ h6 {
     padding: 10px;
     padding-left: 30px;
     padding-bottom: 20px;
-    padding-right: 10px;
+    padding-right: 30px;
 }
 
 .content-below h4 {
