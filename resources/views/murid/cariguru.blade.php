@@ -1,23 +1,15 @@
 @extends('murid.layouts.app')
 
 @section('content')
-<!-- <div id="gurus"> -->
     <!-- Halaman Nav (Sorting) -->
     @include('murid.cariGuru.section.navigation')
     <!-- Halaman Searching Guru -->
     @include('murid.cariGuru.section.listGuru')
-<!-- </div> -->
 @endsection
 
 @push('js')
 <!-- Code for filter -->
     <script type="text/javascript">
-
-      // for debugging
-    // $('#inputHarga').change(function(){ 
-    //   var value_harga = $('#inputHarga').val();
-    //   console.log(value_harga);
-    // });
 
       $('#inputStudi').change(function(){  
         var value_studi = $('#inputStudi').val();

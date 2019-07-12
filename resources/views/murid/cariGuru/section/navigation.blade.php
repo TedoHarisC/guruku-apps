@@ -1,4 +1,4 @@
-<div class="col-lg-4">
+<div class="col-lg-4 col-md-10">
 <section id="halamanNavigation">
     <div class="about-extra">
         <label>Nama</label>
