@@ -122,8 +122,14 @@ class GuruController extends Controller
         $guru -> bio = $request -> bio;
         $guru -> tentangsaya = $request -> tentangsaya;
         $guru -> pengalaman = $request -> pengalaman;
-        
         $guru -> user_id = $user_id;
+
+        // if change password triggered
+        if($request->change_password == "on"){
+            
+        }
+
+        // if upload photo
         if ($request->hasFile('foto')) {
 			// Mengambil file yang diupload
 			$uploaded_cover = $request->file('foto');
