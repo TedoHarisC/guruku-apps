@@ -1,5 +1,4 @@
-
-<div class="col-lg-8">
+<div class="col-lg-8 col-md-10">
     <section id="halamanList">
         <div class="about-extra">
         <div class="grid-container">

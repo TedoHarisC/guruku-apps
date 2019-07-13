@@ -76,7 +76,7 @@
                 <!-- Tab 2 -->
                 <fieldset>
                     <h2 class="fs-title">Tentukan Waktu</h2>
-                    <div class="row">
+                    <!-- <div class="row">
                         <div class="col col-lg-4">
                             <div class="button" id="tambah">
                                 <i class="fa fa-plus"></i>
@@ -103,14 +103,42 @@
                                 </div>
                             </div>
                             
-                            <!-- <div class="col col-lg-2">
+                             <div class="col col-lg-2">
                                 <br/>
-                                <div class="button" id="kurang1"> -->
+                                <div class="button" id="kurang1">
                                     <i class="button fa fa-minus" id="kurang1"></i>
-                                <!-- </div>
-                            </div> -->
+                                </div>
+                            </div>
 
-                    </div><br/>
+                    </div> -->
+                    <table class="table table-bordered table-sm m-0">
+                        <thead class="">
+                            <tr>
+                                <td>#</td>
+                                <td>Hari</td>
+                                <td>Jam</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><input type="checkbox" value="" id="defaultCheck1"></td>
+                                <td>John Lilki</td>
+                                <td>September 14, 2013</td>
+                            </tr>
+                                    <tr>
+                                        <td><input type="checkbox" value="" id="defaultCheck1"></td>
+                                        <td>John Lilki</td>
+                                        <td>September 14, 2013</td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="checkbox" value="" id="defaultCheck1"></td>
+                                        <td>John Lilki</td>
+                                        <td>September 14, 2013</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                    <!-- </div> -->
+                    <br/>
                     
                     <input type="button" name="previous" class="previous action-button" value="Previous" />
                     <input type="button" name="next" class="next action-button" value="Next" />

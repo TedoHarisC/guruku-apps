@@ -1,7 +1,6 @@
 <section id="intro">
       <div class="container">
           <div class="row about-extra">
-          
            @if (empty($murid) ) 
               <div class="alert alert-danger alert-dismissible show wow fadeInUp" role="alert">
                 <a href="{{route('muridprofile')}}" class="alert-link">Silahkan lengkapi data diri anda pada halaman profil, untuk melakukan proses selanjutnya</a>

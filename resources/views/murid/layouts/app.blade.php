@@ -8,7 +8,7 @@
   <meta content="" name="description">
 
   <!-- Favicons -->
-  <link href="{{ asset('landing') }}/img/favicon.png" rel="icon">
+  <link href="{{ asset('landing') }}/img/favicon2.png" rel="icon">
   <link href="{{ asset('landing') }}/img/apple-touch-icon.png" rel="apple-touch-icon">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link href="{{ asset('argon') }}/vendor/nucleo/css/nucleo.css" rel="stylesheet">
@@ -63,14 +63,17 @@
       <nav class="main-nav float-right d-none d-lg-block">
 
       @auth()
-      <div class="container-fluid">
-
+      <div class="container-fluid" style="margin-top: -8px">
         <ul class="navbar-nav align-items-center d-none d-md-flex">
             <li class="nav-item dropdown">
                 <a class="nav-link pr-0" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <div class="media align-items-center">
                         <span class="avatar avatar-sm rounded-circle">
-                            <img alt="Image placeholder" src="{{ asset('argon') }}/img/theme/team-4-800x800.jpg">
+                          @if (!empty($murid->foto) )  
+						                <img src="{{ asset($murid->foto) }}" class="img-responsive" alt="avatar murid" style="width: 40px; height: 40px; object-fit: cover;">
+					                @else
+						                <img alt="Image placeholder" src="{{ asset('argon') }}/img/theme/team-4-800x800.jpg">
+					                @endif
                         </span>
                         <div class="media-body ml-2 d-none d-lg-block">
                             <span class="mb-0 text-sm  font-weight-bold">{{ auth()->user()->name }}</span>
@@ -78,9 +81,6 @@
                     </div>
                 </a>
                 <div class="dropdown-menu dropdown-menu-arrow dropdown-menu-right">
-                    <!-- <div class=" dropdown-header noti-title">
-                        <h6 class="text-overflow m-0">{{ __('Welcome!') }}</h6>
-                    </div> -->
                     <a href="{{ route('muridprofile') }}" class="dropdown-item">
                         <i class="ni ni-single-02"></i>
                         <span>{{ __('My profile') }}</span>

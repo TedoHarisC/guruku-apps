@@ -1,9 +1,9 @@
-<section id="intro">
+<section id="listGuru">
 <div id="list" style="background-color:white">
     <div class="container">
         <div class="row about-extra">
           <div class="col-lg-12 wow fadeInUp pt-5 pt-lg-0">
-            <h4>List Guru yang dipesan</h4>
+            <h4>List Guru yang dipesan</h4><br/>
             
             <!-- Ini List nya -->
             <div class="row">
@@ -19,6 +19,7 @@
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
+                      </div>
                     </div>
                 </div>
               @endforeach
@@ -32,7 +33,7 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Beri penilaian</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>

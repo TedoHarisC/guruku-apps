@@ -725,7 +725,7 @@ button {
 }
 
 .table {
-    background-color: #2196f3;
+    /* background-color: #2196f3; */
     margin: 0;
     padding: 0;
     width: 100%;
@@ -741,6 +741,7 @@ button {
 .table tr th label {
     padding-right: 50px;
 }
+
 /*--------------------------------------------------------------
 # Footer
 --------------------------------------------------------------*/
@@ -953,13 +954,13 @@ button {
     }
 
     #intro {
-        padding: 140px 0 60px 0;
+        padding: 80px 0 80px 0;
     }
 
     #intro .intro-img {
         width: 80%;
         float: none;
-        margin: 0 auto 25px auto;
+        margin: 0 auto 0 auto;
     }
 
     #intro .intro-info {
@@ -1023,7 +1024,7 @@ button {
 #intro {
     width: 100%;
     background-size: cover;
-    padding: 120px 0 120px 0;
+    padding: 120px 0 0 0;
 }
 
 .shadow {
@@ -1184,6 +1185,21 @@ button {
 }
 
 /* Dashboard Halaman Murid */
+
+/* Section header dashboard yang ada tombol nya */
+#intro {
+    width: 100%;
+    background-size: cover;
+    padding: 120px 0 0 0;
+}
+
+/* Section listGuru */
+#listGuru {
+    width: 100%;
+    background-size: cover;
+    padding: 70px 0 0 0;
+}
+
 #list {
     background: #ddfaff;
     padding: 10px;
