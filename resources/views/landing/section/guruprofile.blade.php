@@ -146,7 +146,7 @@
 							<div class="row">
 									<label>Change Password</label>
 									<label class="switch">
-										<input type="checkbox" id="myCheck" onclick="myFunction()">
+										<input name="change_password" type="checkbox" id="myCheck" onclick="myFunction()">
 										<div class="slider round"></div>
 									</label>
 							</div>
@@ -156,18 +156,18 @@
 								
 									<div class="form-group col-md-12">
 										<label for="password">Password Lama</label>
-										<input type="password" class="form-control" id="password" value="tedo12345">
+										<input type="password" class="form-control" id="passwordlama" name="passwordlama">
 									</div>
 
 									<div class="form-group col-md-12">
-										<label for="password">Ulangi Password Baru</label>
-										<input type="password" class="form-control" id="password">
+										<label for="password">Password Baru</label>
+										<input type="password" class="form-control" id="passwordbaru" name="passwordbaru">
 									</div>
 								
 
 									<div class="form-group col-md-12">
-										<label for="password">Password Baru</label>
-										<input type="password" class="form-control" id="password">
+										<label for="password">Ulangi Password Baru</label>
+										<input type="password" class="form-control" id="passwordconfirm" name="passwordconfirm">
 									</div>
 								
 						</div>
@@ -221,7 +221,7 @@
 							<label for="bio">Tentang saya</label>
 							
 							@if (!empty($guru) )  
-								<textarea class="form-control" id="tentangsaya" name="tentangsaya" rows="2" required></textarea>
+								<textarea class="form-control" id="tentangsaya" name="tentangsaya" rows="2" required>{{$guru->tentangsaya}}</textarea>
 							@else
 								<textarea class="form-control" id="tentangsaya" name="tentangsaya" rows="2" required></textarea>
 							@endif
@@ -231,7 +231,7 @@
 							<label for="bio">Pengalaman</label>
 							
 							@if (!empty($guru) )  
-								<textarea class="form-control" id="pengalaman" name="pengalaman" rows="2" required></textarea>
+								<textarea class="form-control" id="pengalaman" name="pengalaman" rows="2" required>{{$guru->pengalaman}}</textarea>
 							@else
 								<textarea class="form-control" id="pengalaman" name="pengalaman" rows="2" required></textarea>
 							@endif
@@ -239,7 +239,7 @@
 
 						<div class="form-group col-md-12">
 							<label for="foto">Foto</label>
-							<input type="file" class="form-control-file" id="foto" name="foto" required>
+							<input type="file" class="form-control-file" id="foto" name="foto">
 						</div>
 					</div>
 

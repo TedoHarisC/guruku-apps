@@ -55,7 +55,7 @@ Route::group(['middleware' => 'checkmurid:murid','auth'],function () {
     Route::post('/checkout' , 'MuridController@checkout')->name('checkout');
     Route::post('/checkout/pesanan' , 'PesananController@store')->name('pesananstore');
     //tambahan untuk coba saja
-    Route::get('/dashboard','MuridController@dashboard');
+    Route::get('/dashboard','MuridController@dashboard')->name('muriddashboard');
     Route::get('/detailpesanan','MuridController@detail');
 });
 
