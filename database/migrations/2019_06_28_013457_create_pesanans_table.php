@@ -15,16 +15,19 @@ class CreatePesanansTable extends Migration
     {
         Schema::create('pesanans', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('kelas');
-            $table->string('kode_invoice');
-            $table->string('waktu');
             $table->string('mata_pelajaran');
-            $table->string('durasi_pertemuan');
-            $table->string('hari');
-            $table->string('jam');
+            $table->string('durasi');
+            $table->string('pesan')->nullable();
+            $table->string('alamat');
+            $table->string('provinsi');
+            $table->string('kota');
+            $table->string('kecamatan');
+            $table->string('total');
             $table->string('buka_kelas_id');
             $table->string('user_id');
-            $table->string('user_guru_id');
+            $table->string('kode_invoice');
+            $table->string('snap_token')->nullable();
+            $table->string('status');
             $table->timestamps();
         });
     }

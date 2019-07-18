@@ -95,7 +95,7 @@ class MuridController extends Controller
         // count review
         $count = $review->count();
 
-        // dd($jadwals);
+        // dd($guru);
 
         return view('murid.detailGuru')->with('bukakelas',$bukakelas)->with('guru',$guru)->with('jadwals',$jadwals)->with('review',$review)->with('count',$count);
     }
@@ -105,11 +105,18 @@ class MuridController extends Controller
 
         $provinces = Indonesia::allProvinces();
 
-        $mata_pelajaran = $request -> mata_pelajaran;
-        
-        $jadwals = Jadwal::where('bukakelas_id', '=', $request->bukakelas_id)->get();
+        $bukakelas = DB::table('buka_kelas')
+        ->select('buka_kelas.id','foto','mata_pelajaran','biaya','users.name')
+        ->join('users', 'buka_kelas.id_user_guru', '=', 'users.id')
+        ->join('gurus', 'users.id', '=', 'gurus.user_id')
+        ->where('buka_kelas.id',$request->bukakelas_id)
+        ->first();
 
-        return(view('murid.detailPesanGuru')->with('provinces',$provinces)->with('mata_pelajaran',$mata_pelajaran)->with('jadwals',$jadwals));
+        // dd($bukakelas);
+        
+        $jadwals = Jadwal::where('bukakelas_id', '=', $request->bukakelas_id)->orderBy('id', 'desc')->get();
+
+        return(view('murid.detailPesanGuru')->with('provinces',$provinces)->with('jadwals',$jadwals)->with('bukakelas',$bukakelas));
     }
 
     public function dashboard()
@@ -120,7 +127,12 @@ class MuridController extends Controller
         ->where('users.id', '=', $user_id)
         ->first();  
 
-        return view('murid.dashboard')->with('murid',$murid);
+        $pesan = DB::table('pesanans')
+        ->join('buka_kelas', 'pesanans.buka_kelas_id', '=','buka_kelas.id')
+        ->join('users', 'buka_kelas.id_user_guru', '=','users.id')
+        ->get();  
+
+        return view('murid.dashboard')->with('murid',$murid)->with('pesan',$pesan);
     }
 
     public function detail()

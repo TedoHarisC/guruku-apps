@@ -7,31 +7,22 @@
             
             <!-- Ini List nya -->
             <div class="row">
+            @foreach ($pesan as $data)
                 <!-- Ini core list -->
                 <div class="col-md-9 col-lg-8 offset-lg-1 wow bounceInUp" data-wow-duration="1.4s">
                     <div class="box" style="background-color:#ddfaff">
-                      <div class="row">
-                        <div class="col-md-2">
-                            <img src="{{ asset('landing') }}/img/sd.jpeg" class="rounded-circle" alt="" style="width: 120px;">
-                            <!-- <i class="ion-ios-analytics-outline" style="color: #ff689b;"></i> -->
-                        </div>
-                        <div class="col-md-8">
-                            <h4 class="title"><a href="detailpesanan">Dio Jotaro</a></h4>
-                            <p class="description"><i class="ion-ios-briefcase-outline" style="color: #d63636;"></i>SD Bugangan 01</p>
-                            <p class="description"><i class="ion-ios-alarm-outline" style="color: #d63636;"></i>Kamis, Sabtu, Jumat</p>
-                        </div>
-                      </div>
-                      <div class="row">
-                        <div class="col-md-2"></div>
-                        <div class="col-md-8">
-                            <button type="button" data-toggle="modal" data-target="#beriRating">Beri Nilai</button>
-                        </div>
+                        <div class="icon"><i class="ion-ios-analytics-outline" style="color: #ff689b;"></i></div>
+                        <h4 class="title"><a href="detailpesanan">{{$data->name}}</a></h4>
+                        <p class="description"><i class="ion-ios-analytics-outline" style="color: #d63636;"></i>SD Bugangan 01</p>
+                        <p class="description"><i class="ion-ios-alarm-outline" style="color: #d63636;"></i>Kamis, Sabtu, Jumat</p>
+                        <button type="button" data-toggle="modal" data-target="#beriRating">Beri Nilai</button>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                       </div>
                     </div>
                 </div>
+              @endforeach
             </div>
         </div>
     </div>

@@ -31,11 +31,11 @@
                     <div class="fs-type">
                         <div class="row">
                             <div class="col col-md-1">
-                                <img src="{{ asset('landing') }}/img/sd.jpeg" class="profile-img" style="width: 120px;">
+                                <img src="{{ asset($bukakelas->foto) }}" class="profile-img" style="width: 120px;">
                             </div>
                             <div class="col col-md-11">
                                 <div class="fs-label-type">
-                                    <h4>Annisa</h4>
+                                    <h4>{{$bukakelas->name}}</h4>
                                     <label>Rating :
                                     <span class="fa fa-star checked"></span>
                                     <span class="fa fa-star checked"></span>
@@ -50,7 +50,8 @@
                      <div class="row">
                             <div class="col col-lg-6">
                                     <label for="comboBoxMapel" style="float:left;">Mata Pelajaran *</label>
-                                    <input type="text" name="matapelajaran" class="form-control" value="{{$mata_pelajaran}}" disabled />
+                                    <input type="text" name="mata_pelajaran" class="form-control" value="{{$bukakelas->mata_pelajaran}}" disabled />
+                                    <input type="hidden" name="matapelajaran" class="form-control" value="{{$bukakelas->mata_pelajaran}}"/>
                             </div>
                             <div class="col col-lg-6">
                                 <label for="comboBoxMapel" style="float:left;">Durasi Per Pertemuan *</label>
@@ -66,7 +67,7 @@
                         </div><br/>
                         <div class="form-group">
                             <label for="exampleFormControlTextarea1" style="float:left;">Pesan Untuk Pengajar</label>
-                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="4" placeholder="Optional"></textarea>
+                            <textarea name="pesan" class="form-control" id="exampleFormControlTextarea1" rows="4" placeholder="Optional"></textarea>
                         </div>
                         <label style="float:left;">* Wajib Diisi</label><br/>
                     <input type="button" name="next" class="next action-button" value="Next" />
@@ -85,17 +86,17 @@
                     <div class="row" id="form1">
                             <div class="col col-lg-5">
                                 <label for="comboBoxMapel" style="float:left;">Tentukan Hari*</label>
-                                <select name="hari[]" class="form-control">
-                                    <option value="" selected disabled>Pilih...</option>
+                                <select onchange="setJamValue(this.value)" name="hari[]" class="form-control">
+                                    {{-- <option value="" selected disabled>Pilih...</option> --}}
                                     @foreach ($jadwals as $jadwal)
-                                        <option value="{{$jadwal->hari}}">{{$jadwal->hari}}</option>    
+                                        <option value="{{$jadwal->hari}}|{{$jadwal->jam}}">{{$jadwal->hari}}</option>    
                                     @endforeach
                                 </select>
                             </div>
                             <div class="col col-lg-5">
-                                <label for="comboBoxMapel" style="float:left;">Tentukan Waktu Pertemuan Pertama*</label>
+                                <label for="comboBoxMapel" style="float:left;">Waktu Pertemuan*</label>
                                 <div class="input-group clockpicker" data-align="top" data-autoclose="true">
-	                                <input type="text" name="jam[]" class="form-control" value="Pilih...">
+	                                <input type="text" name="jam[]" id="jam" class="form-control" value="{{$jadwal->jam}}" disabled>
 	                            <span class="input-group-addon">
 		                            <span class="glyphicon glyphicon-time"></span>
 	                            </span>
@@ -191,12 +192,29 @@
                                 <option value="" selected disabled>Pilih Kecamatan</option>
                             </select>
                     </div>
+                    <input type="hidden" name="buka_kelas_id" class="submit action-button" value="{{$bukakelas->id}}"/>
+                    <input type="hidden" name="total" class="submit action-button" value="{{$bukakelas->biaya}}"/>
                     <input type="button" name="previous" class="previous action-button" value="Previous" />
                     <input type="submit" name="submit" class="submit action-button" value="Submit" />
                 </fieldset>
                 </form>
             <br/><br/>
     </section>
+
+    <script>
+    function setJamValue(val) {
+        
+        var explode = val.split('|');
+        
+        var jam = explode[1];
+
+        console.log(index);
+
+
+        document.getElementById('jam').value=jam ; 
+
+    }
+    </script>
 
     <script type="text/javascript">
     function showCity() {
@@ -341,19 +359,25 @@
     <script type="text/javascript">
 
     $(document).ready(function(){
-    var maxField = 10; //Input fields increment limitation
+    var maxField = <?php echo count($jadwals);?>; //Input fields increment limitation
+    console.log(maxField);
     var addButton = $('#tambah'); //Add button selector
     var wrapper = $('#form1'); //Input field wrapper
-    var fieldHTML = '<div class="col col-lg-5"><label for="comboBoxMapel" style="float:left;">Tentukan Hari*</label><select class="form-control"><option value="" selected disabled>Pilih...</option><option value="">Senin</option><option value="">Selasa</option><option value="">Rabu</option><option value="">Kamis</option><option value="">Jumat</option><option value="">Sabtu</option><option value="">Minggu</option></select></div><div class="col col-lg-5"><label for="comboBoxMapel" style="float:left;">Tentukan Waktu Pertemuan Pertama*</label><div class="input-group clockpicker" data-align="top" data-autoclose="true"><input type="text" name="date" class="form-control" value="Pilih..."><span class="input-group-addon"><span class="glyphicon glyphicon-time"></span></span></div></div><i class="button fa fa-minus" id="kurang1"></i>';
+    
     // var fieldHTML2 = ''                        
     // var fieldHTML3 = ''
-    var x = 1; //Initial field counter is 1
-    
+     //Initial field counter is 1
+    var x = 1;
     //Once add button is clicked
     $(addButton).click(function(){
         //Check maximum number of input fields
+
+        
         if(x < maxField){ 
             x++; //Increment field counter
+            console.log(x);
+            var fieldHTML = 
+            '<div class="col col-lg-5"><label for="comboBoxMapel" style="float:left;">Tentukan Hari*</label><select onchange="setJamValue(this.value)" class="form-control"><option value="" selected disabled>Pilih...</option>@foreach($jadwals as $jadwal)  <option value="{{$jadwal->hari}}|{{$jadwal->jam}}">{{$jadwal->hari}}</option>@endforeach</select></div><div class="col col-lg-5"><label for="comboBoxMapel" style="float:left;">Tentukan Waktu Pertemuan Pertama*</label><div class="input-group clockpicker" data-align="top" data-autoclose="true"><input type="text" name="date" class="form-control" value="'+x+'"><span class="input-group-addon"><span class="glyphicon glyphicon-time"></span></span></div></div><i class="button fa fa-minus" id="kurang1"></i>';
             $(wrapper).append(fieldHTML);
             // $(wrapper).append(fieldHTML2);
             // $(wrapper).append(fieldHTML3);

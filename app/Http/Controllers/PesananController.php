@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Pesanan;
+use Illuminate\Support\Facades\Auth;
+
 use Illuminate\Http\Request;
 
 class PesananController extends Controller
@@ -36,8 +38,32 @@ class PesananController extends Controller
     public function store(Request $request)
     {
         //
-        // $pesanan = new Pesanan;
-        return "lala";
+        $user_id = Auth::id();
+
+        $s = substr(str_shuffle(str_repeat('0123456789abcdefghijklmnopqrstuvyxyz',5)),0,5);
+        $awal = strtoupper(substr($request->matapelajaran,0,3));
+        $nomoriv = $awal.date('ymdHis');
+
+        // dd($nomoriv);
+
+        $pesanan = new Pesanan;
+
+        $pesanan -> mata_pelajaran = $request -> matapelajaran;
+        $pesanan -> durasi = $request -> durasi;
+        $pesanan -> pesan = $request -> pesan;
+        $pesanan -> alamat = $request -> alamat;
+        $pesanan -> provinsi = $request -> provinsi;
+        $pesanan -> kota = $request -> kota;
+        $pesanan -> kecamatan = $request -> kecamatan;
+        $pesanan -> total = $request -> total;
+        $pesanan -> buka_kelas_id = $request -> buka_kelas_id;
+        $pesanan -> kode_invoice = $nomoriv;
+        $pesanan -> user_id = $user_id;
+        $pesanan -> status = "waiting";
+
+        $pesanan -> save();
+
+        return redirect() -> route('muriddashboard');
         
 
     }
