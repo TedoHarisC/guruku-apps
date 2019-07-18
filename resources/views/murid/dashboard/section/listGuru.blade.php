@@ -17,7 +17,7 @@
                         </div>
                         <div class="col-md-8">
                             <h4 class="title"><a href="detailpesanan">Dio Jotaro</a></h4>
-                            <p class="description"><i class="ion-ios-analytics-outline" style="color: #d63636;"></i>SD Bugangan 01</p>
+                            <p class="description"><i class="ion-ios-briefcase-outline" style="color: #d63636;"></i>SD Bugangan 01</p>
                             <p class="description"><i class="ion-ios-alarm-outline" style="color: #d63636;"></i>Kamis, Sabtu, Jumat</p>
                         </div>
                       </div>

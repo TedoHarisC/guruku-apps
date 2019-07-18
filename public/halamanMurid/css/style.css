@@ -2,6 +2,15 @@
 # Konfigurasi Umum (Semua configurasi CSS)
 --------------------------------------------------------------*/
 
+@viewport {
+    width: device-width;
+    zoom: 1.0;
+}
+
+@-ms-viewport {
+    width: device-width;
+}
+
 .btn-get-started,
 .btn-services {
     font-family: "Montserrat", sans-serif;
@@ -67,6 +76,7 @@ h6 {
     padding: 0;
 }
 
+
 /* Tombol ke atas */
 
 .back-to-top {
@@ -90,6 +100,7 @@ h6 {
     padding-top: 12px;
     color: #fff;
 }
+
 
 /* Preloader */
 
@@ -123,7 +134,6 @@ h6 {
         -webkit-transform: rotate(0deg);
         transform: rotate(0deg);
     }
-
     100% {
         -webkit-transform: rotate(360deg);
         transform: rotate(360deg);
@@ -135,12 +145,12 @@ h6 {
         -webkit-transform: rotate(0deg);
         transform: rotate(0deg);
     }
-
     100% {
         -webkit-transform: rotate(360deg);
         transform: rotate(360deg);
     }
 }
+
 
 /*--------------------------------------------------------------
 # Header
@@ -189,9 +199,11 @@ h6 {
     margin-top: 60px;
 }
 
+
 /*--------------------------------------------------------------
 # Navigation Menu (Ada dua untuk Desktop dan Mobile)
 --------------------------------------------------------------*/
+
 
 /* Desktop Navigation */
 
@@ -207,7 +219,7 @@ h6 {
     list-style: none;
 }
 
-.main-nav > ul > li {
+.main-nav>ul>li {
     position: relative;
     white-space: nowrap;
     float: left;
@@ -225,8 +237,8 @@ h6 {
 }
 
 .main-nav a:hover,
-.main-nav .active > a,
-.main-nav li:hover > a {
+.main-nav .active>a,
+.main-nav li:hover>a {
     color: #007bff;
     text-decoration: none;
 }
@@ -245,7 +257,7 @@ h6 {
     transition: ease all 0.3s;
 }
 
-.main-nav .drop-down:hover > ul {
+.main-nav .drop-down:hover>ul {
     opacity: 1;
     top: 100%;
     visibility: visible;
@@ -263,12 +275,12 @@ h6 {
 }
 
 .main-nav .drop-down ul a:hover,
-.main-nav .drop-down ul .active > a,
-.main-nav .drop-down ul li:hover > a {
+.main-nav .drop-down ul .active>a,
+.main-nav .drop-down ul li:hover>a {
     color: #007bff;
 }
 
-.main-nav .drop-down > a:after {
+.main-nav .drop-down>a:after {
     content: "\f107";
     font-family: FontAwesome;
     padding-left: 10px;
@@ -279,21 +291,22 @@ h6 {
     left: calc(100% - 30px);
 }
 
-.main-nav .drop-down .drop-down:hover > ul {
+.main-nav .drop-down .drop-down:hover>ul {
     opacity: 1;
     top: 0;
     left: 100%;
 }
 
-.main-nav .drop-down .drop-down > a {
+.main-nav .drop-down .drop-down>a {
     padding-right: 35px;
 }
 
-.main-nav .drop-down .drop-down > a:after {
+.main-nav .drop-down .drop-down>a:after {
     content: "\f105";
     position: absolute;
     right: 15px;
 }
+
 
 /* Mobile Navigation */
 
@@ -325,13 +338,13 @@ h6 {
 }
 
 .mobile-nav a:hover,
-.mobile-nav .active > a,
-.mobile-nav li:hover > a {
+.mobile-nav .active>a,
+.mobile-nav li:hover>a {
     color: #74b5fc;
     text-decoration: none;
 }
 
-.mobile-nav .drop-down > a:after {
+.mobile-nav .drop-down>a:after {
     content: "\f078";
     font-family: FontAwesome;
     padding-left: 10px;
@@ -339,11 +352,11 @@ h6 {
     right: 15px;
 }
 
-.mobile-nav .active.drop-down > a:after {
+.mobile-nav .active.drop-down>a:after {
     content: "\f077";
 }
 
-.mobile-nav .drop-down > a {
+.mobile-nav .drop-down>a {
     padding-right: 35px;
 }
 
@@ -400,9 +413,11 @@ h6 {
     color: #fff;
 }
 
+
 /* -------------------------------------------------------------
 # Navigation (To Sorting and Search Guru)
 ----------------------------------------------------------------*/
+
 #halamanNavigation {
     background: #fff;
     padding: 60px 0;
@@ -428,9 +443,12 @@ h6 {
     background-color: #2196f3;
 }
 
+
 /* Slider Guru */
 
+
 /* Btn search */
+
 .search-button {
     background-color: #007bff;
     padding: 10px 20px;
@@ -447,9 +465,11 @@ h6 {
     color: black;
 }
 
+
 /* -------------------------------------------------------------
 # List Guru (To Sorting and Search Guru)
 ----------------------------------------------------------------*/
+
 #halamanList {
     background: #fff;
     padding: 60px 0;
@@ -482,7 +502,9 @@ h6 {
     list-style: none;
 }
 
+
 /* Card untuk bagian detail pesan */
+
 .card-pesan {
     border: 1px solid #d3d3d3;
     border-radius: 0.25rem;
@@ -505,7 +527,9 @@ h6 {
     float: left;
 }
 
+
 /* ===== Card detail CSS ====== */
+
 .card-detail {
     border: 1px solid #d3d3d3;
     border-radius: 0.25rem;
@@ -531,18 +555,25 @@ h6 {
     margin-bottom: 8px;
 }
 
+
 /* Stars */
+
 .checked {
     color: orange;
 }
 
+
 /* Form Tab */
+
+
 /*form styles*/
+
 #msform {
     margin: 10px auto;
     text-align: center;
     position: relative;
 }
+
 #msform fieldset {
     background: white;
     border: 0 none;
@@ -555,11 +586,17 @@ h6 {
     /*stacking fieldsets above each other*/
     position: relative;
 }
+
+
 /*Hide all except first fieldset*/
+
 #msform fieldset:not(:first-of-type) {
     display: none;
 }
+
+
 /*inputs*/
+
 #msform input,
 #msform textarea {
     padding: 15px;
@@ -572,7 +609,10 @@ h6 {
     color: #2c3e50;
     font-size: 13px;
 }
+
+
 /*buttons*/
+
 #msform .action-button {
     width: 100px;
     background: #007bff;
@@ -584,6 +624,7 @@ h6 {
     padding: 10px 5px;
     margin: 10px 5px;
 }
+
 #msform .action-button:hover,
 #msform .action-button:focus {
     box-shadow: 0 0 0 2px white, 0 0 0 3px #27ae60;
@@ -609,7 +650,9 @@ h6 {
     text-align: center;
 }
 
+
 /*headings*/
+
 .fs-title {
     font-size: 15px;
     text-transform: uppercase;
@@ -617,7 +660,9 @@ h6 {
     margin-bottom: 40px;
 }
 
+
 /* Type Guru */
+
 .fs-type {
     margin-bottom: 5px;
     border: 1px solid #007bff;
@@ -629,13 +674,16 @@ h6 {
     padding-left: 20px;
 }
 
+
 /*progressbar*/
+
 #progressbar {
     margin-bottom: 30px;
     overflow: hidden;
     /*CSS counters to number the steps*/
     counter-reset: step;
 }
+
 #progressbar li {
     list-style-type: none;
     color: white;
@@ -645,6 +693,7 @@ h6 {
     float: left;
     position: relative;
 }
+
 #progressbar li:before {
     content: counter(step);
     counter-increment: step;
@@ -657,7 +706,10 @@ h6 {
     border-radius: 3px;
     margin: 0 auto 5px auto;
 }
+
+
 /*progressbar connectors*/
+
 #progressbar li:after {
     content: "";
     width: 100%;
@@ -666,19 +718,28 @@ h6 {
     position: absolute;
     left: -50%;
     top: 9px;
-    z-index: -1; /*put it behind the numbers*/
+    z-index: -1;
+    /*put it behind the numbers*/
 }
+
 #progressbar li:first-child:after {
     /*connector not needed before the first step*/
     content: none;
 }
+
+
 /*marking active/completed steps green*/
+
+
 /*The number of the step and the connector before it = green*/
+
 #progressbar li.active:before,
 #progressbar li.active:after {
     background: #007bff;
     color: white;
 }
+
+
 /* =============== */
 
 .content {
@@ -741,6 +802,33 @@ button {
 .table tr th label {
     padding-right: 50px;
 }
+
+
+/* Halaman 2 (bagian check) */
+
+.checkbox {
+    background-color: #fff;
+    border: solid 1px #d7d7d7;
+    border-radius: 4px;
+    cursor: pointer;
+    display: inline-block;
+    height: 25px;
+    margin-right: 1rem;
+    text-align: center;
+    width: 25px;
+    vertical-align: middle;
+}
+
+svg {
+    margin-top: 2px;
+    stroke: #fff;
+}
+
+.positive {
+    background-color: #4aca65;
+    border-color: #43b45b;
+}
+
 
 /*--------------------------------------------------------------
 # Footer
@@ -932,6 +1020,7 @@ button {
     color: #f1f7ff;
 }
 
+
 /*--------------------------------------------------------------
 # Responsive Media Queries
 --------------------------------------------------------------*/
@@ -947,32 +1036,56 @@ button {
         height: 60px;
         padding: 10px 0;
     }
-
     #header .logo h1 {
         font-size: 28px;
         padding: 8px 0;
     }
-
     #intro {
         padding: 80px 0 80px 0;
     }
-
     #intro .intro-img {
         width: 80%;
         float: none;
         margin: 0 auto 0 auto;
     }
-
     #intro .intro-info {
         width: 80%;
         float: none;
         margin: auto;
         text-align: center;
     }
-
     #materiku .card {
         margin: 0;
         border-width: 0.5px;
+    }
+    #halamanList {
+        padding: 40px 0;
+    }
+    #halamanList .about-extra {
+        padding-top: 20px;
+        padding-left: 60px;
+        width: 80%;
+    }
+    #halamanNavigation {
+        padding: 40px 0;
+    }
+    #halamanNavigation .about-extra {
+        padding-top: 40px;
+        padding-left: 100px;
+        width: 80%;
+    }
+    .card {
+        width: 100%;
+    }
+    .content {
+        /* margin: 10px 10px; */
+        padding: 10px;
+        margin: inherit;
+    }
+    .content h4 {
+        font-weight: bold;
+        padding-left: 0;
+        text-align: center;
     }
 }
 
@@ -986,25 +1099,20 @@ button {
     #intro .intro-info {
         width: 100%;
     }
-
     #intro .intro-info h2 {
         font-size: 34px;
         margin-bottom: 30px;
     }
-
     .section-header p {
         width: 100%;
     }
-
     #testimonials .testimonial-item {
         text-align: center;
     }
-
     #testimonials .testimonial-item .testimonial-img {
         float: none;
         margin: auto;
     }
-
     #testimonials .testimonial-item h3,
     #testimonials .testimonial-item h4,
     #testimonials .testimonial-item p {
@@ -1018,9 +1126,12 @@ button {
     }
 }
 
+
 /* Detail Guru  */
 
+
 /* Box CSS*/
+
 #intro {
     width: 100%;
     background-size: cover;
@@ -1033,6 +1144,7 @@ button {
     -webkit-border-radius: 0% 0% 100% 100% / 0% 0% 8px 8px;
     -webkit-box-shadow: rgba(0, 0, 0, 0.3) 0 2px 3px;
 }
+
 .wrap {
     margin: 50px auto;
     margin-top: 20px;
@@ -1043,6 +1155,7 @@ button {
     box-shadow: 1px 1px 2px #fff inset, -1px -1px 2px #fff inset;
     border-radius: 3px/6px;
 }
+
 
 /* Tab Informations about Teacher */
 
@@ -1149,23 +1262,19 @@ button {
         margin: 0;
         border: none;
     }
-
     .tab:after {
         top: 0;
         left: 0;
         right: 0;
         bottom: 0;
     }
-
     .tab-active {
         display: block;
         top: 0;
     }
-
     .tab a {
         border-bottom: solid 1px #ddd;
     }
-
     .tab-menu {
         display: block;
         position: absolute;
@@ -1175,7 +1284,6 @@ button {
         width: 24px;
         height: 22px;
     }
-
     .tab-menu .line {
         height: 4px;
         background-color: #333;
@@ -1184,16 +1292,21 @@ button {
     }
 }
 
+
 /* Dashboard Halaman Murid */
 
+
 /* Section header dashboard yang ada tombol nya */
+
 #intro {
     width: 100%;
     background-size: cover;
     padding: 120px 0 0 0;
 }
 
+
 /* Section listGuru */
+
 #listGuru {
     width: 100%;
     background-size: cover;
@@ -1306,7 +1419,9 @@ button {
     top: 50px;
 }
 
+
 /* Rating page pada halaman murid */
+
 .star-rating {
     line-height: 50px;
     font-size: 1.9em;

@@ -1,6 +1,5 @@
 @extends('guru.layouts.app')
 
-
 @section('content')
     <section id="formKelas">
         <div class="container">

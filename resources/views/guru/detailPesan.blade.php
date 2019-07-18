@@ -4,28 +4,26 @@
     <section id="intro">
         <div class="container">
             <div class="shadow">
-                <div class="card-pesan" style="height: 800px;">
-                    <h3 style="text-align: center; padding: 20px;">Detail Murid yang memesan</h3>
-                   
-
-                    <section class="content content_content" style="width: 80%; ">
+                <div class="card-pesan" style="height: 830px; margin-bottom: 40px;">
+                    <h2 style="text-align: center; padding: 20px;">Detail Murid yang memesan</h2>
+                    <section class="content content_content" style="width: 100%; ">
                     <section class="invoice">
                         <!-- title row -->
                         <div class="row" style="padding-bottom: 0">
-                            <div class="col-lg-8">
-                                <h3 class="page-header">GuruKu</h3>
+                            <div class="col-md-8">
+                                <h1>GuruKu</h1>
                             </div>
-                            <div class="col-lg-4">
-                                <h6 style="float: left">Date: 2019/01/01</h6>
+                            <div class="col-md-4">
+                                <h3 style="float: left">Date: 2019/01/01</h3>
                             </div>
                         </div>
                         <hr/>
                         <!-- info row -->
                         <div class="row invoice-info">
-                            <div class="col-lg-4">
-                            <img src="{{ asset('landing') }}/img/sd.jpeg" class="profile-img" style="width: 200px;">
-                            </div><!-- /.col -->
-                            <div class="col-lg-4">
+                            <div class="col-md-4">
+                                <img src="{{ asset('landing') }}/img/sd.jpeg" class="profile-img" style="width: 200px;">
+                            </div>
+                            <div class="col-md-4">
                                 <strong>Data Diri :</strong> 
                                 <div>
                                     Nama : Dio Jotaro<br>
@@ -37,7 +35,7 @@
                                     Provinsi : Jawa Tengah<br>                                
                                 </div>
                             </div><!-- /.col -->
-                            <div class="col-lg-4">
+                            <div class="col-md-4">
                                 <b>Invoice #007612</b><br>
                                 <br>
                                 <b>Order ID:</b> 4F3S8J<br>
@@ -48,7 +46,7 @@
 
                         <!-- Table row -->
                         <div class="row">
-                            <div class="col-xs-12 table-responsive">
+                            <div class="col-md-12 table-responsive">
                                 <table class="table table-striped"  style="background-color: white;">
                                     <thead>
                                         <tr>
@@ -82,17 +80,17 @@
 
                         <div class="row">
                             <!-- accepted payments column -->
-                            <div class="col-lg-12">
+                            <div class="col-md-12">
                                 <p><b>Amount Due 2/22/2014</b></p>
                             </div><!-- /.col -->
                         </div><!-- /.row -->
 
                         <!-- this row will not appear when printing -->
                         <div class="row no-print">
-                            <div class="col-lg-6">
+                            <div class="col-md-6">
                                 <button class="btn" style="background-color: green"><i class="fa fa-check"></i> Terima Pesanan</button>
                             </div>
-                            <div class="col-lg-6">
+                            <div class="col-md-6">
                             <button class="btn" style="margin-right: 5px; background-color: red"><i class="fa fa-times"></i> Tolak Pesanan</button>
                             </div>
                         </div>
