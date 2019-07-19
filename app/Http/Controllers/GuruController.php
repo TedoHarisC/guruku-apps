@@ -36,9 +36,15 @@ class GuruController extends Controller
         ->where('users.id', '=', $user_id)
         ->first();  
 
-        // dd($guru);
+        $pesan = DB::table('pesanans')
+        ->select('pesanans.id as id','pesanans.mata_pelajaran','kode_invoice','status','tingkat_pendidikan','biaya','kelas','name','alamat')
+        ->join('buka_kelas', 'pesanans.buka_kelas_id', '=','buka_kelas.id')
+        ->join('users', 'pesanans.user_id', '=','users.id')
+        ->get(); 
 
-        return view('guru.dashboard')->with('kelas',$kelas)->with('jadwals',$jadwals)->with('guru',$guru);
+        // dd($pesan);
+
+        return view('guru.dashboard')->with('kelas',$kelas)->with('pesan',$pesan)->with('jadwals',$jadwals)->with('guru',$guru);
 
     }
 

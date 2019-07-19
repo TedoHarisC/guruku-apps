@@ -120,23 +120,15 @@
                             </tr>
                         </thead>
                         <tbody>
+                        @foreach ($jadwals as $jadwal)
                             <tr>
-                                <td><input type="checkbox" value="" id="defaultCheck1"></td>
-                                <td>John Lilki</td>
-                                <td>September 14, 2013</td>
+                                <td><input name="jadwal[]" type="checkbox" value="{{$jadwal->id}}" id="defaultCheck1"></td>
+                                <td>{{$jadwal->hari}}</td>
+                                <td>{{$jadwal->jam}}</td>
                             </tr>
-                                    <tr>
-                                        <td><input type="checkbox" value="" id="defaultCheck1"></td>
-                                        <td>John Lilki</td>
-                                        <td>September 14, 2013</td>
-                                    </tr>
-                                    <tr>
-                                        <td><input type="checkbox" value="" id="defaultCheck1"></td>
-                                        <td>John Lilki</td>
-                                        <td>September 14, 2013</td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                        @endforeach 
+                        </tbody>
+                    </table>
                     <!-- </div> -->
                     <br/>
                     

@@ -16,8 +16,9 @@
                             <p class="description">{{$data->mata_pelajaran}} tingkat {{$data->tingkat_pendidikan}} kelas {{$data->kelas}}</p>
                             <p class="description"><i class="ion-ios-alarm-outline" style="color: #d63636;"></i>
                             @foreach ($jadwals as $jadwal)
-                            {{$jadwal->hari}} ({{$jadwal->jam}}),
-                                
+                                @if($jadwal->bukakelas_id == $data->id)
+                                    {{$jadwal->hari}} ({{$jadwal->jam}}),
+                                @endif
                             @endforeach
                             </p>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
