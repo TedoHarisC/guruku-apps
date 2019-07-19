@@ -38,6 +38,7 @@ h6 {
     padding: 0;
 }
 
+
 /* Tombol ke atas */
 
 .back-to-top {
@@ -61,6 +62,7 @@ h6 {
     padding-top: 12px;
     color: #fff;
 }
+
 
 /* Preloader */
 
@@ -94,7 +96,6 @@ h6 {
         -webkit-transform: rotate(0deg);
         transform: rotate(0deg);
     }
-
     100% {
         -webkit-transform: rotate(360deg);
         transform: rotate(360deg);
@@ -106,12 +107,12 @@ h6 {
         -webkit-transform: rotate(0deg);
         transform: rotate(0deg);
     }
-
     100% {
         -webkit-transform: rotate(360deg);
         transform: rotate(360deg);
     }
 }
+
 
 /*--------------------------------------------------------------
 # Header (Jumbotron CSS)
@@ -159,6 +160,7 @@ h6 {
 .main-pages {
     margin-top: 60px;
 }
+
 
 /*--------------------------------------------------------------
 # Intro Section 
@@ -230,9 +232,11 @@ h6 {
     color: #fff;
 }
 
+
 /*--------------------------------------------------------------
 # Navigation Menu (Ada dua untuk Desktop dan Mobile)
 --------------------------------------------------------------*/
+
 
 /* Desktop Navigation */
 
@@ -248,7 +252,7 @@ h6 {
     list-style: none;
 }
 
-.main-nav > ul > li {
+.main-nav>ul>li {
     position: relative;
     white-space: nowrap;
     float: left;
@@ -266,8 +270,8 @@ h6 {
 }
 
 .main-nav a:hover,
-.main-nav .active > a,
-.main-nav li:hover > a {
+.main-nav .active>a,
+.main-nav li:hover>a {
     color: #007bff;
     text-decoration: none;
 }
@@ -286,7 +290,7 @@ h6 {
     transition: ease all 0.3s;
 }
 
-.main-nav .drop-down:hover > ul {
+.main-nav .drop-down:hover>ul {
     opacity: 1;
     top: 100%;
     visibility: visible;
@@ -304,12 +308,12 @@ h6 {
 }
 
 .main-nav .drop-down ul a:hover,
-.main-nav .drop-down ul .active > a,
-.main-nav .drop-down ul li:hover > a {
+.main-nav .drop-down ul .active>a,
+.main-nav .drop-down ul li:hover>a {
     color: #007bff;
 }
 
-.main-nav .drop-down > a:after {
+.main-nav .drop-down>a:after {
     content: "\f107";
     font-family: FontAwesome;
     padding-left: 10px;
@@ -320,21 +324,22 @@ h6 {
     left: calc(100% - 30px);
 }
 
-.main-nav .drop-down .drop-down:hover > ul {
+.main-nav .drop-down .drop-down:hover>ul {
     opacity: 1;
     top: 0;
     left: 100%;
 }
 
-.main-nav .drop-down .drop-down > a {
+.main-nav .drop-down .drop-down>a {
     padding-right: 35px;
 }
 
-.main-nav .drop-down .drop-down > a:after {
+.main-nav .drop-down .drop-down>a:after {
     content: "\f105";
     position: absolute;
     right: 15px;
 }
+
 
 /* Mobile Navigation */
 
@@ -366,13 +371,13 @@ h6 {
 }
 
 .mobile-nav a:hover,
-.mobile-nav .active > a,
-.mobile-nav li:hover > a {
+.mobile-nav .active>a,
+.mobile-nav li:hover>a {
     color: #74b5fc;
     text-decoration: none;
 }
 
-.mobile-nav .drop-down > a:after {
+.mobile-nav .drop-down>a:after {
     content: "\f078";
     font-family: FontAwesome;
     padding-left: 10px;
@@ -380,11 +385,11 @@ h6 {
     right: 15px;
 }
 
-.mobile-nav .active.drop-down > a:after {
+.mobile-nav .active.drop-down>a:after {
     content: "\f077";
 }
 
-.mobile-nav .drop-down > a {
+.mobile-nav .drop-down>a {
     padding-right: 35px;
 }
 
@@ -441,9 +446,11 @@ h6 {
     color: #fff;
 }
 
+
 /*--------------------------------------------------------------
 # Sections
 --------------------------------------------------------------*/
+
 
 /* Sections Header
 --------------------------------*/
@@ -465,12 +472,14 @@ h6 {
     width: 50%;
 }
 
+
 /* Section with background
 --------------------------------*/
 
 .section-bg {
     background: #ecf5ff;
 }
+
 
 /* Tampilan Tentang Kami
 --------------------------------*/
@@ -589,7 +598,9 @@ h6 {
     cursor: pointer;
 }
 
+
 /* Tombol cariGuru */
+
 #about .pelajari {
     background: #007bff;
     border: 0;
@@ -603,7 +614,10 @@ h6 {
     background: #0067d5;
     cursor: pointer;
 }
+
+
 /* End Tombol cariGuru */
+
 
 /* CSS Halaman Layanan Kami
 --------------------------------*/
@@ -662,6 +676,7 @@ h6 {
     line-height: 24px;
     margin-bottom: 0;
 }
+
 
 /* Bagian MateriKU */
 
@@ -739,6 +754,7 @@ h6 {
     font-size: 14px;
     color: #cce5ff;
 }
+
 
 /* Tampilan Portfolio (Kelihatannya tidak terlalu penting :D)
 --------------------------------*/
@@ -875,18 +891,8 @@ h6 {
     background: #3395ff;
 }
 
-#portfolio
-    .portfolio-item
-    .portfolio-wrap
-    .portfolio-info
-    .link-preview:hover
-    i,
-#portfolio
-    .portfolio-item
-    .portfolio-wrap
-    .portfolio-info
-    .link-details:hover
-    i {
+#portfolio .portfolio-item .portfolio-wrap .portfolio-info .link-preview:hover i,
+#portfolio .portfolio-item .portfolio-wrap .portfolio-info .link-details:hover i {
     color: #fff;
 }
 
@@ -897,6 +903,7 @@ h6 {
 #portfolio .portfolio-item .portfolio-wrap:hover .portfolio-info {
     opacity: 1;
 }
+
 
 /* Tampilan testimoni 
 --------------------------------*/
@@ -955,6 +962,7 @@ h6 {
 #testimonials .owl-dot.active {
     background-color: #007bff;
 }
+
 
 /* Tampilan Team (Kelihatannya tidak di butuhkan juga)
 --------------------------------*/
@@ -1043,6 +1051,7 @@ h6 {
     margin: 0 2px;
 }
 
+
 /* Halaman Tenaga Pengajar Section
 --------------------------------*/
 
@@ -1086,6 +1095,7 @@ h6 {
 #pengajar img {
     transition: all 0.4s ease-in-out;
 }
+
 
 /* Contact Section
 --------------------------------*/
@@ -1215,6 +1225,7 @@ h6 {
     background: #0067d5;
     cursor: pointer;
 }
+
 
 /*--------------------------------------------------------------
 # Footer
@@ -1406,6 +1417,7 @@ h6 {
     color: #f1f7ff;
 }
 
+
 /*--------------------------------------------------------------
 # Responsive Media Queries
 --------------------------------------------------------------*/
@@ -1421,29 +1433,24 @@ h6 {
         height: 60px;
         padding: 10px 0;
     }
-
     #header .logo h1 {
         font-size: 28px;
         padding: 8px 0;
     }
-
     #intro {
         padding: 140px 0 60px 0;
     }
-
     #intro .intro-img {
         width: 80%;
         float: none;
         margin: 0 auto 25px auto;
     }
-
     #intro .intro-info {
         width: 80%;
         float: none;
         margin: auto;
         text-align: center;
     }
-
     #materiku .card {
         margin: 0;
     }
@@ -1459,25 +1466,20 @@ h6 {
     #intro .intro-info {
         width: 100%;
     }
-
     #intro .intro-info h2 {
         font-size: 34px;
         margin-bottom: 30px;
     }
-
     .section-header p {
         width: 100%;
     }
-
     #testimonials .testimonial-item {
         text-align: center;
     }
-
     #testimonials .testimonial-item .testimonial-img {
         float: none;
         margin: auto;
     }
-
     #testimonials .testimonial-item h3,
     #testimonials .testimonial-item h4,
     #testimonials .testimonial-item p {
@@ -1489,15 +1491,32 @@ h6 {
     #intro {
         padding: 100px 0 20px 0;
     }
+    .map {
+        overflow: hidden;
+        padding-bottom: 56.25%;
+        position: relative;
+        height: 0;
+    }
+    .map iframe {
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        position: absolute;
+    }
 }
 
+
 /* Untuk hr*/
+
 hr {
     border-top: 8px solid #fff;
     border-radius: 15px;
 }
 
+
 /* cariGuru list */
+
 #list {
     background: #ddfaff;
     padding: 30px 0;
@@ -1596,6 +1615,7 @@ hr {
     top: 50px;
 }
 
+
 /* Halaman Profile */
 
 .profile {
@@ -1659,7 +1679,9 @@ hr {
     margin-right: 0px;
 }
 
+
 /* Profile User menu */
+
 .profile-usermenu {
     margin-top: 30px;
 }
@@ -1700,7 +1722,9 @@ hr {
     margin-left: -2px;
 }
 
+
 /* Profile Content */
+
 .profile-content {
     box-sizing: border-box;
     padding: 20px;
@@ -1710,7 +1734,10 @@ hr {
     box-shadow: 0 10px 28px -7px rgba(0, 0, 0, 0.1);
     border-radius: 4px;
 }
+
+
 /* Form Site on Profile */
+
 .sub-entry {
     width: 50%;
     float: left;
@@ -1729,6 +1756,7 @@ hr {
     font-size: 14px;
     font-weight: 400;
 }
+
 
 /* Slider */
 
@@ -1768,21 +1796,23 @@ hr {
     transition: 0.4s;
 }
 
-input:checked + .slider {
+input:checked+.slider {
     background-color: #2196f3;
 }
 
-input:focus + .slider {
+input:focus+.slider {
     box-shadow: 0 0 1px #2196f3;
 }
 
-input:checked + .slider:before {
+input:checked+.slider:before {
     -webkit-transform: translateX(26px);
     -ms-transform: translateX(26px);
     transform: translateX(26px);
 }
 
+
 /* Rounded sliders */
+
 .slider.round {
     border-radius: 34px;
 }
@@ -1790,5 +1820,6 @@ input:checked + .slider:before {
 .slider.round:before {
     border-radius: 50%;
 }
+
 
 /* End Profile CSS Site */

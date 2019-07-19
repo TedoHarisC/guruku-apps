@@ -70,7 +70,13 @@
                 <a class="nav-link pr-0" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <div class="media align-items-center">
                         <span class="avatar avatar-sm rounded-circle">
-                            <img alt="Image placeholder" src="{{ asset('argon') }}/img/theme/team-4-800x800.jpg">
+                          @if (!empty($guru->foto))  
+						                <img src="{{ asset($guru->foto) }}" class="img-responsive" alt="avatar guru" style="width: 40px; height: 40px; object-fit: cover;">
+                          @elseif (!empty($murid->foto))
+                            <img src="{{ asset($guru->foto) }}" class="img-responsive" alt="avatar guru" style="width: 40px; height: 40px; object-fit: cover;">
+                          @else
+						                <img alt="Image placeholder" src="{{ asset('argon') }}/img/theme/team-4-800x800.jpg">
+					                @endif
                         </span>
                         <div class="media-body ml-2 d-none d-lg-block">
                             <span class="mb-0 text-sm  font-weight-bold">{{ auth()->user()->name }}</span>
@@ -78,6 +84,11 @@
                     </div>
                 </a>
                 <div class="dropdown-menu dropdown-menu-arrow dropdown-menu-right">
+                    <a href="{{ route('dashboard') }}" class="dropdown-item">
+                        <i class="ni ni-app"></i>
+                        <span>{{ __('Dashboard') }}</span>
+                    </a>
+                    <div class="dropdown-divider"></div>
                     <a href="{{ route('guruprofile') }}" class="dropdown-item">
                         <i class="ni ni-single-02"></i>
                         <span>{{ __('My profile') }}</span>

@@ -111,7 +111,7 @@
                             </div>
 
                     </div> -->
-                    <table class="table table-bordered table-sm m-0">
+                    <table class="table table-borderless table-sm m-0">
                         <thead class="">
                             <tr>
                                 <td>#</td>
@@ -121,17 +121,35 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td><input type="checkbox" value="" id="defaultCheck1"></td>
+                                <td style="text-align: center;">
+                                    <span class="checkbox">
+                                    <svg id="i-checkmark" viewBox="0 0 32 32" width="18" height="18" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="10.9375%">
+                                        <path d="M2 20 L12 28 30 4" />
+                                    </svg>
+                                    </span>
+                                </td>
                                 <td>John Lilki</td>
                                 <td>September 14, 2013</td>
                             </tr>
                                     <tr>
-                                        <td><input type="checkbox" value="" id="defaultCheck1"></td>
+                                        <td>
+                                            <span class="checkbox">
+                                            <svg id="i-checkmark" viewBox="0 0 32 32" width="18" height="18" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="10.9375%">
+                                                <path d="M2 20 L12 28 30 4" />
+                                            </svg>
+                                            </span>
+                                        </td>
                                         <td>John Lilki</td>
                                         <td>September 14, 2013</td>
                                     </tr>
                                     <tr>
-                                        <td><input type="checkbox" value="" id="defaultCheck1"></td>
+                                        <td>
+                                        <span class="checkbox">
+                                            <svg id="i-checkmark" viewBox="0 0 32 32" width="18" height="18" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="10.9375%">
+                                                <path d="M2 20 L12 28 30 4" />
+                                            </svg>
+                                            </span>
+                                        </td>
                                         <td>John Lilki</td>
                                         <td>September 14, 2013</td>
                                     </tr>
@@ -377,6 +395,19 @@
 	    }
         x--; //Decrement field counter
     });
+});
+    </script>
+
+    <!-- Script untuk checklist di halaman 2 -->
+    <script type="text/javascript">
+        $('.checkbox').click(function(){
+            if ($(this).hasClass('positive')){
+                $(this).removeClass('positive');
+                $(this).html('');
+            } else {
+                $(this).addClass('positive');
+                $(this).html('<svg id="i-checkmark" viewBox="0 0 32 32" width="18" height="18" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="10.9375%"><path d="M2 20 L12 28 30 4" /></svg>');
+            }
 });
     </script>
 @endpush

@@ -1,5 +1,15 @@
 <section id="intro">
 <div class="container">
+	<div class="row profile" style="margin-top: -80px; margin-bottom: -10px">
+		<div class="col-md-12">
+			<div class="alert alert-danger alert-dismissible show wow fadeInUp" role="alert">
+            	<a href="" class="alert-link">Gagal mengganti password</a>
+            	<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                	<span aria-hidden="true">&times;</span>
+            	</button>
+			</div>
+		</div>
+	</div>
     <div class="row profile">
 		<div class="col-md-3">
 			<div class="profile-sidebar">

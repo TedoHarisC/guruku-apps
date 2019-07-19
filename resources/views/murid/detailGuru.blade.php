@@ -26,7 +26,7 @@
                 </fieldset>
 
                 <div class="content-below">
-                    <div class="icons"><i class="ion-ios-analytics-outline" style="color: #ff689b;"></i><a href="" style="padding-left: 10px">Alamat</a></div>
+                    <div class="icons"><i class="ion-android-home" style="color: #ff689b;"></i><a href="" style="padding-left: 10px">Alamat</a></div>
                     <div class="content" style="margin-top: 2px;">
                         <label style="padding-left: 15px;">{{$guru->alamat}}</label>
                     </div>

@@ -81,6 +81,11 @@
                     </div>
                 </a>
                 <div class="dropdown-menu dropdown-menu-arrow dropdown-menu-right">
+                    <a href="{{ route('dashboard') }}" class="dropdown-item">
+                        <i class="ni ni-app"></i>
+                        <span>{{ __('Dashboard') }}</span>
+                    </a>
+                    <div class="dropdown-divider"></div>
                     <a href="{{ route('muridprofile') }}" class="dropdown-item">
                         <i class="ni ni-single-02"></i>
                         <span>{{ __('My profile') }}</span>
