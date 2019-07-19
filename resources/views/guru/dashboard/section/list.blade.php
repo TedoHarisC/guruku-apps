@@ -11,9 +11,10 @@
                 @foreach ($kelas as $data)
                     <div class="col-md-9 col-lg-8 offset-lg-1 wow bounceInUp" data-wow-duration="1.4s">
                         <div class="box">
-                            <div class="icon"><i class="ion-ios-analytics-outline" style="color: #ff689b;"></i></div>
+                            <div class="icon"><i class="ion-ios-briefcase-outline" style="color: #ff689b;"></i></div>
                             <h4 class="title"><a href="">{{$data->mata_pelajaran}}</a></h4>
-                            <p class="description">{{$data->mata_pelajaran}} tingkat {{$data->tingkat_pendidikan}} kelas {{$data->kelas}}</p>
+                            <p class="description"><i class="ion-ios-bookmarks-outline" style="color: #d63636;"></i>
+                            {{$data->mata_pelajaran}} tingkat {{$data->tingkat_pendidikan}} kelas {{$data->kelas}}</p>
                             <p class="description"><i class="ion-ios-alarm-outline" style="color: #d63636;"></i>
                             @foreach ($jadwals as $jadwal)
                                 @if($jadwal->bukakelas_id == $data->id)

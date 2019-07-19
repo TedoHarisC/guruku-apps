@@ -1,6 +1,21 @@
 <!-- CSS di landing untuk profile -->
 
 <section id="intro">
+<div class="container" style="margin-top: -90px; margin-bottom: -20px">
+          <div class="row profile">
+			<div class="col-md-12">
+           <!-- @if (empty($murid) )  -->
+              <div class="alert alert-danger alert-dismissible show wow fadeInUp" role="alert">
+                <a href="" class="alert-link">Gagal mengganti password</a>
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+            <!-- @else
+			@endif -->
+			</div>
+		</div>
+</div><br>
 <div class="container">
     <div class="row profile">
 		<div class="col-md-3">

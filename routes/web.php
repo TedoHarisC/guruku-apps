@@ -33,7 +33,7 @@ Route::prefix('admin')->middleware(['checkadmin:admin', 'auth'])->name('admin')-
 // Route for Guru
 Route::prefix('/my')->middleware(['checkguru:guru','auth'])->group(function () {
 
-    Route::get('/', 'GuruController@index')->name('gurudashboard');
+    Route::get('/', 'GuruController@index')->name('dashboard');
     Route::get('/profiles' , 'GuruController@profile')->name('guruprofile');
     Route::get('/bukakelas', 'GuruController@bukaKelas')->name('bukakelas');
 
@@ -55,7 +55,7 @@ Route::group(['middleware' => 'checkmurid:murid','auth'],function () {
     Route::post('/checkout' , 'MuridController@checkout')->name('checkout');
     Route::post('/checkout/pesanan' , 'PesananController@store')->name('pesananstore');
     //tambahan untuk coba saja
-    Route::get('/dashboard','MuridController@dashboard')->name('muriddashboard');
+    Route::get('/dashboard','MuridController@dashboard')->name('dashboard');
     Route::get('/detailpesanan','MuridController@detail');
 });
 

@@ -111,7 +111,7 @@
                             </div>
 
                     </div> -->
-                    <table class="table table-bordered table-sm m-0">
+                    <table class="table table-borderless table-sm m-0">
                         <thead class="">
                             <tr>
                                 <td>#</td>
@@ -122,13 +122,40 @@
                         <tbody>
                         @foreach ($jadwals as $jadwal)
                             <tr>
-                                <td><input name="jadwal[]" type="checkbox" value="{{$jadwal->id}}" id="defaultCheck1"></td>
-                                <td>{{$jadwal->hari}}</td>
-                                <td>{{$jadwal->jam}}</td>
+                                <td style="text-align: center;">
+                                    <span class="checkbox">
+                                    <svg id="i-checkmark" viewBox="0 0 32 32" width="18" height="18" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="10.9375%">
+                                        <path d="M2 20 L12 28 30 4" />
+                                    </svg>
+                                    </span>
+                                </td>
+                                <td>John Lilki</td>
+                                <td>September 14, 2013</td>
                             </tr>
-                        @endforeach 
-                        </tbody>
-                    </table>
+                                    <tr>
+                                        <td>
+                                            <span class="checkbox">
+                                            <svg id="i-checkmark" viewBox="0 0 32 32" width="18" height="18" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="10.9375%">
+                                                <path d="M2 20 L12 28 30 4" />
+                                            </svg>
+                                            </span>
+                                        </td>
+                                        <td>John Lilki</td>
+                                        <td>September 14, 2013</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                        <span class="checkbox">
+                                            <svg id="i-checkmark" viewBox="0 0 32 32" width="18" height="18" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="10.9375%">
+                                                <path d="M2 20 L12 28 30 4" />
+                                            </svg>
+                                            </span>
+                                        </td>
+                                        <td>John Lilki</td>
+                                        <td>September 14, 2013</td>
+                                    </tr>
+                                </tbody>
+                            </table>
                     <!-- </div> -->
                     <br/>
                     
@@ -369,6 +396,19 @@
 	    }
         x--; //Decrement field counter
     });
+});
+    </script>
+
+    <!-- Script untuk checklist di halaman 2 -->
+    <script type="text/javascript">
+        $('.checkbox').click(function(){
+            if ($(this).hasClass('positive')){
+                $(this).removeClass('positive');
+                $(this).html('');
+            } else {
+                $(this).addClass('positive');
+                $(this).html('<svg id="i-checkmark" viewBox="0 0 32 32" width="18" height="18" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="10.9375%"><path d="M2 20 L12 28 30 4" /></svg>');
+            }
 });
     </script>
 @endpush

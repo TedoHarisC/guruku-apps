@@ -8,7 +8,7 @@
   <meta content="" name="description">
 
   <!-- Favicons -->
-  <link href="{{ asset('cariguru') }}/img/favicon2.png" rel="icon">
+  <link href="{{ asset('landing') }}/img/favicon2.png" rel="icon">
   <link href="{{ asset('cariguru') }}/img/apple-touch-icon.png" rel="apple-touch-icon">
   <link href="{{ asset('argon') }}/vendor/nucleo/css/nucleo.css" rel="stylesheet">
 
@@ -29,12 +29,6 @@
   <!-- Main Stylesheet File -->
   <link href="{{ asset('cariguru') }}/css/style.css" rel="stylesheet">
 
-  <!-- =======================================================
-    Theme Name: NewBiz
-    Theme URL: https://bootstrapmade.com/newbiz-bootstrap-business-template/
-    Author: BootstrapMade.com
-    License: https://bootstrapmade.com/license/
-  ======================================================= -->
 </head>
 
 <body>
@@ -60,14 +54,14 @@
       </nav>
       <nav class="main-nav float-right d-none d-lg-block">
 
-        @auth()
+      @auth()
       <div class="container-fluid" style="margin-top: -8px">
         <ul class="navbar-nav align-items-center d-none d-md-flex">
             <li class="nav-item dropdown">
                 <a class="nav-link pr-0" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <div class="media align-items-center">
                         <span class="avatar avatar-sm rounded-circle">
-                          @if (!empty($guru->foto) )  
+                          @if (!empty($guru->foto))  
 						                <img src="{{ asset($guru->foto) }}" class="img-responsive" alt="avatar guru" style="width: 40px; height: 40px; object-fit: cover;">
 					                @else
 						                <img alt="Image placeholder" src="{{ asset('argon') }}/img/theme/team-4-800x800.jpg">
@@ -79,9 +73,11 @@
                     </div>
                 </a>
                 <div class="dropdown-menu dropdown-menu-arrow dropdown-menu-right">
-                    <!-- <div class=" dropdown-header noti-title">
-                        <h6 class="text-overflow m-0">{{ __('Welcome!') }}</h6>
-                    </div> -->
+                    <a href="{{ route('dashboard') }}" class="dropdown-item">
+                        <i class="ni ni-app"></i>
+                        <span>{{ __('Dashboard') }}</span>
+                    </a>
+                    <div class="dropdown-divider"></div>
                     <a href="{{ route('guruprofile') }}" class="dropdown-item">
                         <i class="ni ni-single-02"></i>
                         <span>{{ __('My profile') }}</span>
@@ -98,13 +94,14 @@
                 </div>
             </li>
         </ul>
-        </div>
-        
+        </div>  
         @endauth()
+
         {{-- <ul>
           <li><a href="login">Log In</a></li>
           <li><a href="register">Sign Up</a></li>
         </ul> --}}
+        
       </nav>
       <!-- .main-nav -->
       
