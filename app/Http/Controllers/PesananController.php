@@ -68,12 +68,13 @@ class PesananController extends Controller
         foreach ($request->jadwal as $index => $value) {
             
             $jadwal = Jadwal::find($value);
+            // dd($value);
             $jadwal -> pesanan_id = $pesanan->id;
             $jadwal -> save();
         }
         // end
 
-        return redirect() -> route('muriddashboard');
+        return redirect() -> route('dashboard');
         
 
     }

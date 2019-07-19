@@ -19,6 +19,7 @@ class CreateReviewsTable extends Migration
             $table->string('review');
             $table->string('user_id');
             $table->string('guru_id');
+            $table->string('pesanan_id');
             $table->timestamps();
         });
     }

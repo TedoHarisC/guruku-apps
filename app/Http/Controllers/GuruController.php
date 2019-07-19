@@ -7,6 +7,7 @@ use App\Guru;
 use App\BukaKelas;
 use App\Jadwal;
 use App\User;
+use App\Pesanan;
 use Illuminate\Support\Facades\Auth;
 use DB;
 // use Illuminate\Support\Facades\File;
@@ -164,6 +165,20 @@ class GuruController extends Controller
     {
         return view('guru.detailPesan');
 
+    }
+
+
+    public function konfirmasiterima(Request $request)
+    {
+
+
+        $pesan = Pesanan::find($request->id);
+        $pesan -> status = $request -> status;
+        $pesan -> save();
+
+        // dd($pesan);
+        return redirect()->route('gurudashboard');
+        // return "lala";
     }
 
 }
