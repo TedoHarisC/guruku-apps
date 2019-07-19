@@ -33,7 +33,7 @@ Route::prefix('admin')->middleware(['checkadmin:admin', 'auth'])->name('admin')-
 // Route for Guru
 Route::prefix('/my')->middleware(['checkguru:guru','auth'])->group(function () {
 
-    Route::get('/', 'GuruController@index')->name('dashboard');
+    Route::get('/', 'GuruController@index')->name('gurudashboard');
     Route::get('/profiles' , 'GuruController@profile')->name('guruprofile');
     Route::get('/bukakelas', 'GuruController@bukaKelas')->name('bukakelas');
 
@@ -41,6 +41,7 @@ Route::prefix('/my')->middleware(['checkguru:guru','auth'])->group(function () {
     Route::post('/bukakelas', 'GuruController@postBukaKelas')->name('postbukakelas');
     Route::post('/profiles', 'GuruController@postProfiles')->name('postprofiles');
     Route::get('/detailpesanan/{slug}', 'GuruController@detail')->name('detailPesananMurid');
+    Route::post('/konfirmasiterima', 'GuruController@konfirmasiterima')->name('konfirmasiterima');
 });
 
 // Route for Murid

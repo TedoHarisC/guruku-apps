@@ -20,8 +20,24 @@
                                 {{$jadwal->hari}} {{$jadwal->jam}},
                             @endif
                         @endforeach
-                        <p class="description"><i class="ion-ios-alarm-outline" style="color: #d63636;">{{$data->alamat}}</i>
+                        <p class="description"><i class="ion-ios-alarm-outline" style="color: #d63636;"></i>{{$data->alamat}}
                         </p>
+                        <p class="description"><i class="ion-ios-alarm-outline" style="color: #d63636;"></i>{{$data->status}}
+                        </p>
+                        @if($data->status == "waiting")
+                            <form role="form" method="POST" action="{{ route('konfirmasiterima') }}">
+                                @csrf
+                                <input type="hidden" name="status" value="accepted">
+                                <input type="hidden" name="id" value="{{$data->id}}">
+                                <button type="submit" aria-label="Close">Terima</button>
+                            </form>
+                            <form role="form" method="POST" action="{{ route('konfirmasiterima') }}">
+                                @csrf
+                                <input type="hidden" name="status" value="canceled">
+                                <input type="hidden" name="id" value="{{$data->id}}">
+                                <button type="submit" aria-label="Close">Tolak</button>
+                            </form>
+                        @endif
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>

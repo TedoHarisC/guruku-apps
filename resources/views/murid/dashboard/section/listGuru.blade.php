@@ -18,7 +18,7 @@
                         <p class="description"><i class="ion-ios-alarm-outline" style="color: #d63636;"></i>{{$data->status}}</p>
                         <p class="description"><i class="ion-ios-alarm-outline" style="color: #d63636;"></i>{{$data->biaya}}</p>
                         
-                        @if($data->status == 'waiting')
+                        @if($data->status == 'waiting' || $data->status == 'canceled')
                           <button type="button" data-toggle="modal"  disabled>Bayar</button>
                         @elseif ($data->status == 'accepted')
                           <button type="button" data-toggle="modal">Bayar</button>
