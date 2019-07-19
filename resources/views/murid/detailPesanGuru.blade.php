@@ -114,46 +114,27 @@
                     <table class="table table-borderless table-sm m-0">
                         <thead class="">
                             <tr>
-                                <td>#</td>
+                                <td></td>
                                 <td>Hari</td>
                                 <td>Jam</td>
                             </tr>
                         </thead>
                         <tbody>
-                        @foreach ($jadwals as $jadwal)
-                            <tr>
+                            @foreach ($jadwals as $jadwal)
+                             <tr>
                                 <td style="text-align: center;">
-                                    <span class="checkbox">
-                                    <svg id="i-checkmark" viewBox="0 0 32 32" width="18" height="18" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="10.9375%">
+                                    
+                                    <input class="checkbox" type="checkbox" value="{{$jadwal->id}}" name="jadwal[]">
+                                    {{-- <svg id="i-checkmark" viewBox="0 0 32 32" width="18" height="18" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="10.9375%">
                                         <path d="M2 20 L12 28 30 4" />
-                                    </svg>
-                                    </span>
+                                    </svg> --}}
+                                    
                                 </td>
-                                <td>John Lilki</td>
-                                <td>September 14, 2013</td>
-                            </tr>
-                                    <tr>
-                                        <td>
-                                            <span class="checkbox">
-                                            <svg id="i-checkmark" viewBox="0 0 32 32" width="18" height="18" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="10.9375%">
-                                                <path d="M2 20 L12 28 30 4" />
-                                            </svg>
-                                            </span>
-                                        </td>
-                                        <td>John Lilki</td>
-                                        <td>September 14, 2013</td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                        <span class="checkbox">
-                                            <svg id="i-checkmark" viewBox="0 0 32 32" width="18" height="18" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="10.9375%">
-                                                <path d="M2 20 L12 28 30 4" />
-                                            </svg>
-                                            </span>
-                                        </td>
-                                        <td>John Lilki</td>
-                                        <td>September 14, 2013</td>
-                                    </tr>
+                                <td>{{$jadwal->hari}}</td>
+                                <td>{{$jadwal->jam}}</td>
+                             </tr>
+                            @endforeach
+                                    
                                 </tbody>
                             </table>
                     <!-- </div> -->
@@ -372,8 +353,6 @@
     //Once add button is clicked
     $(addButton).click(function(){
         //Check maximum number of input fields
-
-        
         if(x < maxField){ 
             x++; //Increment field counter
             console.log(x);
@@ -389,26 +368,14 @@
     $(wrapper).on('click', '#kurang1', function(e){
         e.preventDefault();
         var total_fields = wrapper[0].childNodes.length;
-	    if(total_fields>1){
-		    wrapper[0].childNodes[total_fields-1].remove();
-            wrapper[0].childNodes[total_fields-2].remove();
-            wrapper[0].childNodes[total_fields-3].remove();
-	    }
+            if(total_fields>1){
+                wrapper[0].childNodes[total_fields-1].remove();
+                wrapper[0].childNodes[total_fields-2].remove();
+                wrapper[0].childNodes[total_fields-3].remove();
+            }
         x--; //Decrement field counter
+        });
     });
-});
     </script>
 
-    <!-- Script untuk checklist di halaman 2 -->
-    <script type="text/javascript">
-        $('.checkbox').click(function(){
-            if ($(this).hasClass('positive')){
-                $(this).removeClass('positive');
-                $(this).html('');
-            } else {
-                $(this).addClass('positive');
-                $(this).html('<svg id="i-checkmark" viewBox="0 0 32 32" width="18" height="18" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="10.9375%"><path d="M2 20 L12 28 30 4" /></svg>');
-            }
-});
-    </script>
 @endpush

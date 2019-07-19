@@ -28,6 +28,7 @@ class CreatePesanansTable extends Migration
             $table->string('kode_invoice');
             $table->string('snap_token')->nullable();
             $table->string('status');
+            $table->string('reviewed')->nullable();
             $table->timestamps();
         });
     }

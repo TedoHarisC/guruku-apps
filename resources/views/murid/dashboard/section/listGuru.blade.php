@@ -22,8 +22,10 @@
                           <button type="button" data-toggle="modal"  disabled>Bayar</button>
                         @elseif ($data->status == 'accepted')
                           <button type="button" data-toggle="modal">Bayar</button>
-                        @elseif ($data->status == 'finished')
-                          <button type="button" data-toggle="modal" data-target="#beriRating">Rating</button>
+                        @elseif ($data->status == 'paid')
+                          <button type="button" data-toggle="modal">Paid</button>
+                        @elseif ($data->status == 'finished' && $data->reviewed != 1)
+                          <button type="button" data-id_guru="{{$data->id_user_guru}}" data-id_pesanan="{{$data->id}}" data-toggle="modal" data-target="#beriRating">Rating</button>
                         @endif
                         
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -44,12 +46,13 @@
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel">Beri penilaian</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
-        <form accept-charset="UTF-8" action="" method="post">
+        <form accept-charset="UTF-8" action="{{route('ratingstore')}}" method="post">
+        @csrf
         <!-- Bintang -->
         <div class="container">
             <div class="row">
@@ -60,19 +63,47 @@
                     <span class="fa fa-star-o" data-rating="3"></span>
                     <span class="fa fa-star-o" data-rating="4"></span>
                     <span class="fa fa-star-o" data-rating="5"></span>
-                    <input type="hidden" name="whatever1" class="rating-value" value="0">
+                    <input type="hidden" name="rating" class="rating-value" value="0">
                 </div>
                 </div>
-            </div><br/>
+          </div><br/>
 
-            <input id="ratings-hidden" name="rating" type="hidden"> 
-            <textarea class="form-control animated" cols="50" id="new-review" name="comment" placeholder="Enter your review here..." rows="4"></textarea>
-        </form>
+          <input id="ratings-hidden" name="id_guru" type="hidden"> 
+          <textarea class="form-control animated" cols="50" id="new-review" name="review" placeholder="Enter your review here..." rows="4"></textarea>
+
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary" style="width: 100%;">Save changes</button>
+        <input type="hidden" id="id_guru" name="guru_id" class="rating-value">
+        <input type="hidden" id="id_pesanan" name="pesanan_id" class="rating-value">
+        <button type="submit" class="btn btn-primary" style="width: 100%;">Save changes</button>
+        </form>
       </div>
     </div>
   </div>
 </div>
 </section>
+
+@push('js')
+<script>
+  $(document).ready(function() {
+
+    $('button[data-toggle = modal]').click(function () {
+
+      // init
+      var data_guru_id = '';
+      var data_pesanan_id = '';
+
+      // check if null
+      if (typeof $(this).data('id_pesanan') !== 'undefined') {
+
+        data_guru_id = $(this).data('id_guru');
+        data_pesanan_id = $(this).data('id_pesanan');
+
+        console.log("terklik"+data_guru_id+"lala"+data_pesanan_id);
+      }
+      document.getElementById('id_guru').value= data_guru_id ; 
+      document.getElementById('id_pesanan').value= data_pesanan_id ; 
+    })
+  });
+</script>
+@endpush

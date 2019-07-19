@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests;
 use App\BukaKelas;
 use App\User;
+use App\Pesanan;
 use App\Review;
 use App\Jadwal;
 use DB;
@@ -128,7 +129,7 @@ class MuridController extends Controller
         ->first();  
 
         $pesan = DB::table('pesanans')
-        ->select('pesanans.id as id','pesanans.mata_pelajaran','kode_invoice','status','tingkat_pendidikan','biaya','kelas','name')
+        ->select('pesanans.id as id','pesanans.mata_pelajaran','kode_invoice','status','tingkat_pendidikan','biaya','kelas','name','id_user_guru','reviewed')
         ->join('buka_kelas', 'pesanans.buka_kelas_id', '=','buka_kelas.id')
         ->join('users', 'buka_kelas.id_user_guru', '=','users.id')
         ->get();  
@@ -137,10 +138,16 @@ class MuridController extends Controller
         ->join('pesanans', 'jadwals.pesanan_id', '=','pesanans.id')
         ->get();
 
+        $rating = DB::table('reviews')
+        ->select('reviews.id','rating','review','pesanan_id','guru_id')
+        ->join('users', 'reviews.user_id', '=','users.id')
+        ->join('pesanans', 'reviews.pesanan_id', '=','pesanans.id')
+        ->get();
+
         // dd($jadwals);
         // dd($pesan);
   
-        return view('murid.dashboard')->with('murid',$murid)->with('pesan',$pesan)->with('jadwals',$jadwals);
+        return view('murid.dashboard')->with('murid',$murid)->with('pesan',$pesan)->with('jadwals',$jadwals)->with('rating',$rating);
     }
 
     public function detail()
@@ -172,6 +179,26 @@ class MuridController extends Controller
         }
     
         return $test;
+    }
+
+    public function rating(Request $request)
+    {
+        $user_id = Auth::id();
+
+        $rating = new Review;
+        $rating -> guru_id = $request -> guru_id;
+        $rating -> pesanan_id = $request -> pesanan_id;
+        $rating -> user_id = $user_id;
+        $rating -> rating = $request -> rating;
+        $rating -> review = $request -> review;
+
+            $pesan = Pesanan::find($request->pesanan_id);
+            $pesan->reviewed = 1;
+            $pesan->save();
+
+        $rating -> save();
+    
+        return redirect()->route('dashboard');
     }
     
 }
