@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Pesanan;
+use App\Jadwal;
 use Illuminate\Support\Facades\Auth;
 
 use Illuminate\Http\Request;
@@ -62,6 +63,15 @@ class PesananController extends Controller
         $pesanan -> status = "waiting";
 
         $pesanan -> save();
+
+        // update jadwal field
+        foreach ($request->jadwal as $index => $value) {
+            
+            $jadwal = Jadwal::find($value);
+            $jadwal -> pesanan_id = $pesanan->id;
+            $jadwal -> save();
+        }
+        // end
 
         return redirect() -> route('muriddashboard');
         

@@ -128,11 +128,19 @@ class MuridController extends Controller
         ->first();  
 
         $pesan = DB::table('pesanans')
+        ->select('pesanans.id as id','pesanans.mata_pelajaran','kode_invoice','status','tingkat_pendidikan','biaya','kelas','name')
         ->join('buka_kelas', 'pesanans.buka_kelas_id', '=','buka_kelas.id')
         ->join('users', 'buka_kelas.id_user_guru', '=','users.id')
         ->get();  
 
-        return view('murid.dashboard')->with('murid',$murid)->with('pesan',$pesan);
+        $jadwals = DB::table('jadwals')
+        ->join('pesanans', 'jadwals.pesanan_id', '=','pesanans.id')
+        ->get();
+
+        // dd($jadwals);
+        // dd($pesan);
+  
+        return view('murid.dashboard')->with('murid',$murid)->with('pesan',$pesan)->with('jadwals',$jadwals);
     }
 
     public function detail()

@@ -16,6 +16,7 @@ class CreateJadwalsTable extends Migration
         Schema::create('jadwals', function (Blueprint $table) {
             $table->increments('id');
             $table->string('bukakelas_id');
+            $table->string('pesanan_id')->nullable();
             $table->string('hari');
             $table->string('jam');
             $table->timestamps();

@@ -13,9 +13,19 @@
                     <div class="box" style="background-color:#ddfaff">
                         <div class="icon"><i class="ion-ios-analytics-outline" style="color: #ff689b;"></i></div>
                         <h4 class="title"><a href="detailpesanan">{{$data->name}}</a></h4>
-                        <p class="description"><i class="ion-ios-analytics-outline" style="color: #d63636;"></i>SD Bugangan 01</p>
-                        <p class="description"><i class="ion-ios-alarm-outline" style="color: #d63636;"></i>Kamis, Sabtu, Jumat</p>
-                        <button type="button" data-toggle="modal" data-target="#beriRating">Beri Nilai</button>
+                        <p class="description"><i class="ion-ios-analytics-outline" style="color: #d63636;"></i>{{$data->mata_pelajaran}} tingkat {{$data->tingkat_pendidikan}} kelas {{$data->kelas}}</p>
+                        <p class="description"><i class="ion-ios-alarm-outline" style="color: #d63636;"></i>@foreach ($jadwals as $jadwal)@if($jadwal->pesanan_id == $data->id){{$jadwal->hari}} {{$jadwal->jam}},@endif @endforeach </p>
+                        <p class="description"><i class="ion-ios-alarm-outline" style="color: #d63636;"></i>{{$data->status}}</p>
+                        <p class="description"><i class="ion-ios-alarm-outline" style="color: #d63636;"></i>{{$data->biaya}}</p>
+                        
+                        @if($data->status == 'waiting')
+                          <button type="button" data-toggle="modal"  disabled>Bayar</button>
+                        @elseif ($data->status == 'accepted')
+                          <button type="button" data-toggle="modal">Bayar</button>
+                        @elseif ($data->status == 'finished')
+                          <button type="button" data-toggle="modal" data-target="#beriRating">Rating</button>
+                        @endif
+                        
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>

@@ -120,6 +120,7 @@
                             </tr>
                         </thead>
                         <tbody>
+                        @foreach ($jadwals as $jadwal)
                             <tr>
                                 <td style="text-align: center;">
                                     <span class="checkbox">

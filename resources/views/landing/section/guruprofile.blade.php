@@ -192,7 +192,7 @@
 					<div class="sub-entry">
 						<div class="form-group col-md-12">
 							<label for="jenisKelamin">Jenis Kelamin</label>
-							<select class="form-control" id="jenisKelamin" name="jk">
+							<select class="form-control" id="jenisKelamin" name="jk" required>
 								
 								@if ((!empty($guru) ) && ($guru->jk == 'laki'))
 									<option  disabled>Pilih</option>
