@@ -16,7 +16,8 @@
         "laravel/socialite": "^4.1",
         "laravel/tinker": "^1.0",
         "laravolt/indonesia": "^0.9.0",
-        "spatie/laravel-permission": "^2.33"
+        "spatie/laravel-permission": "^2.33",
+        "veritrans/veritrans-php": "dev-master"
     },
     "require-dev": {
         "beyondcode/laravel-dump-server": "^1.0",

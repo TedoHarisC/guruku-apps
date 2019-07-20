@@ -52,10 +52,14 @@ Route::group(['middleware' => 'checkmurid:murid','auth'],function () {
     Route::get('/guru' , 'MuridController@cariguru')->name('cariguru');
     Route::get('/guru/{slug}' , 'MuridController@detailguru')->name('detailguru');
 
-    //post
+    // post
     Route::post('/checkout' , 'MuridController@checkout')->name('checkout');
     Route::post('/checkout/pesanan' , 'PesananController@store')->name('pesananstore');
     Route::post('/rating' , 'MuridController@rating')->name('ratingstore');
+
+    // snap midtrans
+    Route::post('/snap/store','PesananController@actionSnapToken')->name('snap');
+
     //tambahan untuk coba saja
     Route::get('/dashboard','MuridController@dashboard')->name('dashboard');
     Route::get('/detailpesanan','MuridController@detail');

@@ -1,6 +1,6 @@
 <?php
 /* ===========================================================================
- * Copyright (c) 2018 Zindex Software
+ * Copyright (c) 2018-2019 Zindex Software
  *
  * Licensed under the MIT License
  * =========================================================================== */
@@ -615,7 +615,7 @@ class ReflectionClosure extends ReflectionFunction
     protected function getHashedFileName()
     {
         if ($this->hashedName === null) {
-            $this->hashedName = md5($this->getFileName());
+            $this->hashedName = sha1($this->getFileName());
         }
 
         return $this->hashedName;
