@@ -135,7 +135,7 @@
                             <div class="row">
                             <div class="col-md-6">
                                 <label for="jadwalPertemuan">Hari</label>
-                                <select name="hari[]" type="text" class="form-control" >
+                                <select name="hari[]" type="text" class="form-control">
                                     <option selected disabled>Masukkan Hari</option>
                                     <option>Senin</option>
                                     <option>Selasa</option>
@@ -215,16 +215,20 @@
         var listkelasSd = [1,2,3,4,5,6];
         var listkelasSmpSma = [1,2,3];
 
-        if(tingkatPendidikan === 'sd'){
-            $.each(listmapelSdSmp, function(i, p) {
+        if(tingkatPendidikan === 'SD'){
+            $('#mataPelajaran').empty();
+            $('#mataPelajaran').append($('<option>Pilih Mata Pelajaran</option>'));
+            $.each(listmapelSdSmp, function(i, p) {    
                 $('#mataPelajaran').append($('<option></option>').val(p).html(p));
             });
-
+            
+            $('#kelasPendidikan').empty();
+            $('#kelasPendidikan').append($('<option>Pilih Kelas</option>'));
             $.each(listkelasSd, function(i, p){
                 $('#kelasPendidikan').append($('<option></option>').val(p).html(p));
             });
         }
-        else if(tingkatPendidikan === 'smp'){
+        else if(tingkatPendidikan === 'SMP'){
             $('#mataPelajaran').empty();
             $('#mataPelajaran').append($('<option>Pilih Mata Pelajaran</option>'));
             $.each(listmapelSdSmp, function(i, p) {

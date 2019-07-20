@@ -236,6 +236,59 @@ h6 {
     color: #fff;
 }
 
+.btn-get-accepted {
+    background: #19CC95;
+    border: 2px solid #82E5F3;
+    color: #fff;
+    cursor: pointer;
+    width: 100%;
+}
+
+.btn-get-accepted-mini {
+    background: #19CC95;
+    border: 2px solid #82E5F3;
+    color: #fff;
+    cursor: pointer;
+    width: 50%;
+}
+
+.btn-get-decline {
+    background: #ED467E;
+    border: 2px solid #F495B5;
+    color: #fff;
+    cursor: pointer;
+    width: 100%;
+}
+
+.btn-get-decline-mini {
+    background: #ED467E;
+    border: 2px solid #F495B5;
+    color: #fff;
+    cursor: pointer;
+    width: 50%;
+}
+
+.btn-get-started:hover {
+    background: none;
+    border-color: #2592f8;
+    color: #007bff !important;
+    cursor: pointer;
+}
+
+.btn-get-accepted:hover,
+.btn-get-accepted-mini:hover {
+    background: #21DF53;
+    border-color: #9FE4AD;
+    color: #fff !important;
+}
+
+.btn-get-decline:hover,
+.btn-get-decline-mini:hover {
+    background: #F24D4F;
+    border-color: #F495B5;
+    color: #fff !important;
+}
+
 
 /*--------------------------------------------------------------
 # Navigation Menu (Ada dua untuk Desktop dan Mobile)
