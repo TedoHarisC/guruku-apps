@@ -18,10 +18,8 @@ class CreateMuridsTable extends Migration
             $table->string('alamat');
             $table->string('jk');
             $table->string('telp');
-            $table->string('institusi');
+            $table->string('asal_sekolah');
             $table->string('programstudi');
-            $table->string('ipk');
-            $table->string('bio');
             $table->string('foto');
             $table->string('user_id');
             $table->timestamps();

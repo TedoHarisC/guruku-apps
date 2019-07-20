@@ -15,24 +15,28 @@
 			<div class="profile-sidebar">
 				<!-- SIDEBAR USERPIC -->
 				<div class="profile-userpic" style="text-align:center">
-          			<img src="{{ asset('landing') }}/img/sd.jpeg" class="img-responsive" alt="foto profil">
+				@if (!empty($murid->foto) ) 
+					<img src="{{ asset($murid->foto) }}" class="img-responsive" alt="">
+				@else
+					<img src="{{ asset('landing') }}/img/sd.jpeg" class="img-responsive" alt="foto profil">
+				@endif
 				</div>
 				<!-- END SIDEBAR USERPIC -->
 				<!-- SIDEBAR USER TITLE -->
 				<div class="profile-usertitle">
 					<div class="profile-usertitle-name">
-						Marcus Doe
+						{{$user->name}}
 					</div>
 					<div class="profile-usertitle-job">
-						Joined 24 Nov 2016
+						Joined <?php $date=$user->created_at; echo date_format($date,"D, d M y");?>
 					</div>
 				</div>
 				<!-- END SIDEBAR USER TITLE -->
 				<!-- SIDEBAR BUTTONS -->
-				<div class="profile-userbuttons">
+				{{-- <div class="profile-userbuttons">
 					<button type="button" class="btn btn-success btn-sm">Follow</button>
 					<button type="button" class="btn btn-danger btn-sm">Message</button>
-				</div>
+				</div> --}}
 				<!-- END SIDEBAR BUTTONS -->
 				<!-- SIDEBAR MENU -->
 				<div class="profile-usermenu">
@@ -40,12 +44,17 @@
 						<li>
 							<a href="#">
 							<ion-icon name="mail"></ion-icon>
-							emailku@gmail.com </a>
+							{{$user->email}}</a>
 						</li>
 						<li>
 							<a href="#">
 							<ion-icon name="call"></ion-icon>
-							08xxxxxxxx </a>
+							@if (!empty($murid->telp) )  
+								{{$murid->telp}}
+							@else
+								-
+							@endif
+							</a>
 						</li>
 						<li>
 							<a href="#" target="_blank">
@@ -55,12 +64,22 @@
 						<li>
 							<a href="#">
 							<ion-icon name="business"></ion-icon>
-							Semarang </a>
+							@if (!empty($murid->asal_sekolah) )  
+								{{$murid->asal_sekolah}}
+							@else
+								-
+							@endif
+							</a>
 						</li>
 						<li>
 							<a href="#">
 							<ion-icon name="pin"></ion-icon>
-							Street 69, 235, RK Puram </a>
+							@if (!empty($murid->alamat) )  
+								{{$murid->alamat}}
+							@else
+									-
+							@endif	
+							</a>
 						</li>
 					</ul>
 				</div>
@@ -70,29 +89,56 @@
 		<div class="col-md-9">
       <div class="profile-content">
 					<label>Basic Details</label>
-					<form>
+					<form action="{{route('postprofiles')}}" method="POST" enctype="multipart/form-data">
+					@csrf
 					<!--Sub entry left  -->
 					<div class="sub-entry">
 						<div class="form-group col-md-12">
 							<label for="namaDepan">Nama </label>
-							<input type="text" class="form-control" id="namaDepan" name="name" value="Murid" required>
-						</div>
-						<div class="form-group col-md-12">
-							<label for="email">Alamat Email</label>
-							<input type="email" class="form-control" id="email" aria-describedby="emailHelp" value="Doe@gmail.com">
-						</div>
-
-						<div class="form-group col-md-12">
-							<label for="Address">Address</label>
-							<input type="text" class="form-control" id="Address" value="street 69,235,RK Puram">
+							<input type="text" class="form-control" id="namaDepan" name="name" 
+							@if (!empty($murid)) 
+								value="{{$user->name}}"
+							@else
+								value="{{$user->name}}"
+							@endif required>
 						</div>
 						
 						<div class="form-group col-md-12">
-								<label for="jenisKelamin">Jenis Kelamin</label>
-								<select class="form-control" id="jenisKelamin" name="jenisKelamin">
-                    <option value="laki">Laki laki</option>
-                    <option value="perempuan">Perempuan</option>
-                </select>
+							<label for="email">Alamat Email</label>
+							<input type="email" class="form-control" id="email" aria-describedby="emailHelp" 
+							@if (!empty($user))
+								value="{{$user->email}}"
+							@else
+								value="{{$user->email}}"
+							@endif required>
+						</div>
+
+						<div class="form-group col-md-12">
+							<label for="Address">Alamat</label>
+							@if (!empty($murid))  
+								<textarea class="form-control" id="alamat" name="alamat" rows="2" required>{{$murid->alamat}}</textarea>
+							@else
+								<textarea class="form-control" id="alamat" name="alamat" rows="2" required></textarea>
+							@endif
+						</div>
+						
+						<div class="form-group col-md-12">
+							<label for="jenisKelamin">Jenis Kelamin</label>
+							<select class="form-control" id="jenisKelamin" name="jk" required>
+								@if ((!empty($murid) ) && ($murid->jk == 'laki'))
+									<option  disabled>Pilih</option>
+									<option value="laki" selected>Laki laki</option>
+									<option value="perempuan">Perempuan</option>
+								@elseif (( !empty($murid) ) && ($murid->jk == 'perempuan'))
+									<option  disabled>Pilih</option>
+									<option value="laki">Laki laki</option>
+									<option value="perempuan" selected>Perempuan</option>
+								@else
+									<option selected disabled>Pilih</option>
+									<option value="laki">Laki laki</option>
+									<option value="perempuan">Perempuan</option>
+								@endif
+							</select>
 						</div>
 
 						<div class="form-group col-md-12">
@@ -126,24 +172,41 @@
 					<!-- Sub entry right -->
 					<div class="sub-entry">
 						<div class="form-group col-md-12">
-								<label for="nomorTelepon">Nomor Telepon</label>
-								<input type="text" class="form-control" id="nomorTelepon" name="nomorTelepon" value="08xxxxxxx">
+							<label for="nomorTelepon">Nomor Telepon</label>
+							<input type="text" class="form-control" id="telp" name="telp" 
+							@if (!empty($murid))  
+								value="{{$murid->telp}}"
+							@else
+							@endif>
 						</div>
 
 						<div class="form-group col-md-12">
-								<label for="asalSekolah">Asal Sekolah</label>
-								<input type="text" class="form-control" id="asalSekolah" name="asalSekolah" value="SD Permata Indah 1">
+							<label for="asalSekolah">Asal Sekolah</label>
+							<input type="text" class="form-control" id="asal_sekolah" name="asal_sekolah" 
+							@if (!empty($murid))  
+								value="{{$murid->asal_sekolah}}"
+							@else
+							@endif required>
+						</div>
+
+						<div class="form-group col-md-12">
+							<label for="asalSekolah">Program Studi</label>
+							<input type="text" class="form-control" id="programstudi" name="programstudi" 
+							@if (!empty($murid))  
+								value="{{$murid->programstudi}}"
+							@else
+							@endif required>
 						</div>
 
 						<div class="form-group col-md-12">
 							<label for="foto">Foto</label>
-							<input type="file" class="form-control-file" id="foto" name="foto" value="">
+							<input type="file" class="form-control-file" id="foto" name="foto">
 						</div>
 					</div>
 				
 					<button type="submit" class="btn btn-primary submit-button">Submit</button>
 				</form>
-      </div>
+      		</div>
 		</div>
 	</div>
 </div>
