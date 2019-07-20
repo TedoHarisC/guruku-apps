@@ -229,7 +229,7 @@
         $('#city').change(function(){
             var city = $('#city').val();
 
-            // mulai 
+            // mulai berubah
             $.post("{{ route('kecamatan')}}",
                 {
                     _method: 'POST',

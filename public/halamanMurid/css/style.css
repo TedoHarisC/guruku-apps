@@ -12,7 +12,9 @@
 }
 
 .btn-get-started,
-.btn-services {
+.btn-services,
+.btn-get-accepted,
+.btn-get-decline {
     font-family: "Montserrat", sans-serif;
     font-size: 14px;
     font-weight: 600;
@@ -31,12 +33,43 @@
     color: #fff;
 }
 
+.btn-get-accepted {
+    background: #19CC95;
+    border: 2px solid #82E5F3;
+    color: #fff;
+    cursor: pointer;
+    width: 100%;
+}
+
+.btn-get-decline {
+    background: #ED467E;
+    border: 2px solid #F495B5;
+    color: #fff;
+    cursor: pointer;
+    width: 100%;
+}
+
 .btn-get-started:hover {
     background: none;
-    border-color: #007bff;
+    border-color: #2592f8;
     color: #007bff !important;
     cursor: pointer;
 }
+
+.btn-get-accepted:hover {
+    background: #21DF53;
+    border-color: #9FE4AD;
+    color: #fff !important;
+}
+
+.btn-get-decline:hover {
+    background: #F24D4F;
+    border-color: #F495B5;
+    color: #fff !important;
+}
+
+
+/* Halaman detail pesananan di halaman guru (salah ngarahin css) */
 
 body {
     background: #fff;
@@ -450,19 +483,26 @@ h6 {
 /* Btn search */
 
 .search-button {
-    background-color: #007bff;
+    font-family: "Montserrat", sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    display: inline-block;
     padding: 10px 20px;
-    color: white;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: color 0.2s ease-out;
-    outline: 0;
-    border: 0;
+    border: 2px solid #007bff;
     border-radius: 3px 3px 3px 3px;
+    transition: 0.5s;
+    margin: 0 20px 20px 0;
+    color: #fff !important;
+    background-color: #007bff;
+    transition: color 0.2s ease-out;
 }
 
 .search-button:hover {
-    color: black;
+    background: none;
+    border-color: #007bff;
+    color: #007bff !important;
+    cursor: pointer;
 }
 
 
@@ -627,6 +667,16 @@ h6 {
     margin: 10px 5px;
 }
 
+#msform .next {
+    background: #19CC95;
+    border: #82E5F3;
+}
+
+#msform .previous {
+    background: #ED467E;
+    border-color: #F495B5;
+}
+
 #msform .action-button:hover,
 #msform .action-button:focus {
     box-shadow: 0 0 0 2px white, 0 0 0 3px #27ae60;
@@ -779,13 +829,14 @@ h6 {
     padding-left: 5px;
 }
 
-button {
+
+/* button {
     background-color: transparent;
     border: 1px solid #2196f3;
     padding: 0.5rem 1rem;
     cursor: pointer;
     border-radius: 0.25rem;
-}
+} */
 
 .table {
     /* background-color: #2196f3; */
