@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests;
+use App\Murid;
 use App\BukaKelas;
 use App\User;
 use App\Pesanan;
@@ -52,16 +53,17 @@ class MuridController extends Controller
     public function profile()
     {
         $user_id = Auth::id();
+        $user = User::find($user_id);
 
-        $murid = DB::table('murids')
-        ->join('users', 'murids.user_id', '=', 'users.id')
+        $murid = DB::table('users')
+        ->join('murids', 'users.id', '=', 'murids.user_id')
         //->orderBy('carts.created_at', 'desc')
         ->where('users.id', '=', $user_id)
-        ->get();    
+        ->first();    
 
         // dd($murid);
         
-        return view('murid.profile')->with('murid',$murid);
+        return view('murid.profile')->with('murid',$murid)->with('user',$user);
 
         // return view("murid.profile");
     }
@@ -198,6 +200,65 @@ class MuridController extends Controller
 
         $rating -> save();
     
+        return redirect()->route('dashboard');
+    }
+
+    public function postProfiles(Request $request){
+        $user_id = Auth::id();
+
+        // update name field on users table
+        $user = User::find($user_id);
+        $user -> name = $request -> name;
+        $user -> save();
+
+        // retrieve murid data 
+        $muridcheck = DB::table('users')
+        ->join('murids', 'murids.id', '=','murids.user_id')
+        ->where('murids.id', '=', $user_id)
+        ->first();
+
+        // check whenever murid data is exist
+        if(empty($muridcheck)){
+            // if empty create new !
+            $murid = new Murid;
+
+        }else if(!empty($gurucheck)){
+            // if exist just update!
+            $murid = Murid::find($muridcheck->id);
+        }
+        $murid -> alamat = $request -> alamat;
+        $murid -> jk = $request -> jk;
+        $murid -> telp = $request -> telp;
+        $murid -> asal_sekolah = $request -> asal_sekolah;
+        $murid -> programstudi = $request -> programstudi;
+        $murid -> user_id = $user_id;
+
+        // if change password triggered
+        if($request->change_password == "on"){
+            
+        }
+
+        // if upload photo
+        if ($request->hasFile('foto')) {
+			// Mengambil file yang diupload
+			$uploaded_cover = $request->file('foto');
+			// Mengambil extension file
+			$extension = $uploaded_cover->getClientOriginalExtension();
+			// Membuat nama file random dengan extension
+            $filename = md5(time()) . "." . $extension;
+            $filesave = 'photo/murid/profiles/'.$filename;
+			// Menyimpan cover ke folder public/gambar
+            // $destinationPath = storage_path() . DIRECTORY_SEPARATOR . 'storage'. DIRECTORY_SEPARATOR . 'users';
+            $destinationPath = public_path() . DIRECTORY_SEPARATOR . 'photo'. DIRECTORY_SEPARATOR . 'murid'. DIRECTORY_SEPARATOR . 'profiles';
+            
+			$uploaded_cover->move($destinationPath, $filename);
+			// Mengisi field gambar di artikel dengan filename yang baru dibuat
+			$murid-> foto = $filesave;
+            $murid-> save();
+		    }
+            
+            $murid -> save();
+
         return redirect()->route('dashboard');
     }
     

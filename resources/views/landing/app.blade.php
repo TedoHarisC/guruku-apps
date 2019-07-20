@@ -70,10 +70,8 @@
                 <a class="nav-link pr-0" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <div class="media align-items-center">
                         <span class="avatar avatar-sm rounded-circle">
-                          @if (!empty($guru->foto))  
-						                <img src="{{ asset($guru->foto) }}" class="img-responsive" alt="avatar guru" style="width: 40px; height: 40px; object-fit: cover;">
-                          @elseif (!empty($murid->foto))
-                            <img src="{{ asset($guru->foto) }}" class="img-responsive" alt="avatar guru" style="width: 40px; height: 40px; object-fit: cover;">
+                          @if (!empty($murid->foto))
+                            <img src="{{ asset($murid->foto) }}" class="img-responsive" alt="avatar guru" style="width: 40px; height: 40px; object-fit: cover;">
                           @else
 						                <img alt="Image placeholder" src="{{ asset('argon') }}/img/theme/team-4-800x800.jpg">
 					                @endif
