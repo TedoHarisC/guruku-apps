@@ -21,9 +21,9 @@
                         @if($data->status == 'waiting' || $data->status == 'canceled')
                           <button type="button" class="waiting" data-toggle="modal"  disabled>Bayar</button>
                         @elseif ($data->status == 'accepted')
-                          <button type="button" data-toggle="modal" class="accepted">Bayar</button>
+                          <button type="button" onclick="postSnap({{$data->id}})" class="accepted">Bayar</button>
                         @elseif ($data->status == 'paid')
-                          <button type="button" data-toggle="modal" class="paid">Paid</button>
+                          <button type="button" id="pay-button"  class="paid">Paid</button>
                         @elseif ($data->status == 'finished' && $data->reviewed != 1)
                           <button type="button"  class="finished" data-id_guru="{{$data->id_user_guru}}" data-id_pesanan="{{$data->id}}" data-toggle="modal" data-target="#beriRating">Rating</button>
                         @endif
@@ -106,4 +106,50 @@
     })
   });
 </script>
+
+{{-- SNAP CLIENT KEY --}}
+<script src="https://app.midtrans.com/snap/snap.js" data-client-key="Mid-client-PO5jSOPXEfM7r9K7"></script>
+{{-- SNAP INTEGRATION --}}
+<script>
+    function postSnap(val){
+
+    var id = val;
+    console.log(id);
+      $.post("{{ route('snap') }}",
+      {
+        _method: 'POST',
+        _token: '{{ csrf_token() }}',
+        id_pesanan: id,
+			success: function(result){
+                console.log("result kok");
+             }
+        },
+        function (data, status) {
+            snap.pay(data.snap_token, {
+                // Optional
+                onSuccess: function (result) {
+                  console.log("result kok",data);
+
+                },
+                // Optional
+                onPending: function (result) {
+                    // window.location.replace("http://skartistic2.com");
+                },
+                // Optional
+                onError: function (result) {
+
+
+                },
+                // Optional
+                onClose: function (result) {
+
+                }
+
+            });
+        });
+        return false;  
+        
+
+      }
+    </script>
 @endpush
