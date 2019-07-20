@@ -152,7 +152,7 @@
 							@if (!empty($guru) )  
 								<textarea class="form-control" id="bio" name="bio" rows="2" required>{{$guru->bio}}</textarea>
 							@else
-								<textarea class="form-control" id="bio" name="bio" rows="2" required></textarea>
+								<textarea class="form-control" id="bio" name="bio" rows="2" placeholder="Masukan biografi singkat anda semenarik mungkin" required></textarea>
 							@endif
 							
 						</div>
@@ -238,7 +238,7 @@
 							@if (!empty($guru) )  
 								<textarea class="form-control" id="tentangsaya" name="tentangsaya" rows="2" required>{{$guru->tentangsaya}}</textarea>
 							@else
-								<textarea class="form-control" id="tentangsaya" name="tentangsaya" rows="2" required></textarea>
+								<textarea class="form-control" id="tentangsaya" name="tentangsaya" rows="2" placeholder="Masukan biografi secara lengkap yang dapat menarik calon murid" required></textarea>
 							@endif
 						</div>
 
@@ -248,7 +248,7 @@
 							@if (!empty($guru) )  
 								<textarea class="form-control" id="pengalaman" name="pengalaman" rows="2" required>{{$guru->pengalaman}}</textarea>
 							@else
-								<textarea class="form-control" id="pengalaman" name="pengalaman" rows="2" required></textarea>
+								<textarea class="form-control" id="pengalaman" name="pengalaman" rows="2" placeholder="Masukan pengalaman yang dapat menarik calon murid" required></textarea>
 							@endif
 						</div>
 
@@ -260,7 +260,7 @@
 
 					<button type="submit" class="btn btn-primary submit-button">Submit</button>
 				</form>
-      </div>
+      		</div>
 		</div>
 	</div>
 </div>
