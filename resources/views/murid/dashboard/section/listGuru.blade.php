@@ -11,21 +11,21 @@
                 <!-- Ini core list -->
                 <div class="col-md-9 col-lg-8 offset-lg-1 wow bounceInUp" data-wow-duration="1.4s">
                     <div class="box" style="background-color:#ddfaff">
-                        <div class="icon"><i class="ion-ios-analytics-outline" style="color: #ff689b;"></i></div>
+                        <div class="icons"><i class="ion-ios-analytics-outline" style="color: #ff689b;"></i></div>
                         <h4 class="title"><a href="detailpesanan">{{$data->name}}</a></h4>
-                        <p class="description"><i class="ion-ios-analytics-outline" style="color: #d63636;"></i>{{$data->mata_pelajaran}} tingkat {{$data->tingkat_pendidikan}} kelas {{$data->kelas}}</p>
+                        <p class="description"><i class="ion-ios-briefcase-outline" style="color: #d63636;"></i>{{$data->mata_pelajaran}} tingkat {{$data->tingkat_pendidikan}} kelas {{$data->kelas}}</p>
                         <p class="description"><i class="ion-ios-alarm-outline" style="color: #d63636;"></i>@foreach ($jadwals as $jadwal)@if($jadwal->pesanan_id == $data->id){{$jadwal->hari}} {{$jadwal->jam}},@endif @endforeach </p>
-                        <p class="description"><i class="ion-ios-alarm-outline" style="color: #d63636;"></i>{{$data->status}}</p>
-                        <p class="description"><i class="ion-ios-alarm-outline" style="color: #d63636;"></i>{{$data->biaya}}</p>
+                        <p class="description"><i class="ion-ios-cart-outline" style="color: #d63636;"></i>{{$data->status}}</p>
+                        <p class="description"><i class="ion-ios-pricetag-outline" style="color: #d63636;"></i>Rp. {{$data->biaya}}</p>
                         
                         @if($data->status == 'waiting' || $data->status == 'canceled')
-                          <button type="button" data-toggle="modal"  disabled>Bayar</button>
+                          <button type="button" class="waiting" data-toggle="modal"  disabled>Bayar</button>
                         @elseif ($data->status == 'accepted')
-                          <button type="button" data-toggle="modal">Bayar</button>
+                          <button type="button" data-toggle="modal" class="accepted">Bayar</button>
                         @elseif ($data->status == 'paid')
-                          <button type="button" data-toggle="modal">Paid</button>
+                          <button type="button" data-toggle="modal" class="paid">Paid</button>
                         @elseif ($data->status == 'finished' && $data->reviewed != 1)
-                          <button type="button" data-id_guru="{{$data->id_user_guru}}" data-id_pesanan="{{$data->id}}" data-toggle="modal" data-target="#beriRating">Rating</button>
+                          <button type="button"  class="finished" data-id_guru="{{$data->id_user_guru}}" data-id_pesanan="{{$data->id}}" data-toggle="modal" data-target="#beriRating">Rating</button>
                         @endif
                         
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
