@@ -88,10 +88,14 @@
                         <!-- this row will not appear when printing -->
                         <div class="row no-print">
                             <div class="col-md-6">
-                                <button class="btn" style="background-color: green"><i class="fa fa-check"></i> Terima Pesanan</button>
+                                <button class="btn-get-accepted">
+                                    <i class="fa fa-check"></i> Terima Pesanan
+                                </button>
                             </div>
                             <div class="col-md-6">
-                            <button class="btn" style="margin-right: 5px; background-color: red"><i class="fa fa-times"></i> Tolak Pesanan</button>
+                                <button class="btn-get-decline">
+                                    <i class="fa fa-times"></i> Tolak Pesanan
+                                </button>
                             </div>
                         </div>
                     </section>
