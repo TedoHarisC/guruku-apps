@@ -89,7 +89,7 @@
 		<div class="col-md-9">
       <div class="profile-content">
 					<label>Basic Details</label>
-					<form action="{{route('postprofiles')}}" method="POST" enctype="multipart/form-data">
+					<form action="{{route('postprofilesmurid')}}" method="POST" enctype="multipart/form-data">
 					@csrf
 					<!--Sub entry left  -->
 					<div class="sub-entry">

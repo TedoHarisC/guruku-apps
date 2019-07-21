@@ -158,9 +158,9 @@ class PesananController extends Controller
         $id_pesanan = $this->request->id_pesanan;
 
         $pesan = DB::table('pesanans')
-        ->select('pesanans.id as id','kode_invoice','status','name','email','reviewed','total')
+        ->select('pesanans.id as id','kode_invoice','status','name','email','reviewed','total','telp')
         ->join('users', 'pesanans.user_id', '=','users.id')
-        ->join('murids', 'users.id', '=','murids.users_id')
+        ->join('murids', 'users.id', '=','murids.user_id')
         ->where('pesanans.id', '=', $id_pesanan)
         ->first();  
 
@@ -189,7 +189,7 @@ class PesananController extends Controller
             $customer_details = array(
                 'first_name'    => $pesan -> name,
                     'email'         => $pesan -> email,
-                    'phone'         => "0989777"
+                    'phone'         => $pesan -> telp
                 );
             // Data yang akan dikirim untuk request redirect_url.
             $transaction_data = array(
