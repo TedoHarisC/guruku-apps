@@ -56,7 +56,7 @@ Route::group(['middleware' => 'checkmurid:murid','auth'],function () {
     Route::post('/checkout' , 'MuridController@checkout')->name('checkout');
     Route::post('/checkout/pesanan' , 'PesananController@store')->name('pesananstore');
     Route::post('/rating' , 'MuridController@rating')->name('ratingstore');
-    Route::post('/profiles', 'MuridController@postProfiles')->name('postprofiles');
+    Route::post('/profiles', 'MuridController@postProfiles')->name('postprofilesmurid');
 
     // snap midtrans
     Route::post('/snap/store','PesananController@actionSnapToken')->name('snap');
