@@ -7,25 +7,32 @@
             <div class="shadow">
             <div class="card">
                 <div class="bg-img">
+                <fieldset style="margin: 30px; text-align:center">
+                <div class="fs-type">
                 <div class="row">
                     <div class="col col-md-2">
-                        <img src="{{ asset('landing') }}/img/sd.jpeg" class="profile-img" alt="">
+                        <img src="{{ asset('landing') }}/img/sd.jpeg" class="profile-img" alt="" style="width: 120px;">
                     </div>
-                    <div class="col col-md-10 content">
-                            <h4>Annisa</h4>
-                            <label>Rating : 4.7</label>
-                            <label>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis deleniti neque eaque odio sunt distinctio nesciunt, aut natus esse ab ex nisi laboriosam illum magnam perferendis consequuntur aspernatur error reiciendis?</label>
+                    <div class="col col-md-10">
+                        <div class="fs-label-type">
+                            <h4>{{$guru->name}}</h4>
+                            <label>Rating : 4.7</label><br/>
+                            <label>{{$guru->bio}}</label>
+                        </div>
                     </div>
                 </div>
                 </div>
+                </div>
+                </fieldset>
+
                 <div class="content-below">
-                    <div class="icon"><i class="ion-ios-analytics-outline" style="color: #ff689b;"></i><a href="" style="padding-left: 10px">Lokasi Mengajar</a></div>
+                    <div class="icons"><i class="ion-android-home" style="color: #ff689b;"></i><a href="" style="padding-left: 10px">Alamat</a></div>
                     <div class="content" style="margin-top: 2px;">
-                        <label style="padding-left: 15px;">Jakarta Utara , Jakarta Selatan , Jakarta Barat</label>
+                        <label style="padding-left: 15px;">{{$guru->alamat}}</label>
                     </div>
-                    <div class="icon"><i class="ion-ios-alarm-outline" style="color: #d63636;"></i><a href="" style="padding-left: 10px;">Rekam Studi</a></div>
+                    <div class="icons"><i class="ion-ios-alarm-outline" style="color: #d63636;"></i><a href="" style="padding-left: 10px;">Rekam Studi</a></div>
                     <div class="content" style="margin-top: 2px;">
-                        <label style="padding-left: 15px;">SMA N 1 KUDUS , Politeknik Negeri Semarang</label>
+                        <label style="padding-left: 15px;">{{$guru->programstudi}} , {{$guru->institusi}}</label>
                     </div>
                 </div>
                 <div class="content">
@@ -41,15 +48,31 @@
                     </ul>
                     <div class="tabpanel" id="panel1" role="tabpanel">
                         <h1>Siapa saya ?</h1>
-                        <p>Lorem ipsum dolor sit amet, case solum pri ex, sed te feugiat legimus. Sea doming alterum necessitatibus id, ipsum putent disputando ei pri. Docendi electram ei cum, usu ea meis tractatos dignissim. An eos putent tamquam postulant, falli periculis nam et. Ne mel hinc scaevola probatus.</p>
+                        <p>{{$guru->tentangsaya}}</p>
                     </div>
                     <div class="tabpanel" id="panel2" role="tabpanel">
                         <h1>Apa Saja Pengalaman Saya ?</h1>
-                        <p>Eu choro adolescens est. Cu pro case sanctus convenire, natum mazim duo ne. Ius numquam euismod luptatum eu, eu veri iudico molestie nec. Causae facilis duo id, te vix maiorum omittam appareat, nostrud platonem in quo. At nobis vitae vel.</p>
+                        <p>{{$guru->pengalaman}}</p>
                     </div>
                     <div class="tabpanel" id="panel3" role="tabpanel">
                         <h1>Jadwal Saya ?</h1>
-                        <p>Id qui natum prompta percipit, per no dicta ancillae scripserit. Simul veniam vidisse mea eu, vim ei corpora splendide. Aeque possim usu eu, ad brute choro verear pro. Amet erat copiosae has te. At lorem vocibus ancillae duo, ius ea putant scripserit, vel ei sale inimicus forensibus. No quando nullam voluptatum pro, has at quodsi aperiri principes.</p>
+                        <table style="margin-left: 25px;">
+                        @foreach ($jadwals as $jadwal)
+                        <tr>
+                            
+                            <div class="icons">
+                                <td>
+                                    <i class="ion-ios-timer-outline" style="color: #d63636;"></i><a  style="padding-left: 10px;">{{$jadwal->hari}}</a>
+                                <td>
+                                <td>
+                                    <i class="ion-ios-alarm-outline" style="color: #d63636;padding-left: 10px;"></i><a  style="padding-left: 10px;">{{$jadwal->jam}}</a>
+                                </td>
+                            </div>
+                            
+                        </tr>
+                        @endforeach
+                        </table>
+                        <p></p>
                     </div>
                 </div>
             </div>
@@ -61,7 +84,13 @@
                 <div class="content-below">
                     <h4>Tertarik dengan Saya ?</h4>
                     <label>Tekan tombol di bawah ini untuk les dengan saya</label><br/>
-                    <button class="btn search-button">Pesan Guru</button>
+                    <form action="{{route('checkout')}}" method="POST">
+                        @csrf
+                        <input type="hidden" name="mata_pelajaran" value="{{$bukakelas->mata_pelajaran}}" /> 
+                        <input type="hidden" name="bukakelas_id" value="{{$bukakelas->id}}" /> 
+
+                        <button class="btn search-button" type="submit">Pesan Guru</button>
+                    </form>
                 </div>
             </div>
             </div>
@@ -93,3 +122,45 @@
         </div>
     </section>
 @endsection
+
+
+@push('js')
+
+ <!-- Script for Tab on detailGuru Tabs -->
+  <script type="text/javascript">
+      (function() {
+
+  function activateTab() {
+      if(activeTab) {
+        resetTab.call(activeTab);
+      }
+      this.parentNode.className = 'tab tab-active';
+      activeTab = this;
+      activePanel = document.getElementById(activeTab.getAttribute('href').substring(1));
+       activePanel.className = 'tabpanel show';
+      activePanel.setAttribute('aria-expanded', true);
+    }
+
+    function resetTab() {
+      activeTab.parentNode.className = 'tab';
+      if(activePanel) {
+        activePanel.className = 'tabpanel hide';
+        activePanel.setAttribute('aria-expanded', false);
+      }
+    }
+
+    var doc = document,
+        tabs = doc.querySelectorAll('.tab a'),
+        panels = doc.querySelectorAll('.tabpanel'),
+        activeTab = tabs[0],
+        activePanel;
+
+     activateTab.call(activeTab);
+
+    for(var i = tabs.length - 1; i >= 0; i--) {
+      tabs[i].addEventListener('click', activateTab, false);
+    }
+
+  })();
+  </script>
+@endpush

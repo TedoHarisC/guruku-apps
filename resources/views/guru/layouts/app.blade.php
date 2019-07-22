@@ -8,14 +8,16 @@
   <meta content="" name="description">
 
   <!-- Favicons -->
-  <link href="{{ asset('cariguru') }}/img/favicon.png" rel="icon">
+  <link href="{{ asset('landing') }}/img/favicon2.png" rel="icon">
   <link href="{{ asset('cariguru') }}/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <link href="{{ asset('argon') }}/vendor/nucleo/css/nucleo.css" rel="stylesheet">
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Montserrat:300,400,500,700" rel="stylesheet">
 
   <!-- Bootstrap CSS File -->
   <link href="{{ asset('cariguru') }}/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link type="text/css" href="{{ asset('argon') }}/css/argon.css?v=1.0.0" rel="stylesheet">
 
   <!-- Libraries CSS Files -->
   <link href="{{ asset('cariguru') }}/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
@@ -27,12 +29,6 @@
   <!-- Main Stylesheet File -->
   <link href="{{ asset('cariguru') }}/css/style.css" rel="stylesheet">
 
-  <!-- =======================================================
-    Theme Name: NewBiz
-    Theme URL: https://bootstrapmade.com/newbiz-bootstrap-business-template/
-    Author: BootstrapMade.com
-    License: https://bootstrapmade.com/license/
-  ======================================================= -->
 </head>
 
 <body>
@@ -57,10 +53,55 @@
         </ul>
       </nav>
       <nav class="main-nav float-right d-none d-lg-block">
-        <ul>
+
+      @auth()
+      <div class="container-fluid" style="margin-top: -8px">
+        <ul class="navbar-nav align-items-center d-none d-md-flex">
+            <li class="nav-item dropdown">
+                <a class="nav-link pr-0" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <div class="media align-items-center">
+                        <span class="avatar avatar-sm rounded-circle">
+                          @if (!empty($guru->foto))  
+						                <img src="{{ asset($guru->foto) }}" class="img-responsive" alt="avatar guru" style="width: 40px; height: 40px; object-fit: cover;">
+					                @else
+						                <img alt="Image placeholder" src="{{ asset('argon') }}/img/theme/team-4-800x800.jpg">
+					                @endif
+                        </span>
+                        <div class="media-body ml-2 d-none d-lg-block">
+                            <span class="mb-0 text-sm  font-weight-bold">{{ auth()->user()->name }}</span>
+                        </div>
+                    </div>
+                </a>
+                <div class="dropdown-menu dropdown-menu-arrow dropdown-menu-right">
+                    <a href="{{ route('dashboard') }}" class="dropdown-item">
+                        <i class="ni ni-app"></i>
+                        <span>{{ __('Dashboard') }}</span>
+                    </a>
+                    <div class="dropdown-divider"></div>
+                    <a href="{{ route('guruprofile') }}" class="dropdown-item">
+                        <i class="ni ni-single-02"></i>
+                        <span>{{ __('My profile') }}</span>
+                    </a>
+                    <div class="dropdown-divider"></div>
+                    <a href="{{ route('logout') }}" class="dropdown-item" onclick="event.preventDefault();
+                    document.getElementById('logout-form').submit();">
+                        <i class="ni ni-user-run"></i>
+                        <span>{{ __('Logout') }}</span>
+                    </a>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                      @csrf
+                    </form>
+                </div>
+            </li>
+        </ul>
+        </div>  
+        @endauth()
+
+        {{-- <ul>
           <li><a href="login">Log In</a></li>
           <li><a href="register">Sign Up</a></li>
-        </ul>
+        </ul> --}}
+        
       </nav>
       <!-- .main-nav -->
       
@@ -183,6 +224,31 @@
 
   <!-- Template Main Javascript File -->
   <script src="{{ asset('cariguru') }}/js/main.js"></script>
+  
+  <!-- ClockPicker Stylesheet -->
+  <link rel="stylesheet" type="text/css" href="{{ asset('landing') }}/vendor/bootstrap/dist/bootstrap-clockpicker.min.css">
+
+  <!-- ClockPicker script -->
+  <script src="{{ asset('landing') }}/vendor/bootstrap/dist/bootstrap-clockpicker.min.js"></script>
+
+  @yield('js')
+
+<script type="text/javascript">
+    $(document).ready(function(){
+      var date_input=$('input[name="date"]'); //our date input has the name "date"
+      var container=$('.bootstrap-iso form').length>0 ? $('.bootstrap-iso form').parent() : "body";
+    });
+    </script>
+
+    <script type="text/javascript">
+    $('.clockpicker').clockpicker()
+	    .find('input').change(function(){
+		  // TODO: time changed
+		  console.log(this.value);
+	  });
+</script>
+
+
 
 </body>
 </html>

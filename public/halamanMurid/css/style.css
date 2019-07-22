@@ -2,10 +2,79 @@
 # Konfigurasi Umum (Semua configurasi CSS)
 --------------------------------------------------------------*/
 
+@viewport {
+    width: device-width;
+    zoom: 1.0;
+}
+
+@-ms-viewport {
+    width: device-width;
+}
+
+.btn-get-started,
+.btn-services,
+.btn-get-accepted,
+.btn-get-decline {
+    font-family: "Montserrat", sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    display: inline-block;
+    padding: 10px 32px;
+    border-radius: 50px;
+    transition: 0.5s;
+    margin: 0 20px 20px 0;
+    color: #fff !important;
+}
+
+.btn-get-started {
+    background: #007bff;
+    border: 2px solid #007bff;
+    color: #fff;
+}
+
+.btn-get-accepted {
+    background: #19CC95;
+    border: 2px solid #82E5F3;
+    color: #fff;
+    cursor: pointer;
+    width: 100%;
+}
+
+.btn-get-decline {
+    background: #ED467E;
+    border: 2px solid #F495B5;
+    color: #fff;
+    cursor: pointer;
+    width: 100%;
+}
+
+.btn-get-started:hover {
+    background: none;
+    border-color: #2592f8;
+    color: #007bff !important;
+    cursor: pointer;
+}
+
+.btn-get-accepted:hover {
+    background: #21DF53;
+    border-color: #9FE4AD;
+    color: #fff !important;
+}
+
+.btn-get-decline:hover {
+    background: #F24D4F;
+    border-color: #F495B5;
+    color: #fff !important;
+}
+
+
+/* Halaman detail pesananan di halaman guru (salah ngarahin css) */
+
 body {
     background: #fff;
     color: #444;
-    font-family: 'Open Sans', sans-serif;
+    font-family: "Open Sans", sans-serif;
     height: 100%;
     overflow-x: hidden;
 }
@@ -34,11 +103,12 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: 'Montserrat', sans-serif;
+    font-family: "Montserrat", sans-serif;
     font-weight: 400;
     margin: 0 0 20px 0;
     padding: 0;
 }
+
 
 /* Tombol ke atas */
 
@@ -64,6 +134,7 @@ h6 {
     color: #fff;
 }
 
+
 /* Preloader */
 
 #preloader {
@@ -78,7 +149,7 @@ h6 {
 }
 
 #preloader:before {
-    content: '';
+    content: "";
     position: fixed;
     top: calc(50% - 30px);
     left: calc(50% - 30px);
@@ -96,7 +167,6 @@ h6 {
         -webkit-transform: rotate(0deg);
         transform: rotate(0deg);
     }
-
     100% {
         -webkit-transform: rotate(360deg);
         transform: rotate(360deg);
@@ -108,12 +178,12 @@ h6 {
         -webkit-transform: rotate(0deg);
         transform: rotate(0deg);
     }
-
     100% {
         -webkit-transform: rotate(360deg);
         transform: rotate(360deg);
     }
 }
+
 
 /*--------------------------------------------------------------
 # Header
@@ -162,9 +232,11 @@ h6 {
     margin-top: 60px;
 }
 
+
 /*--------------------------------------------------------------
 # Navigation Menu (Ada dua untuk Desktop dan Mobile)
 --------------------------------------------------------------*/
+
 
 /* Desktop Navigation */
 
@@ -180,7 +252,7 @@ h6 {
     list-style: none;
 }
 
-.main-nav > ul > li {
+.main-nav>ul>li {
     position: relative;
     white-space: nowrap;
     float: left;
@@ -193,13 +265,13 @@ h6 {
     padding: 10px 17px;
     transition: 0.3s;
     font-size: 14px;
-    font-family: 'Montserrat', sans-serif;
+    font-family: "Montserrat", sans-serif;
     font-weight: 500;
 }
 
 .main-nav a:hover,
-.main-nav .active > a,
-.main-nav li:hover > a {
+.main-nav .active>a,
+.main-nav li:hover>a {
     color: #007bff;
     text-decoration: none;
 }
@@ -218,7 +290,7 @@ h6 {
     transition: ease all 0.3s;
 }
 
-.main-nav .drop-down:hover > ul {
+.main-nav .drop-down:hover>ul {
     opacity: 1;
     top: 100%;
     visibility: visible;
@@ -236,13 +308,13 @@ h6 {
 }
 
 .main-nav .drop-down ul a:hover,
-.main-nav .drop-down ul .active > a,
-.main-nav .drop-down ul li:hover > a {
+.main-nav .drop-down ul .active>a,
+.main-nav .drop-down ul li:hover>a {
     color: #007bff;
 }
 
-.main-nav .drop-down > a:after {
-    content: '\f107';
+.main-nav .drop-down>a:after {
+    content: "\f107";
     font-family: FontAwesome;
     padding-left: 10px;
 }
@@ -252,21 +324,22 @@ h6 {
     left: calc(100% - 30px);
 }
 
-.main-nav .drop-down .drop-down:hover > ul {
+.main-nav .drop-down .drop-down:hover>ul {
     opacity: 1;
     top: 0;
     left: 100%;
 }
 
-.main-nav .drop-down .drop-down > a {
+.main-nav .drop-down .drop-down>a {
     padding-right: 35px;
 }
 
-.main-nav .drop-down .drop-down > a:after {
-    content: '\f105';
+.main-nav .drop-down .drop-down>a:after {
+    content: "\f105";
     position: absolute;
     right: 15px;
 }
+
 
 /* Mobile Navigation */
 
@@ -298,25 +371,25 @@ h6 {
 }
 
 .mobile-nav a:hover,
-.mobile-nav .active > a,
-.mobile-nav li:hover > a {
+.mobile-nav .active>a,
+.mobile-nav li:hover>a {
     color: #74b5fc;
     text-decoration: none;
 }
 
-.mobile-nav .drop-down > a:after {
-    content: '\f078';
+.mobile-nav .drop-down>a:after {
+    content: "\f078";
     font-family: FontAwesome;
     padding-left: 10px;
     position: absolute;
     right: 15px;
 }
 
-.mobile-nav .active.drop-down > a:after {
-    content: '\f077';
+.mobile-nav .active.drop-down>a:after {
+    content: "\f077";
 }
 
-.mobile-nav .drop-down > a {
+.mobile-nav .drop-down>a {
     padding-right: 35px;
 }
 
@@ -373,9 +446,11 @@ h6 {
     color: #fff;
 }
 
+
 /* -------------------------------------------------------------
 # Navigation (To Sorting and Search Guru)
 ----------------------------------------------------------------*/
+
 #halamanNavigation {
     background: #fff;
     padding: 60px 0;
@@ -401,28 +476,40 @@ h6 {
     background-color: #2196f3;
 }
 
+
 /* Slider Guru */
 
+
 /* Btn search */
+
 .search-button {
-    background-color: #007bff;
-    padding: 10px 21px;
-    color: white;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: color 0.2s ease-out;
-    outline: 0;
-    border: 0;
+    font-family: "Montserrat", sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    display: inline-block;
+    padding: 10px 20px;
+    border: 2px solid #007bff;
     border-radius: 3px 3px 3px 3px;
+    transition: 0.5s;
+    margin: 0 20px 20px 0;
+    color: #fff !important;
+    background-color: #007bff;
+    transition: color 0.2s ease-out;
 }
 
 .search-button:hover {
-    color: black;
+    background: none;
+    border-color: #007bff;
+    color: #007bff !important;
+    cursor: pointer;
 }
+
 
 /* -------------------------------------------------------------
 # List Guru (To Sorting and Search Guru)
 ----------------------------------------------------------------*/
+
 #halamanList {
     background: #fff;
     padding: 60px 0;
@@ -451,7 +538,13 @@ h6 {
     /* height: 900px; */
 }
 
+.list li {
+    list-style: none;
+}
+
+
 /* Card untuk bagian detail pesan */
+
 .card-pesan {
     border: 1px solid #d3d3d3;
     border-radius: 0.25rem;
@@ -469,12 +562,16 @@ h6 {
 .bg-img .profile-img {
     margin: 10px 10px;
     width: 150px;
+    height: 150px;
     border-radius: 50%;
     border: 4px solid #fff;
     float: left;
+    object-fit: cover;
 }
 
+
 /* ===== Card detail CSS ====== */
+
 .card-detail {
     border: 1px solid #d3d3d3;
     border-radius: 0.25rem;
@@ -497,21 +594,28 @@ h6 {
 .card-detail label {
     font-size: 15px;
     line-height: 18px;
-    margin-bottom: 14px;
+    margin-bottom: 8px;
 }
 
+
 /* Stars */
+
 .checked {
     color: orange;
 }
 
+
 /* Form Tab */
+
+
 /*form styles*/
+
 #msform {
     margin: 10px auto;
     text-align: center;
     position: relative;
 }
+
 #msform fieldset {
     background: white;
     border: 0 none;
@@ -524,11 +628,17 @@ h6 {
     /*stacking fieldsets above each other*/
     position: relative;
 }
+
+
 /*Hide all except first fieldset*/
+
 #msform fieldset:not(:first-of-type) {
     display: none;
 }
+
+
 /*inputs*/
+
 #msform input,
 #msform textarea {
     padding: 15px;
@@ -541,7 +651,10 @@ h6 {
     color: #2c3e50;
     font-size: 13px;
 }
+
+
 /*buttons*/
+
 #msform .action-button {
     width: 100px;
     background: #007bff;
@@ -553,11 +666,45 @@ h6 {
     padding: 10px 5px;
     margin: 10px 5px;
 }
+
+#msform .next {
+    background: #19CC95;
+    border: #82E5F3;
+}
+
+#msform .previous {
+    background: #ED467E;
+    border-color: #F495B5;
+}
+
 #msform .action-button:hover,
 #msform .action-button:focus {
     box-shadow: 0 0 0 2px white, 0 0 0 3px #27ae60;
 }
+
+.button {
+    width: 50px;
+    background: #007bff;
+    font-weight: bold;
+    color: white;
+    border: 0 none;
+    border-radius: 1px;
+    cursor: pointer;
+    padding: 4px 4px;
+    margin: 10px 5px;
+}
+
+#kurang1 {
+    padding: 15px;
+    margin-top: 30px;
+    margin-bottom: 7px;
+    background-color: red;
+    text-align: center;
+}
+
+
 /*headings*/
+
 .fs-title {
     font-size: 15px;
     text-transform: uppercase;
@@ -565,7 +712,9 @@ h6 {
     margin-bottom: 40px;
 }
 
+
 /* Type Guru */
+
 .fs-type {
     margin-bottom: 5px;
     border: 1px solid #007bff;
@@ -577,13 +726,16 @@ h6 {
     padding-left: 20px;
 }
 
+
 /*progressbar*/
+
 #progressbar {
     margin-bottom: 30px;
     overflow: hidden;
     /*CSS counters to number the steps*/
     counter-reset: step;
 }
+
 #progressbar li {
     list-style-type: none;
     color: white;
@@ -593,6 +745,7 @@ h6 {
     float: left;
     position: relative;
 }
+
 #progressbar li:before {
     content: counter(step);
     counter-increment: step;
@@ -605,34 +758,46 @@ h6 {
     border-radius: 3px;
     margin: 0 auto 5px auto;
 }
+
+
 /*progressbar connectors*/
+
 #progressbar li:after {
-    content: '';
+    content: "";
     width: 100%;
     height: 2px;
     background: white;
     position: absolute;
     left: -50%;
     top: 9px;
-    z-index: -1; /*put it behind the numbers*/
+    z-index: -1;
+    /*put it behind the numbers*/
 }
+
 #progressbar li:first-child:after {
     /*connector not needed before the first step*/
     content: none;
 }
+
+
 /*marking active/completed steps green*/
+
+
 /*The number of the step and the connector before it = green*/
+
 #progressbar li.active:before,
 #progressbar li.active:after {
     background: #007bff;
     color: white;
 }
+
+
 /* =============== */
 
 .content {
     /* margin: 10px 10px; */
     padding: 10px;
-    margin: auto;
+    margin: inherit;
 }
 
 .content h4 {
@@ -649,7 +814,7 @@ h6 {
     padding: 10px;
     padding-left: 30px;
     padding-bottom: 20px;
-    padding-right: 10px;
+    padding-right: 30px;
 }
 
 .content-below h4 {
@@ -664,16 +829,17 @@ h6 {
     padding-left: 5px;
 }
 
-button {
+
+/* button {
     background-color: transparent;
     border: 1px solid #2196f3;
     padding: 0.5rem 1rem;
     cursor: pointer;
     border-radius: 0.25rem;
-}
+} */
 
 .table {
-    background-color: #2196f3;
+    /* background-color: #2196f3; */
     margin: 0;
     padding: 0;
     width: 100%;
@@ -689,6 +855,87 @@ button {
 .table tr th label {
     padding-right: 50px;
 }
+
+
+/* Halaman 2 (bagian check) */
+
+.checkbox {
+    background-color: #fff;
+    border: solid 1px #d7d7d7;
+    border-radius: 4px;
+    cursor: pointer;
+    display: inline-block;
+    height: 25px;
+    margin-right: 1rem;
+    text-align: center;
+    width: 25px;
+    vertical-align: middle;
+}
+
+svg {
+    margin-top: 2px;
+    stroke: #fff;
+}
+
+.positive {
+    background-color: #4aca65;
+    border-color: #43b45b;
+}
+
+
+/* Halaman dashboard murid */
+
+#list .waiting {
+    background-color: transparent;
+    border: 1px solid grey;
+    padding: 0.5rem 1rem;
+    cursor: not-allowed;
+    border-radius: 0.25rem;
+}
+
+#list .waiting:hover {
+    background-color: grey;
+    border: 1px solid white;
+    color: white;
+}
+
+#list .accepted {
+    background-color: transparent;
+    border: 1px solid #2196f3;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    border-radius: 0.25rem;
+}
+
+#list .paid {
+    background-color: transparent;
+    border: 1px solid #4aca65;
+    padding: 0.5rem 1rem;
+    cursor: not-allowed;
+    border-radius: 0.25rem;
+}
+
+#list .paid:hover {
+    background-color: #4aca65;
+    border: 1px solid white;
+    color: white;
+}
+
+#list .finished {
+    background-color: transparent;
+    border: 1px solid #CCCC00;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    border-radius: 0.25rem;
+}
+
+#list .finished:hover {
+    background-color: #CCCC00;
+    border: 1px solid white;
+    color: white;
+}
+
+
 /*--------------------------------------------------------------
 # Footer
 --------------------------------------------------------------*/
@@ -754,7 +1001,7 @@ button {
     margin: 0 0 20px 0;
     padding: 2px 0 2px 0;
     line-height: 1;
-    font-family: 'Montserrat', sans-serif;
+    font-family: "Montserrat", sans-serif;
     color: #fff;
     font-weight: 400;
     letter-spacing: 3px;
@@ -765,7 +1012,7 @@ button {
     font-size: 13px;
     line-height: 24px;
     margin-bottom: 0;
-    font-family: 'Montserrat', sans-serif;
+    font-family: "Montserrat", sans-serif;
     color: #ecf5ff;
 }
 
@@ -839,13 +1086,13 @@ button {
     margin-top: 25px;
 }
 
-#footer .footer-top .footer-newsletter input[type='email'] {
+#footer .footer-top .footer-newsletter input[type="email"] {
     border: 0;
     padding: 6px 8px;
     width: 65%;
 }
 
-#footer .footer-top .footer-newsletter input[type='submit'] {
+#footer .footer-top .footer-newsletter input[type="submit"] {
     background: #007bff;
     border: 0;
     width: 35%;
@@ -856,7 +1103,7 @@ button {
     cursor: pointer;
 }
 
-#footer .footer-top .footer-newsletter input[type='submit']:hover {
+#footer .footer-top .footer-newsletter input[type="submit"]:hover {
     background: #0062cc;
 }
 
@@ -879,6 +1126,7 @@ button {
     color: #f1f7ff;
 }
 
+
 /*--------------------------------------------------------------
 # Responsive Media Queries
 --------------------------------------------------------------*/
@@ -894,32 +1142,56 @@ button {
         height: 60px;
         padding: 10px 0;
     }
-
     #header .logo h1 {
         font-size: 28px;
         padding: 8px 0;
     }
-
     #intro {
-        padding: 140px 0 60px 0;
+        padding: 80px 0 80px 0;
     }
-
     #intro .intro-img {
         width: 80%;
         float: none;
-        margin: 0 auto 25px auto;
+        margin: 0 auto 0 auto;
     }
-
     #intro .intro-info {
         width: 80%;
         float: none;
         margin: auto;
         text-align: center;
     }
-
     #materiku .card {
         margin: 0;
         border-width: 0.5px;
+    }
+    #halamanList {
+        padding: 40px 0;
+    }
+    #halamanList .about-extra {
+        padding-top: 20px;
+        padding-left: 60px;
+        width: 80%;
+    }
+    #halamanNavigation {
+        padding: 40px 0;
+    }
+    #halamanNavigation .about-extra {
+        padding-top: 40px;
+        padding-left: 100px;
+        width: 80%;
+    }
+    .card {
+        width: 100%;
+    }
+    .content {
+        /* margin: 10px 10px; */
+        padding: 10px;
+        margin: inherit;
+    }
+    .content h4 {
+        font-weight: bold;
+        padding-left: 0;
+        text-align: center;
     }
 }
 
@@ -933,29 +1205,20 @@ button {
     #intro .intro-info {
         width: 100%;
     }
-
     #intro .intro-info h2 {
         font-size: 34px;
         margin-bottom: 30px;
     }
-
+    #intro .container {
+        padding-left: 20px;
+        text-align: center;
+    }
     .section-header p {
         width: 100%;
     }
-
-    #testimonials .testimonial-item {
+    #listGuru {
+        margin-top: -120px;
         text-align: center;
-    }
-
-    #testimonials .testimonial-item .testimonial-img {
-        float: none;
-        margin: auto;
-    }
-
-    #testimonials .testimonial-item h3,
-    #testimonials .testimonial-item h4,
-    #testimonials .testimonial-item p {
-        margin-left: 0;
     }
 }
 
@@ -965,13 +1228,16 @@ button {
     }
 }
 
+
 /* Detail Guru  */
 
+
 /* Box CSS*/
+
 #intro {
     width: 100%;
     background-size: cover;
-    padding: 120px 0 120px 0;
+    padding: 120px 0 0 0;
 }
 
 .shadow {
@@ -980,6 +1246,7 @@ button {
     -webkit-border-radius: 0% 0% 100% 100% / 0% 0% 8px 8px;
     -webkit-box-shadow: rgba(0, 0, 0, 0.3) 0 2px 3px;
 }
+
 .wrap {
     margin: 50px auto;
     margin-top: 20px;
@@ -990,6 +1257,7 @@ button {
     box-shadow: 1px 1px 2px #fff inset, -1px -1px 2px #fff inset;
     border-radius: 3px/6px;
 }
+
 
 /* Tab Informations about Teacher */
 
@@ -1028,7 +1296,7 @@ button {
 }
 
 .tab:after {
-    content: '';
+    content: "";
     position: absolute;
     top: 100%;
     left: -1px;
@@ -1096,23 +1364,19 @@ button {
         margin: 0;
         border: none;
     }
-
     .tab:after {
         top: 0;
         left: 0;
         right: 0;
         bottom: 0;
     }
-
     .tab-active {
         display: block;
         top: 0;
     }
-
     .tab a {
         border-bottom: solid 1px #ddd;
     }
-
     .tab-menu {
         display: block;
         position: absolute;
@@ -1122,11 +1386,155 @@ button {
         width: 24px;
         height: 22px;
     }
-
     .tab-menu .line {
         height: 4px;
         background-color: #333;
         border-radius: 2px;
         margin-bottom: 4px;
     }
+}
+
+
+/* Dashboard Halaman Murid */
+
+
+/* Section header dashboard yang ada tombol nya */
+
+#intro {
+    width: 100%;
+    background-size: cover;
+    padding: 120px 0 0 0;
+}
+
+
+/* Section listGuru */
+
+#listGuru {
+    width: 100%;
+    background-size: cover;
+    padding: 70px 0 0 0;
+}
+
+#list {
+    background: #ddfaff;
+    padding: 10px;
+}
+
+#list .about-container .background {
+    margin: 10px 0;
+}
+
+#list .about-container .content {
+    background: #fff;
+}
+
+#list .about-container .title {
+    color: #333;
+    font-weight: 700;
+    font-size: 32px;
+}
+
+#list .about-container p {
+    line-height: 26px;
+}
+
+#list .about-container p:last-child {
+    margin-bottom: 0;
+}
+
+#list .about-extra {
+    padding-top: 60px;
+}
+
+#list .about-extra h4 {
+    font-weight: 600;
+    font-size: 24px;
+}
+
+#list .box {
+    padding: 30px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    margin: 0 10px 40px 10px;
+    background: #fff;
+    box-shadow: 0 10px 29px 0 rgba(68, 88, 144, 0.1);
+    transition: all 0.3s ease-in-out;
+}
+
+#list .box:hover {
+    -webkit-transform: translateY(-5px);
+    transform: translateY(-5px);
+}
+
+#list .icons {
+    position: absolute;
+    left: 20px;
+    top: calc(50% - 32px);
+}
+
+#list .icons i {
+    font-size: 64px;
+    line-height: 1;
+    transition: 0.5s;
+}
+
+#list .title {
+    margin-left: 80px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+#list .title a {
+    color: #111;
+}
+
+#list .box:hover .title a {
+    color: #007bff;
+}
+
+#list .description {
+    font-size: 16px;
+    margin-left: 80px;
+    line-height: 24px;
+    margin-bottom: 10px;
+}
+
+#list .description i {
+    font-size: 23px;
+    line-height: 1;
+    transition: 0.5s;
+    padding-right: 12px;
+}
+
+#list button {
+    margin-left: 80px;
+}
+
+#list button:hover {
+    background-color: #007bff;
+    color: white;
+}
+
+#list .close {
+    top: 50px;
+}
+
+
+/* Rating page pada halaman murid */
+
+.star-rating {
+    line-height: 50px;
+    font-size: 1.9em;
+}
+
+.star-rating .fa-star {
+    color: #007bff;
+}
+
+.alert {
+    width: 100%;
+    font-size: 16px;
+    text-align: center;
 }

@@ -7,15 +7,18 @@
   <meta content="" name="keywords">
   <meta content="" name="description">
 
+
   <!-- Favicons -->
-  <link href="{{ asset('landing') }}/img/favicon.png" rel="icon">
+  <link href="{{ asset('landing') }}/img/favicon2.png" rel="icon">
   <link href="{{ asset('landing') }}/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <link href="{{ asset('argon') }}/vendor/nucleo/css/nucleo.css" rel="stylesheet">
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Montserrat:300,400,500,700" rel="stylesheet">
 
   <!-- Bootstrap CSS File -->
   <link href="{{ asset('landing') }}/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link type="text/css" href="{{ asset('argon') }}/css/argon.css?v=1.0.0" rel="stylesheet">
 
   <!-- Libraries CSS Files -->
   <link href="{{ asset('landing') }}/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
@@ -57,12 +60,62 @@
           <li><a href="#contact">Bantuan</a></li>
         </ul>
       </nav>
+
+      <!-- Untuk Auth -->
+      @auth()
+      <nav class="main-nav float-right d-none d-lg-block">
+      <div class="container-fluid">
+        <ul class="navbar-nav align-items-center d-none d-md-flex">
+            <li class="nav-item dropdown">
+                <a class="nav-link pr-0" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <div class="media align-items-center">
+                        <span class="avatar avatar-sm rounded-circle">
+                          @if (!empty($murid->foto))
+                            <img src="{{ asset($murid->foto) }}" class="img-responsive" alt="avatar guru" style="width: 40px; height: 40px; object-fit: cover;">
+                          @else
+						                <img alt="Image placeholder" src="{{ asset('argon') }}/img/theme/team-4-800x800.jpg">
+					                @endif
+                        </span>
+                        <div class="media-body ml-2 d-none d-lg-block">
+                            <span class="mb-0 text-sm  font-weight-bold">{{ auth()->user()->name }}</span>
+                        </div>
+                    </div>
+                </a>
+                <div class="dropdown-menu dropdown-menu-arrow dropdown-menu-right">
+                    <a href="{{ route('dashboard') }}" class="dropdown-item">
+                        <i class="ni ni-app"></i>
+                        <span>{{ __('Dashboard') }}</span>
+                    </a>
+                    <div class="dropdown-divider"></div>
+                    <a href="{{ route('guruprofile') }}" class="dropdown-item">
+                        <i class="ni ni-single-02"></i>
+                        <span>{{ __('My profile') }}</span>
+                    </a>
+                    <div class="dropdown-divider"></div>
+                    <a href="{{ route('logout') }}" class="dropdown-item" onclick="event.preventDefault();
+                    document.getElementById('logout-form').submit();">
+                        <i class="ni ni-user-run"></i>
+                        <span>{{ __('Logout') }}</span>
+                    </a>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                      @csrf
+                    </form>
+                </div>
+            </li>
+        </ul>
+        </div>
+      </nav>
+      @endauth
+
+      <!-- Untuk Guest -->
+      @guest()
       <nav class="main-nav float-right d-none d-lg-block">
         <ul>
           <li><a href="login">Log In</a></li>
           <li><a href="register">Sign Up</a></li>
         </ul>
       </nav>
+      @endguest
       <!-- .main-nav -->
       
     </div>

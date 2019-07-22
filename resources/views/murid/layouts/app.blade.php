@@ -8,9 +8,10 @@
   <meta content="" name="description">
 
   <!-- Favicons -->
-  <link href="{{ asset('landing') }}/img/favicon.png" rel="icon">
+  <link href="{{ asset('landing') }}/img/favicon2.png" rel="icon">
   <link href="{{ asset('landing') }}/img/apple-touch-icon.png" rel="apple-touch-icon">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="{{ asset('argon') }}/vendor/nucleo/css/nucleo.css" rel="stylesheet">
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Montserrat:300,400,500,700" rel="stylesheet">
@@ -18,6 +19,7 @@
 
   <!-- Bootstrap CSS File -->
   <link href="{{ asset('landing') }}/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link type="text/css" href="{{ asset('argon') }}/css/argon.css?v=1.0.0" rel="stylesheet">
 
   <!-- Libraries CSS Files -->
   <link href="{{ asset('landing') }}/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
@@ -59,17 +61,61 @@
         </ul>
       </nav>
       <nav class="main-nav float-right d-none d-lg-block">
-        <ul>
+
+      @auth()
+      <div class="container-fluid" style="margin-top: -8px">
+        <ul class="navbar-nav align-items-center d-none d-md-flex">
+            <li class="nav-item dropdown">
+                <a class="nav-link pr-0" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <div class="media align-items-center">
+                        <span class="avatar avatar-sm rounded-circle">
+                          @if (!empty($murid->foto) )  
+						                <img src="{{ asset($murid->foto) }}" class="img-responsive" alt="avatar murid" style="width: 40px; height: 40px; object-fit: cover;">
+					                @else
+						                <img alt="Image placeholder" src="{{ asset('argon') }}/img/theme/team-4-800x800.jpg">
+					                @endif
+                        </span>
+                        <div class="media-body ml-2 d-none d-lg-block">
+                            <span class="mb-0 text-sm  font-weight-bold">{{ auth()->user()->name }}</span>
+                        </div>
+                    </div>
+                </a>
+                <div class="dropdown-menu dropdown-menu-arrow dropdown-menu-right">
+                    <a href="{{ route('dashboard') }}" class="dropdown-item">
+                        <i class="ni ni-app"></i>
+                        <span>{{ __('Dashboard') }}</span>
+                    </a>
+                    <div class="dropdown-divider"></div>
+                    <a href="{{ route('muridprofile') }}" class="dropdown-item">
+                        <i class="ni ni-single-02"></i>
+                        <span>{{ __('My profile') }}</span>
+                    </a>
+                    <div class="dropdown-divider"></div>
+                    <a href="{{ route('logout') }}" class="dropdown-item" onclick="event.preventDefault();
+                    document.getElementById('logout-form').submit();">
+                        <i class="ni ni-user-run"></i>
+                        <span>{{ __('Logout') }}</span>
+                    </a>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                      @csrf
+                    </form>
+                </div>
+            </li>
+        </ul>
+        </div>
+        @endauth()
+       
+        {{--<ul>
           <li><a href="login">Log In</a></li>
           <li><a href="register">Sign Up</a></li>
-        </ul>
+        </ul> --}}
       </nav>
       <!-- .main-nav -->
 
     </div>
   </header><!-- #header -->
 
-  <div class="row">
+  <div id="gurus" class="row">
       @yield('content');
   </div>
 
@@ -184,6 +230,13 @@
   <script src="{{ asset('landing') }}/vendor/isotope/isotope.pkgd.min.js"></script>
   <script src="{{ asset('landing') }}/vendor/lightbox/js/lightbox.min.js"></script>
 
+  <!-- For range slider (using ion range slider) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.3.0/js/ion.rangeSlider.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.3.0/css/ion.rangeSlider.min.css"/>
+
+  <!-- Library for Searching List -->
+  <script src="//cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
+
   <!-- Contact Form JavaScript File -->
   <script src="{{ asset('landing') }}/contactform/contactform.js"></script>
 
@@ -196,129 +249,7 @@
   <!-- ClockPicker script -->
   <script src="{{ asset('landing') }}/vendor/bootstrap/dist/bootstrap-clockpicker.min.js"></script>
 
-  <!-- Script for Tab on detailGuru Tabs -->
-  <script type="text/javascript">
-      (function() {
-
-  function activateTab() {
-      if(activeTab) {
-        resetTab.call(activeTab);
-      }
-      this.parentNode.className = 'tab tab-active';
-      activeTab = this;
-      activePanel = document.getElementById(activeTab.getAttribute('href').substring(1));
-       activePanel.className = 'tabpanel show';
-      activePanel.setAttribute('aria-expanded', true);
-    }
-
-    function resetTab() {
-      activeTab.parentNode.className = 'tab';
-      if(activePanel) {
-        activePanel.className = 'tabpanel hide';
-        activePanel.setAttribute('aria-expanded', false);
-      }
-    }
-
-    var doc = document,
-        tabs = doc.querySelectorAll('.tab a'),
-        panels = doc.querySelectorAll('.tabpanel'),
-        activeTab = tabs[0],
-        activePanel;
-
-     activateTab.call(activeTab);
-
-    for(var i = tabs.length - 1; i >= 0; i--) {
-      tabs[i].addEventListener('click', activateTab, false);
-    }
-
-  })();
-  </script>
-
-  <!-- Script for Multitab Table -->
-  <script type="text/javascript">
-      //jQuery time
-      var current_fs, next_fs, previous_fs; //fieldsets
-      var left, opacity, scale; //fieldset properties which we will animate
-      var animating; //flag to prevent quick multi-click glitches
-
-      $(".next").click(function(){
-        if(animating) return false;
-        animating = true;
-
-        current_fs = $(this).parent();
-        next_fs = $(this).parent().next();
-
-        //activate next step on progressbar using the index of next_fs
-        $("#progressbar li").eq($("fieldset").index(next_fs)).addClass("active");
-
-        //show the next fieldset
-        next_fs.show();
-        //hide the current fieldset with style
-        current_fs.animate({opacity: 0}, {
-          step: function(now, mx) {
-            //as the opacity of current_fs reduces to 0 - stored in "now"
-            //1. scale current_fs down to 80%
-            scale = 1 - (1 - now) * 0.2;
-            //2. bring next_fs from the right(50%)
-            left = (now * 50)+"%";
-            //3. increase opacity of next_fs to 1 as it moves in
-            opacity = 1 - now;
-            current_fs.css({
-              'transform': 'scale('+scale+')',
-              'position': 'absolute'
-            });
-            next_fs.css({'left': left, 'opacity': opacity});
-          },
-          duration: 800,
-          complete: function(){
-            current_fs.hide();
-            animating = false;
-          },
-          //this comes from the custom easing plugin
-          easing: 'easeInOutBack'
-        });
-      });
-
-      $(".previous").click(function(){
-        if(animating) return false;
-        animating = true;
-
-        current_fs = $(this).parent();
-        previous_fs = $(this).parent().prev();
-
-        //de-activate current step on progressbar
-        $("#progressbar li").eq($("fieldset").index(current_fs)).removeClass("active");
-
-        //show the previous fieldset
-        previous_fs.show();
-        //hide the current fieldset with style
-        current_fs.animate({opacity: 0}, {
-          step: function(now, mx) {
-            //as the opacity of current_fs reduces to 0 - stored in "now"
-            //1. scale previous_fs from 80% to 100%
-            scale = 0.8 + (1 - now) * 0.2;
-            //2. take current_fs to the right(50%) - from 0%
-            left = ((1-now) * 50)+"%";
-            //3. increase opacity of previous_fs to 1 as it moves in
-            opacity = 1 - now;
-            current_fs.css({'left': left});
-            previous_fs.css({'transform': 'scale('+scale+')', 'position': 'absolute', 'opacity': opacity});
-          },
-          duration: 800,
-          complete: function(){
-            current_fs.hide();
-            animating = false;
-          },
-          //this comes from the custom easing plugin
-          easing: 'easeInOutBack'
-        });
-      });
-
-      $(".submit").click(function(){
-        return false;
-      })
-
-    </script>
+  @stack('js')
 
     <!-- Script for Time Date Picker -->
     <script type="text/javascript">
@@ -343,6 +274,6 @@
 		  console.log(this.value);
 	  });
     </script>
-
+    
 </body>
 </html>

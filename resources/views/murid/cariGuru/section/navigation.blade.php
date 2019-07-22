@@ -1,50 +1,34 @@
-<div class="col-lg-4">
+<div class="col-lg-4 col-md-10">
 <section id="halamanNavigation">
     <div class="about-extra">
+        <label>Nama</label>
+        <input class="form-control search" placeholder="Cari Nama" /><br>
         <label>Tingkat Studi</label>
-        <div class="dropdown">
-            <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Dropdown button
-            </button>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <a class="dropdown-item" href="#">SD</a>
-                <a class="dropdown-item" href="#">SMP</a>
-                <a class="dropdown-item" href="#">SMA</a>
-            </div>
-        </div>
+            <select id="inputStudi" class="form-control">
+                <option class="filter" value="semua" selected>Pilih Tingkat Studi</option>
+                <option class="filter" value="SD">SD</option>
+                <option class="filter" value="SMP">SMP</option>
+                <option class="filter" value="SMA">SMA</option>
+            </select>
         <br/>
         <label>Bidang Studi</label>
-        <div class="dropdown">
-            <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Dropdown button
-            </button>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <a class="dropdown-item" href="#">Matematika</a>
-                <a class="dropdown-item" href="#">IPA</a>
-                <a class="dropdown-item" href="#">IPS</a>
-            </div>
-        </div>
+        <select id="mataPelajaran" class="form-control">
+                <option class="filter" value="semua" selected>Pilih Mata Pelajaran</option>
+        </select>
         <br/>
         <label>Kota</label>
-        <div class="dropdown">
-            <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Dropdown button
-            </button>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <a class="dropdown-item" href="#">Jakarta</a>
-                <a class="dropdown-item" href="#">Semarang</a>
-                <a class="dropdown-item" href="#">Jawa Barat</a>
-            </div>
-        </div>
+        <select id="inputKota" class="form-control">
+                <option class="filter" value="semua" selected>Semua...</option>
+                <option class="filter" value="Semarang">Semarang</option>
+                <option class="filter" value="Jakarta">Jakarta</option>
+                <option class="filter" value="Bandung">Bandung</option>
+        </select>
         <br/>
         <form>
         <div class="form-group">
-            <label for="formControlRange">Example Range input</label>
-            <input type="range" class="form-control-range" id="formControlRange">
+            <label for="rangeHarga">Range Harga</label><br>
+            <input type="text" id="inputHarga" class="filter" name="my_range" value="0" /><br>
         </div>
         </form>
-        <center>
-        <button class="btn search-button">Search</button>
-        </center>
 </section>
 </div>

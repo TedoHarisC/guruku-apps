@@ -2,6 +2,9 @@
 
 namespace App\Http\Middleware;
 
+use Illuminate\Support\Facades\Auth;
+
+
 use Closure;
 
 class CheckMurid
@@ -15,8 +18,11 @@ class CheckMurid
      */
     public function handle($request, Closure $next, $role)
     {
-        if (! $request->user()->hasRole($role)) {
-            return redirect('/guru');
+        
+        if (!Auth::check()) {
+            return redirect('/my');
+        }else if(!$request->user()->hasRole($role)){
+            return redirect('/my');
         }
         return $next($request);
     }

@@ -15,8 +15,9 @@ class CheckGuru
      */
     public function handle($request, Closure $next, $role)
     {
+        
         if (! $request->user()->hasRole($role)) {
-            return redirect('/');
+            return redirect('/dashboard');
         }
         return $next($request);
     }

@@ -31,21 +31,39 @@ Route::prefix('admin')->middleware(['checkadmin:admin', 'auth'])->name('admin')-
 });
 
 // Route for Guru
-Route::prefix('/my')->middleware(['auth','checkguru:guru'])->group(function () {
+Route::prefix('/my')->middleware(['checkguru:guru','auth'])->group(function () {
 
-    Route::get('/', 'GuruController@index');
-    Route::get('/profile' , 'GuruController@profile');
-    
+    Route::get('/', 'GuruController@index')->name('gurudashboard');
+    Route::get('/profiles' , 'GuruController@profile')->name('guruprofile');
+    Route::get('/bukakelas', 'GuruController@bukaKelas')->name('bukakelas');
+
+    //post
+    Route::post('/bukakelas', 'GuruController@postBukaKelas')->name('postbukakelas');
+    Route::post('/profiles', 'GuruController@postProfiles')->name('postprofiles');
+    Route::get('/detailpesanan/{slug}', 'GuruController@detail')->name('detailPesananMurid');
+    Route::post('/konfirmasiterima', 'GuruController@konfirmasiterima')->name('konfirmasiterima');
 });
-// Route for murid
-Route::group(['middleware' => 'auth','checkmurid:murid'],function () {
+
+// Route for Murid
+Route::group(['middleware' => 'checkmurid:murid','auth'],function () {
     // Route::get('/' , 'MuridController@index');
+    
+    Route::get('/profiles' , 'MuridController@profile')->name('muridprofile');
+    Route::get('/guru' , 'MuridController@cariguru')->name('cariguru');
+    Route::get('/guru/{slug}' , 'MuridController@detailguru')->name('detailguru');
 
-    Route::get('/profile' , 'MuridController@profile');
-    Route::get('/guru' , 'MuridController@cariguru');
-    Route::get('/detailguru' , 'MuridController@detailguru');
-    Route::get('/checkout' , 'MuridController@checkout');
+    // post
+    Route::post('/checkout' , 'MuridController@checkout')->name('checkout');
+    Route::post('/checkout/pesanan' , 'PesananController@store')->name('pesananstore');
+    Route::post('/rating' , 'MuridController@rating')->name('ratingstore');
+    Route::post('/profiles', 'MuridController@postProfiles')->name('postprofilesmurid');
 
+    // snap midtrans
+    Route::post('/snap/store','PesananController@actionSnapToken')->name('snap');
+
+    //tambahan untuk coba saja
+    Route::get('/dashboard','MuridController@dashboard')->name('dashboard');
+    Route::get('/detailpesanan','MuridController@detail');
 });
 
 Auth::routes();

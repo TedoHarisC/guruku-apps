@@ -38,6 +38,7 @@ h6 {
     padding: 0;
 }
 
+
 /* Tombol ke atas */
 
 .back-to-top {
@@ -61,6 +62,7 @@ h6 {
     padding-top: 12px;
     color: #fff;
 }
+
 
 /* Preloader */
 
@@ -94,7 +96,6 @@ h6 {
         -webkit-transform: rotate(0deg);
         transform: rotate(0deg);
     }
-
     100% {
         -webkit-transform: rotate(360deg);
         transform: rotate(360deg);
@@ -106,16 +107,17 @@ h6 {
         -webkit-transform: rotate(0deg);
         transform: rotate(0deg);
     }
-
     100% {
         -webkit-transform: rotate(360deg);
         transform: rotate(360deg);
     }
 }
 
+
 /* /*--------------------------------------------------------------
 # Header (Navbar - Apabila di scroll maka akan masih ada kotaknya)
 --------------------------------------------------------------*/
+
 #header {
     height: 80px;
     transition: all 0.5s;
@@ -158,9 +160,15 @@ h6 {
 .main-pages {
     margin-top: 60px;
 }
+
+
 /*--------------------------------------------------------------
 # Intro Section 
 --------------------------------------------------------------*/
+
+#formKelas {
+    padding: 140px 0 60px 0;
+}
 
 #intro {
     width: 100%;
@@ -223,14 +231,69 @@ h6 {
 }
 
 #intro .intro-info .btn-services:hover {
-    background: #007bff;
-    border-color: #007bff;
+    background: #fff;
+    border-color: #fff;
     color: #fff;
 }
+
+.btn-get-accepted {
+    background: #19CC95;
+    border: 2px solid #82E5F3;
+    color: #fff;
+    cursor: pointer;
+    width: 100%;
+}
+
+.btn-get-accepted-mini {
+    background: #19CC95;
+    border: 2px solid #82E5F3;
+    color: #fff;
+    cursor: pointer;
+    width: 50%;
+}
+
+.btn-get-decline {
+    background: #ED467E;
+    border: 2px solid #F495B5;
+    color: #fff;
+    cursor: pointer;
+    width: 100%;
+}
+
+.btn-get-decline-mini {
+    background: #ED467E;
+    border: 2px solid #F495B5;
+    color: #fff;
+    cursor: pointer;
+    width: 50%;
+}
+
+.btn-get-started:hover {
+    background: none;
+    border-color: #2592f8;
+    color: #007bff !important;
+    cursor: pointer;
+}
+
+.btn-get-accepted:hover,
+.btn-get-accepted-mini:hover {
+    background: #21DF53;
+    border-color: #9FE4AD;
+    color: #fff !important;
+}
+
+.btn-get-decline:hover,
+.btn-get-decline-mini:hover {
+    background: #F24D4F;
+    border-color: #F495B5;
+    color: #fff !important;
+}
+
 
 /*--------------------------------------------------------------
 # Navigation Menu (Ada dua untuk Desktop dan Mobile)
 --------------------------------------------------------------*/
+
 
 /* Desktop Navigation */
 
@@ -246,7 +309,7 @@ h6 {
     list-style: none;
 }
 
-.main-nav > ul > li {
+.main-nav>ul>li {
     position: relative;
     white-space: nowrap;
     float: left;
@@ -264,8 +327,8 @@ h6 {
 }
 
 .main-nav a:hover,
-.main-nav .active > a,
-.main-nav li:hover > a {
+.main-nav .active>a,
+.main-nav li:hover>a {
     color: #007bff;
     text-decoration: none;
 }
@@ -284,7 +347,7 @@ h6 {
     transition: ease all 0.3s;
 }
 
-.main-nav .drop-down:hover > ul {
+.main-nav .drop-down:hover>ul {
     opacity: 1;
     top: 100%;
     visibility: visible;
@@ -302,12 +365,12 @@ h6 {
 }
 
 .main-nav .drop-down ul a:hover,
-.main-nav .drop-down ul .active > a,
-.main-nav .drop-down ul li:hover > a {
+.main-nav .drop-down ul .active>a,
+.main-nav .drop-down ul li:hover>a {
     color: #007bff;
 }
 
-.main-nav .drop-down > a:after {
+.main-nav .drop-down>a:after {
     content: "\f107";
     font-family: FontAwesome;
     padding-left: 10px;
@@ -318,21 +381,22 @@ h6 {
     left: calc(100% - 30px);
 }
 
-.main-nav .drop-down .drop-down:hover > ul {
+.main-nav .drop-down .drop-down:hover>ul {
     opacity: 1;
     top: 0;
     left: 100%;
 }
 
-.main-nav .drop-down .drop-down > a {
+.main-nav .drop-down .drop-down>a {
     padding-right: 35px;
 }
 
-.main-nav .drop-down .drop-down > a:after {
+.main-nav .drop-down .drop-down>a:after {
     content: "\f105";
     position: absolute;
     right: 15px;
 }
+
 
 /* Mobile Navigation */
 
@@ -364,13 +428,13 @@ h6 {
 }
 
 .mobile-nav a:hover,
-.mobile-nav .active > a,
-.mobile-nav li:hover > a {
+.mobile-nav .active>a,
+.mobile-nav li:hover>a {
     color: #74b5fc;
     text-decoration: none;
 }
 
-.mobile-nav .drop-down > a:after {
+.mobile-nav .drop-down>a:after {
     content: "\f078";
     font-family: FontAwesome;
     padding-left: 10px;
@@ -378,11 +442,11 @@ h6 {
     right: 15px;
 }
 
-.mobile-nav .active.drop-down > a:after {
+.mobile-nav .active.drop-down>a:after {
     content: "\f077";
 }
 
-.mobile-nav .drop-down > a {
+.mobile-nav .drop-down>a {
     padding-right: 35px;
 }
 
@@ -439,6 +503,7 @@ h6 {
     color: #fff;
 }
 
+
 /* Form Buka Kelas CSS
 --------------------------------*/
 
@@ -470,10 +535,12 @@ h6 {
     cursor: pointer;
 }
 
+
 /* Tombol cariGuru */
+
 #bukaKelas .pelajari {
     background: #007bff;
-    border: 0;
+    border: 2px solid #007bff;
     border-radius: 20px;
     padding: 8px 30px;
     color: #fff;
@@ -484,9 +551,34 @@ h6 {
     background: #0067d5;
     cursor: pointer;
 }
+
+
 /* End Tombol cariGuru */
 
-/* cariGuru list */
+
+/* Tombol cariGuru disabled*/
+
+#bukaKelas .pelajaris {
+    background: #fff;
+    border: 2px solid #007bff;
+    color: #007bff;
+    border-radius: 20px;
+    padding: 8px 30px;
+    transition: 0.3s;
+}
+
+#bukaKelas .pelajaris:hover {
+    background: #0067d5;
+    cursor: not-allowed;
+    color: #fff;
+}
+
+
+/* End Tombol cariGuru disabled */
+
+
+/* list murid yang memesan dan kelas yang dibuka */
+
 #list {
     background: #ddfaff;
     padding: 30px 0;
@@ -584,6 +676,54 @@ h6 {
 #list .close {
     top: 50px;
 }
+
+
+/*--------------------------------------------------------------
+# Form Pesan Guru
+--------------------------------------------------------------*/
+
+.shadow {
+    border-radius: 0% 0% 100% 100% / 0% 0% 8px 8px;
+    border-top-right-radius: rgba(0, 0, 0, 0.3) 0 2px 3px;
+    -webkit-border-radius: 0% 0% 100% 100% / 0% 0% 8px 8px;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.3) 0 2px 3px;
+}
+
+.card-pesan {
+    border: 1px solid #d3d3d3;
+    border-radius: 0.25rem;
+    width: 100%;
+    height: 900px;
+}
+
+.bg-img {
+    background-size: cover;
+    min-height: 180px;
+    background-position: center;
+    background-color: white;
+}
+
+#msform {
+    margin: 40px auto;
+    position: relative;
+}
+
+#msform fieldset {
+    background: white;
+    border: 0 none;
+    border-radius: 3px;
+    box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
+    padding: 20px 30px;
+    box-sizing: border-box;
+    width: 80%;
+    margin: 0 10%;
+    position: relative;
+}
+
+small {
+    padding-top: 5px;
+}
+
 
 /*--------------------------------------------------------------
 # Footer
@@ -775,6 +915,7 @@ h6 {
     color: #f1f7ff;
 }
 
+
 /*--------------------------------------------------------------
 # Responsive Media Queries
 --------------------------------------------------------------*/
@@ -790,29 +931,24 @@ h6 {
         height: 60px;
         padding: 10px 0;
     }
-
     #header .logo h1 {
         font-size: 28px;
         padding: 8px 0;
     }
-
     #intro {
         padding: 140px 0 60px 0;
     }
-
     #intro .intro-img {
         width: 80%;
         float: none;
         margin: 0 auto 25px auto;
     }
-
     #intro .intro-info {
         width: 80%;
         float: none;
         margin: auto;
         text-align: center;
     }
-
     #materiku .card {
         margin: 0;
     }
@@ -828,25 +964,20 @@ h6 {
     #intro .intro-info {
         width: 100%;
     }
-
     #intro .intro-info h2 {
         font-size: 34px;
         margin-bottom: 30px;
     }
-
     .section-header p {
         width: 100%;
     }
-
     #testimonials .testimonial-item {
         text-align: center;
     }
-
     #testimonials .testimonial-item .testimonial-img {
         float: none;
         margin: auto;
     }
-
     #testimonials .testimonial-item h3,
     #testimonials .testimonial-item h4,
     #testimonials .testimonial-item p {
@@ -858,4 +989,33 @@ h6 {
     #intro {
         padding: 100px 0 20px 0;
     }
+}
+
+
+/* Halaman detail */
+
+.invoice {
+    position: relative;
+    background: #fff;
+    border: 1px solid #f4f4f4;
+    padding: 10px;
+    margin: 30px 25px;
+}
+
+.profile-img {
+    padding-left: 40px;
+}
+
+.page-judul {
+    margin: 0;
+    font-size: 30px;
+}
+
+
+/* Halaman dashboard */
+
+.alert {
+    width: 100%;
+    font-size: 16px;
+    text-align: center;
 }
