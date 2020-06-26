@@ -3,3 +3,4 @@
 *.css linguist-vendored=false
 *.php linguist-vendored=false
 *.js linguist-vendored=false
+*.cs linguist-vendored=false
